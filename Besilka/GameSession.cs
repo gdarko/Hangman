@@ -24,12 +24,12 @@ namespace Besilka
 
         public bool isHanged()
         {
-            return BodyParts.Equals(BodyPartsAdded);
+            return this.BodyParts.Equals(this.BodyPartsAdded);
         }
 
         public bool isFinishedSuccessfully()
         {
-            return this.EncryptedWord == this.Word;
+            return this.EncryptedWord.Equals(this.Word);
         }
 
         public bool ProcessNewCharacter(Char a)
@@ -50,18 +50,18 @@ namespace Besilka
                 if (Word[indexes[i]] == a)
                 {
                     ew[indexes[i]] = a;
-                    ExitsInEncrypted = true;
+                    this.ExitsInEncrypted = true;
                 }
             }
 
             if (!ExitsInEncrypted)
             {
-                this.BodyPartsAdded = this.BodyPartsAdded + 1;
+                this.BodyPartsAdded++;
                 return false;
             }
 
-            points++;
-            EncryptedWord = ew.ToString();
+            this.points++;
+            this.EncryptedWord = ew.ToString();
 
             return true;
             

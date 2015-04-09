@@ -96,26 +96,25 @@ namespace Besilka
 
         private void UpdateBody()
         {
-            int NumberBodyPartsVisableCurrently = game.Session.BodyPartsAdded;
 
-            switch (NumberBodyPartsVisableCurrently)
+            switch (game.Session.BodyPartsAdded)
             {
-                case 0:
+                case 1:
                     pbHead.Visible = true;
                     break;
-                case 1:
+                case 2:
                     pbBody.Visible = true;
                     break;
-                case 2:
+                case 3:
                     pbLeftHand.Visible = true;
                     break;
-                case 3:
+                case 4:
                     pbRightHand.Visible = true;
                     break;
-                case 4:
+                case 5:
                     pbLeftLeg.Visible = true;
                     break;
-                case 5:
+                case 6:
                     pbRightLeg.Visible = true;
                     break;
             }
