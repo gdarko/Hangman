@@ -64,7 +64,10 @@ namespace Besilka
             if (game.Session.isHanged())
             {
                 UnloadBody();
+                tbCharacter.Text = "";
                 game.Session = new GameSession();
+                lblPogodiZbor.Text = game.Session.EncryptedWord;
+                lblPoeni.Text = Convert.ToString(game.Session.points);
                 return;
             }
             else
@@ -73,9 +76,19 @@ namespace Besilka
                 {
                     UpdateBody();
                 }
+                else if(game.Session.isFinishedSuccessfully())
+                {
+                    tbCharacter.Text = "";
+                    UpdatePoints();
+                    UnloadBody();
+                    game.Session = new GameSession();
+                    lblPogodiZbor.Text = game.Session.EncryptedWord;
+                    lblPoeni.Text = Convert.ToString(game.Session.points);
+                }
                 else
                 {
                     UpdatePoints();
+                    lblPogodiZbor.Text = game.Session.EncryptedWord;
                     
                 }
             }

@@ -18,24 +18,53 @@ namespace Besilka
         {
             this.Word = RandomWord.getRandom();
             this.EncryptedWord = RandomWord.Encrypt(this.Word);
-            points = 0;
-            BodyPartsAdded = 0;
+            this.points = 0;
+            this.BodyPartsAdded = 0;
         }
 
         public bool isHanged()
         {
-            return BodyParts == BodyPartsAdded;
+            return BodyParts.Equals(BodyPartsAdded);
+        }
+
+        public bool isFinishedSuccessfully()
+        {
+            return this.EncryptedWord == this.Word;
         }
 
         public bool ProcessNewCharacter(Char a)
         {
-            if (Word.Contains(a))
+            int [] indexes = new int[10]; 
+            for(int i = 0, j=0; i<EncryptedWord.Length; i++)
             {
-                points++;
-                return true;
+                if(EncryptedWord[i] == '_')
+                {
+                    indexes[j++] = i;
+                }
             }
-            BodyPartsAdded++;
-            return false;
+
+            StringBuilder ew = new StringBuilder(EncryptedWord);
+            bool ExitsInEncrypted = false;
+            for (int i = 0; i < indexes.Length; i++)
+            {
+                if (Word[indexes[i]] == a)
+                {
+                    ew[indexes[i]] = a;
+                    ExitsInEncrypted = true;
+                }
+            }
+
+            if (!ExitsInEncrypted)
+            {
+                this.BodyPartsAdded = this.BodyPartsAdded + 1;
+                return false;
+            }
+
+            points++;
+            EncryptedWord = ew.ToString();
+
+            return true;
+            
         }
     }
 }
