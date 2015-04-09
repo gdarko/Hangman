@@ -8,7 +8,6 @@ namespace Besilka
 {
     public class Game
     {
-
         public GameSession Session { get; set; }
         public Player Player { get; set; }
 
@@ -17,7 +16,5 @@ namespace Besilka
             this.Player = player;
             this.Session = new GameSession();
         }
-
-
     }
 }
