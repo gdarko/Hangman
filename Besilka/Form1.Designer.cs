@@ -37,21 +37,21 @@
             this.pbRightLeg = new System.Windows.Forms.PictureBox();
             this.pbBody = new System.Windows.Forms.PictureBox();
             this.lblPogodiZbor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbCharacter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.gbZborovi = new System.Windows.Forms.GroupBox();
             this.gbVasiInformacii = new System.Windows.Forms.GroupBox();
-            this.tbIme = new System.Windows.Forms.TextBox();
-            this.tbPrezime = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbPrekar = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblPoeni = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbPrekar = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbPrezime = new System.Windows.Forms.TextBox();
+            this.tbIme = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftHand)).BeginInit();
@@ -139,12 +139,12 @@
             this.lblPogodiZbor.TabIndex = 8;
             this.lblPogodiZbor.Text = "Z B O _ R";
             // 
-            // textBox1
+            // tbCharacter
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 9;
+            this.tbCharacter.Location = new System.Drawing.Point(6, 37);
+            this.tbCharacter.Name = "tbCharacter";
+            this.tbCharacter.Size = new System.Drawing.Size(156, 20);
+            this.tbCharacter.TabIndex = 9;
             // 
             // label1
             // 
@@ -165,34 +165,35 @@
             this.button1.Text = "Листа со ресултати";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(87, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Откажи";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.Location = new System.Drawing.Point(87, 92);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 12;
+            this.btnClose.Text = "Откажи";
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCheck
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button3.Location = new System.Drawing.Point(6, 92);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Пробај";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCheck.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCheck.Location = new System.Drawing.Point(6, 92);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(75, 23);
+            this.btnCheck.TabIndex = 13;
+            this.btnCheck.Text = "Пробај";
+            this.btnCheck.UseVisualStyleBackColor = false;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // gbZborovi
             // 
-            this.gbZborovi.Controls.Add(this.button3);
-            this.gbZborovi.Controls.Add(this.textBox1);
+            this.gbZborovi.Controls.Add(this.btnCheck);
+            this.gbZborovi.Controls.Add(this.tbCharacter);
             this.gbZborovi.Controls.Add(this.label1);
             this.gbZborovi.Controls.Add(this.lblPogodiZbor);
             this.gbZborovi.Controls.Add(this.button1);
-            this.gbZborovi.Controls.Add(this.button2);
+            this.gbZborovi.Controls.Add(this.btnClose);
             this.gbZborovi.Location = new System.Drawing.Point(468, 239);
             this.gbZborovi.Name = "gbZborovi";
             this.gbZborovi.Size = new System.Drawing.Size(404, 128);
@@ -217,56 +218,15 @@
             this.gbVasiInformacii.TabStop = false;
             this.gbVasiInformacii.Text = "Ваши Информации";
             // 
-            // tbIme
+            // lblPoeni
             // 
-            this.tbIme.Location = new System.Drawing.Point(70, 34);
-            this.tbIme.Name = "tbIme";
-            this.tbIme.ReadOnly = true;
-            this.tbIme.Size = new System.Drawing.Size(156, 20);
-            this.tbIme.TabIndex = 14;
-            // 
-            // tbPrezime
-            // 
-            this.tbPrezime.Location = new System.Drawing.Point(70, 62);
-            this.tbPrezime.Name = "tbPrezime";
-            this.tbPrezime.ReadOnly = true;
-            this.tbPrezime.Size = new System.Drawing.Size(156, 20);
-            this.tbPrezime.TabIndex = 15;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Име:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Презиме:";
-            // 
-            // tbPrekar
-            // 
-            this.tbPrekar.Location = new System.Drawing.Point(70, 97);
-            this.tbPrekar.Name = "tbPrekar";
-            this.tbPrekar.ReadOnly = true;
-            this.tbPrekar.Size = new System.Drawing.Size(156, 20);
-            this.tbPrekar.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Ник:";
+            this.lblPoeni.AutoSize = true;
+            this.lblPoeni.Font = new System.Drawing.Font("Rockwell", 48F, System.Drawing.FontStyle.Bold);
+            this.lblPoeni.Location = new System.Drawing.Point(288, 47);
+            this.lblPoeni.Name = "lblPoeni";
+            this.lblPoeni.Size = new System.Drawing.Size(68, 77);
+            this.lblPoeni.TabIndex = 23;
+            this.lblPoeni.Text = "0";
             // 
             // label4
             // 
@@ -277,15 +237,56 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Поени";
             // 
-            // lblPoeni
+            // label5
             // 
-            this.lblPoeni.AutoSize = true;
-            this.lblPoeni.Font = new System.Drawing.Font("Rockwell", 48F, System.Drawing.FontStyle.Bold);
-            this.lblPoeni.Location = new System.Drawing.Point(288, 47);
-            this.lblPoeni.Name = "lblPoeni";
-            this.lblPoeni.Size = new System.Drawing.Size(68, 77);
-            this.lblPoeni.TabIndex = 23;
-            this.lblPoeni.Text = "0";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Ник:";
+            // 
+            // tbPrekar
+            // 
+            this.tbPrekar.Location = new System.Drawing.Point(70, 97);
+            this.tbPrekar.Name = "tbPrekar";
+            this.tbPrekar.ReadOnly = true;
+            this.tbPrekar.Size = new System.Drawing.Size(156, 20);
+            this.tbPrekar.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Презиме:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Име:";
+            // 
+            // tbPrezime
+            // 
+            this.tbPrezime.Location = new System.Drawing.Point(70, 62);
+            this.tbPrezime.Name = "tbPrezime";
+            this.tbPrezime.ReadOnly = true;
+            this.tbPrezime.Size = new System.Drawing.Size(156, 20);
+            this.tbPrezime.TabIndex = 15;
+            // 
+            // tbIme
+            // 
+            this.tbIme.Location = new System.Drawing.Point(70, 34);
+            this.tbIme.Name = "tbIme";
+            this.tbIme.ReadOnly = true;
+            this.tbIme.Size = new System.Drawing.Size(156, 20);
+            this.tbIme.TabIndex = 14;
             // 
             // formBesilka
             // 
@@ -328,11 +329,11 @@
         private System.Windows.Forms.PictureBox pbRightLeg;
         private System.Windows.Forms.PictureBox pbBody;
         private System.Windows.Forms.Label lblPogodiZbor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbCharacter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.GroupBox gbZborovi;
         private System.Windows.Forms.GroupBox gbVasiInformacii;
         private System.Windows.Forms.TextBox tbIme;

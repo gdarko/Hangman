@@ -8,13 +8,16 @@ namespace Besilka
 {
     public class Game
     {
-        public string Zbor { get; set; }
-        public Player player { get; set; }
+
+        public GameSession Session { get; set; }
+        public Player Player { get; set; }
 
         public Game(Player player)
         {
-            this.player = player;
-            this.Zbor = RandomWord.getRandom();
+            this.Player = player;
+            this.Session = new GameSession();
         }
+
+
     }
 }
