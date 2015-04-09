@@ -83,7 +83,7 @@ namespace Besilka
                     UnloadBody();
                     game.Session = new GameSession();
                     lblPogodiZbor.Text = game.Session.EncryptedWord;
-                    lblPoeni.Text = Convert.ToString(game.Session.points);
+                   // lblPoeni.Text = Convert.ToString(game.Session.points);
                 }
                 else
                 {

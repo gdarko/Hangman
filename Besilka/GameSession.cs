@@ -10,7 +10,7 @@ namespace Besilka
     {
         private string Word;
         public string EncryptedWord { get; set; }
-        readonly int BodyParts = 7;
+        readonly int BodyParts = 6;
         public int BodyPartsAdded { get; set; }
         public int points {get; set;}
 
@@ -57,11 +57,11 @@ namespace Besilka
 
             if (!ExitsInEncrypted)
             {
-                this.BodyPartsAdded++;
+                this.BodyPartsAdded = this.BodyPartsAdded + 1;
                 return false;
             }
 
-            this.points++;
+            this.points = this.points + 1;
             this.EncryptedWord = ew.ToString();
 
             return true;
