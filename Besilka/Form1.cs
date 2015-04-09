@@ -9,7 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Besilka
-{
+{/*
+    @authors: 
+        * Damjan Miloshevski
+        * Maja Korunoska
+        * Darko Gjorgjijoski
+  */
     public partial class formBesilka : Form
     {
         Game game;

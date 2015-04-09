@@ -8,7 +8,12 @@ using System.Data.SqlClient;
 using System.IO;
 
 namespace Besilka
-{
+{/*
+    @authors: 
+        * Damjan Miloshevski
+        * Maja Korunoska
+        * Darko Gjorgjijoski
+  */
     public static class RandomWord
     {
        

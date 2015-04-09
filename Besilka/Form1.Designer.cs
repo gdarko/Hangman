@@ -132,10 +132,10 @@
             // lblPogodiZbor
             // 
             this.lblPogodiZbor.AutoSize = true;
-            this.lblPogodiZbor.Font = new System.Drawing.Font("Rockwell", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPogodiZbor.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPogodiZbor.Location = new System.Drawing.Point(199, 14);
             this.lblPogodiZbor.Name = "lblPogodiZbor";
-            this.lblPogodiZbor.Size = new System.Drawing.Size(199, 50);
+            this.lblPogodiZbor.Size = new System.Drawing.Size(206, 46);
             this.lblPogodiZbor.TabIndex = 8;
             this.lblPogodiZbor.Text = "Z B O _ R";
             // 
@@ -162,7 +162,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(190, 23);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Листа со ресултати";
+            this.button1.Text = "Листа со резултати";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // btnClose
@@ -221,10 +221,10 @@
             // lblPoeni
             // 
             this.lblPoeni.AutoSize = true;
-            this.lblPoeni.Font = new System.Drawing.Font("Rockwell", 48F, System.Drawing.FontStyle.Bold);
+            this.lblPoeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
             this.lblPoeni.Location = new System.Drawing.Point(288, 47);
             this.lblPoeni.Name = "lblPoeni";
-            this.lblPoeni.Size = new System.Drawing.Size(68, 77);
+            this.lblPoeni.Size = new System.Drawing.Size(69, 73);
             this.lblPoeni.TabIndex = 23;
             this.lblPoeni.Text = "0";
             // 

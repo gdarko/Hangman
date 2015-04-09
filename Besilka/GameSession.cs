@@ -5,7 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Besilka
-{
+{/*
+    @authors: 
+        * Damjan Miloshevski
+        * Maja Korunoska
+        * Darko Gjorgjijoski
+  */
     public class GameSession
     {
         private string Word;
