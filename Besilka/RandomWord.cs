@@ -8,35 +8,36 @@ using System.Data.SqlClient;
 using System.IO;
 
 namespace Besilka
-{/*
-    @authors: 
-        * Damjan Miloshevski
-        * Maja Korunoska
-        * Darko Gjorgjijoski
-  */
+{
+    /**
+     *  @authors: 
+     *  -Damjan Miloshevski
+     *  -Maja Korunoska
+     *  -Darko Gjorgjijoski
+     */
+
     public static class RandomWord
     {
-       
-  
-        public static string [] words = new string[] {
-                "mecka",
-                "kucka",
-                "kamion",
-                "prikolka",
-                "lubenica",
-                "ljubov",
-                "jorgan",
-                "avtomobil",
-                "kompjuter",
-                "video",
-                "tablet",
-                "devojka",
-                "momce",
-                "zgrada",
-                "telefon",
-                "tepih",
-                "baterija",
-                "sokak"
+        public static string [] words = 
+            new string[] {
+            "mecka",
+            "kucka",
+            "kamion",
+            "prikolka",
+            "lubenica",
+            "ljubov",
+            "jorgan",
+            "avtomobil",
+            "kompjuter",
+            "video",
+            "tablet",
+            "devojka",
+            "momce",
+            "zgrada",
+            "telefon",
+            "tepih",
+            "baterija",
+            "sokak"
         };
 
         public static string getRandom()
@@ -62,9 +63,7 @@ namespace Besilka
                 sb[index] = '_';
 
             }
-
             return sb.ToString();
-
         }
     }
 }

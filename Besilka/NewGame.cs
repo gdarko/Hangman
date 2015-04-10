@@ -9,22 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Besilka
-{/*
-    @authors: 
-        * Damjan Miloshevski
-        * Maja Korunoska
-        * Darko Gjorgjijoski
-  */
+{
+    /**
+     *  @authors: 
+     *  -Damjan Miloshevski
+     *  -Maja Korunoska
+     *  -Darko Gjorgjijoski
+     */
+
     public partial class NewGame : Form
     {
-
-        public Game result {get; set;}
+        public Game result { get; set; }
 
         public NewGame()
         {
             InitializeComponent();
         }
-
         private void btnPocetok_Click(object sender, EventArgs e)
         {
             string FirstName = tbFirstName.Text;
@@ -34,7 +34,6 @@ namespace Besilka
             DialogResult = System.Windows.Forms.DialogResult.OK;
             Close();
         }
-
         private void btnOtkazi_Click(object sender, EventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.Cancel;

@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Besilka
-{/*
-    @authors: 
-        * Damjan Miloshevski
-        * Maja Korunoska
-        * Darko Gjorgjijoski
-  */
+{
+    /**
+     *  @authors: 
+     *  -Damjan Miloshevski
+     *  -Maja Korunoska
+     *  -Darko Gjorgjijoski
+     */
+
     public class Player
     {
         public string FirstName { get; set; }

@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Besilka
-{/*
-    @authors: 
-        * Damjan Miloshevski
-        * Maja Korunoska
-        * Darko Gjorgjijoski
-  */
+{
+    /**
+     *  @authors: 
+     *  -Damjan Miloshevski
+     *  -Maja Korunoska
+     *  -Darko Gjorgjijoski
+     */
+
     public partial class formBesilka : Form
     {
         Game game;
@@ -43,14 +45,11 @@ namespace Besilka
                 tbIme.Text = game.Player.FirstName;
                 tbPrekar.Text = game.Player.NickName;
                 tbPrezime.Text = game.Player.FirstName;
-
-                lblPogodiZbor.Text = game.Session.EncryptedWord as string;
+                lblPogodiZbor.Text = game.Session.EncryptedWord;
             }
             else
             {
-                MessageBox.Show("Играта не може да започне!");
-                this.Close();
-               // Application.Exit();
+                MessageBox.Show("Играта не може да започне!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Environment.Exit(1);
             }
             
@@ -88,7 +87,6 @@ namespace Besilka
                     UnloadBody();
                     game.Session = new GameSession();
                     lblPogodiZbor.Text = game.Session.EncryptedWord;
-                   // lblPoeni.Text = Convert.ToString(game.Session.points);
                 }
                 else
                 {
@@ -130,10 +128,6 @@ namespace Besilka
               int CurrentPoints = Convert.ToInt32(lblPoeni.Text);
               int NewPoints = CurrentPoints + (int)game.Session.points;
               lblPoeni.Text = Convert.ToString(NewPoints);
-        }
-
-
-
-        
+        } 
     }
 }
