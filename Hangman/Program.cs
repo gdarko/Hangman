@@ -16,7 +16,7 @@ namespace Hangman
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formBesilka());
+            Application.Run(new HangmanForm());
         }
     }
 }

@@ -10,9 +10,19 @@ using System.Windows.Forms;
 
 namespace Hangman
 {
+    /**
+     *  Highscores Form
+     *  Used to display the highscore results from database
+     *  
+     * @Authors
+     *  -Damjan Miloshevski
+     *  -Maja Korunoska
+     *  -Darko Gjorgjijoski
+     *
+     */
+
     public partial class HighScores : Form
     {
-
         Hmdb db;
 
         public HighScores()

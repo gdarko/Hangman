@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 namespace Hangman
 {
     /**
+     *  Game class
+     *  Used to represent the Game that user starts once 
+     *  the application is executed
+     * 
      *  @authors: 
      *  -Damjan Miloshevski
      *  -Maja Korunoska

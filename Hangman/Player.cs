@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace Hangman
 {
     /**
+     *  Player class
+     *  Used to represent the player properties
+     *  
      *  @authors: 
      *  -Damjan Miloshevski
      *  -Maja Korunoska

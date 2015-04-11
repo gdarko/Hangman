@@ -1,6 +1,6 @@
 ﻿namespace Hangman
 {
-    partial class formBesilka
+    partial class HangmanForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBesilka));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HangmanForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbHead = new System.Windows.Forms.PictureBox();
             this.pbLeftHand = new System.Windows.Forms.PictureBox();
@@ -65,126 +65,82 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(70, 55);
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(368, 331);
-            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // pbHead
             // 
-            this.pbHead.Image = ((System.Drawing.Image)(resources.GetObject("pbHead.Image")));
-            this.pbHead.Location = new System.Drawing.Point(250, 117);
+            resources.ApplyResources(this.pbHead, "pbHead");
             this.pbHead.Name = "pbHead";
-            this.pbHead.Size = new System.Drawing.Size(100, 70);
-            this.pbHead.TabIndex = 1;
             this.pbHead.TabStop = false;
             // 
             // pbLeftHand
             // 
-            this.pbLeftHand.Image = ((System.Drawing.Image)(resources.GetObject("pbLeftHand.Image")));
-            this.pbLeftHand.Location = new System.Drawing.Point(233, 193);
-            this.pbLeftHand.Margin = new System.Windows.Forms.Padding(0);
+            resources.ApplyResources(this.pbLeftHand, "pbLeftHand");
             this.pbLeftHand.Name = "pbLeftHand";
-            this.pbLeftHand.Size = new System.Drawing.Size(55, 34);
-            this.pbLeftHand.TabIndex = 2;
             this.pbLeftHand.TabStop = false;
             // 
             // pbLeftLeg
             // 
-            this.pbLeftLeg.Image = ((System.Drawing.Image)(resources.GetObject("pbLeftLeg.Image")));
-            this.pbLeftLeg.Location = new System.Drawing.Point(250, 258);
+            resources.ApplyResources(this.pbLeftLeg, "pbLeftLeg");
             this.pbLeftLeg.Name = "pbLeftLeg";
-            this.pbLeftLeg.Size = new System.Drawing.Size(100, 50);
-            this.pbLeftLeg.TabIndex = 3;
             this.pbLeftLeg.TabStop = false;
             // 
             // pbRightHand
             // 
-            this.pbRightHand.Image = ((System.Drawing.Image)(resources.GetObject("pbRightHand.Image")));
-            this.pbRightHand.Location = new System.Drawing.Point(291, 184);
-            this.pbRightHand.Margin = new System.Windows.Forms.Padding(0);
+            resources.ApplyResources(this.pbRightHand, "pbRightHand");
             this.pbRightHand.Name = "pbRightHand";
-            this.pbRightHand.Size = new System.Drawing.Size(50, 37);
-            this.pbRightHand.TabIndex = 4;
             this.pbRightHand.TabStop = false;
             // 
             // pbRightLeg
             // 
-            this.pbRightLeg.Image = ((System.Drawing.Image)(resources.GetObject("pbRightLeg.Image")));
-            this.pbRightLeg.Location = new System.Drawing.Point(291, 258);
+            resources.ApplyResources(this.pbRightLeg, "pbRightLeg");
             this.pbRightLeg.Name = "pbRightLeg";
-            this.pbRightLeg.Size = new System.Drawing.Size(100, 50);
-            this.pbRightLeg.TabIndex = 6;
             this.pbRightLeg.TabStop = false;
             // 
             // pbBody
             // 
-            this.pbBody.Image = ((System.Drawing.Image)(resources.GetObject("pbBody.Image")));
-            this.pbBody.Location = new System.Drawing.Point(288, 184);
-            this.pbBody.Margin = new System.Windows.Forms.Padding(0);
+            resources.ApplyResources(this.pbBody, "pbBody");
             this.pbBody.Name = "pbBody";
-            this.pbBody.Size = new System.Drawing.Size(10, 77);
-            this.pbBody.TabIndex = 7;
             this.pbBody.TabStop = false;
             // 
             // lblPogodiZbor
             // 
-            this.lblPogodiZbor.AutoSize = true;
-            this.lblPogodiZbor.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPogodiZbor.Location = new System.Drawing.Point(199, 14);
+            resources.ApplyResources(this.lblPogodiZbor, "lblPogodiZbor");
             this.lblPogodiZbor.Name = "lblPogodiZbor";
-            this.lblPogodiZbor.Size = new System.Drawing.Size(206, 46);
-            this.lblPogodiZbor.TabIndex = 8;
-            this.lblPogodiZbor.Text = "Z B O _ R";
             // 
             // tbCharacter
             // 
-            this.tbCharacter.Location = new System.Drawing.Point(6, 37);
+            resources.ApplyResources(this.tbCharacter, "tbCharacter");
             this.tbCharacter.Name = "tbCharacter";
-            this.tbCharacter.Size = new System.Drawing.Size(156, 20);
-            this.tbCharacter.TabIndex = 9;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 21);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Внеси буква";
             // 
             // btnResults
             // 
             this.btnResults.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnResults.Location = new System.Drawing.Point(208, 92);
+            resources.ApplyResources(this.btnResults, "btnResults");
             this.btnResults.Name = "btnResults";
-            this.btnResults.Size = new System.Drawing.Size(190, 23);
-            this.btnResults.TabIndex = 11;
-            this.btnResults.Text = "Листа со резултати";
             this.btnResults.UseVisualStyleBackColor = false;
             this.btnResults.Click += new System.EventHandler(this.btnResults_Click);
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Red;
-            this.btnClose.Location = new System.Drawing.Point(87, 92);
+            resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 12;
-            this.btnClose.Text = "Откажи";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnCheck
             // 
             this.btnCheck.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnCheck.Location = new System.Drawing.Point(6, 92);
+            resources.ApplyResources(this.btnCheck, "btnCheck");
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(75, 23);
-            this.btnCheck.TabIndex = 13;
-            this.btnCheck.Text = "Пробај";
             this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
@@ -196,12 +152,9 @@
             this.gbZborovi.Controls.Add(this.lblPogodiZbor);
             this.gbZborovi.Controls.Add(this.btnResults);
             this.gbZborovi.Controls.Add(this.btnClose);
-            this.gbZborovi.Location = new System.Drawing.Point(468, 239);
+            resources.ApplyResources(this.gbZborovi, "gbZborovi");
             this.gbZborovi.Name = "gbZborovi";
-            this.gbZborovi.Size = new System.Drawing.Size(404, 128);
-            this.gbZborovi.TabIndex = 14;
             this.gbZborovi.TabStop = false;
-            this.gbZborovi.Text = "Игра";
             // 
             // gbVasiInformacii
             // 
@@ -213,88 +166,57 @@
             this.gbVasiInformacii.Controls.Add(this.label2);
             this.gbVasiInformacii.Controls.Add(this.tbPrezime);
             this.gbVasiInformacii.Controls.Add(this.tbIme);
-            this.gbVasiInformacii.Location = new System.Drawing.Point(468, 55);
+            resources.ApplyResources(this.gbVasiInformacii, "gbVasiInformacii");
             this.gbVasiInformacii.Name = "gbVasiInformacii";
-            this.gbVasiInformacii.Size = new System.Drawing.Size(404, 142);
-            this.gbVasiInformacii.TabIndex = 15;
             this.gbVasiInformacii.TabStop = false;
-            this.gbVasiInformacii.Text = "Ваши Информации";
             // 
             // lblPoeni
             // 
-            this.lblPoeni.AutoSize = true;
-            this.lblPoeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
-            this.lblPoeni.Location = new System.Drawing.Point(288, 47);
+            resources.ApplyResources(this.lblPoeni, "lblPoeni");
             this.lblPoeni.Name = "lblPoeni";
-            this.lblPoeni.Size = new System.Drawing.Size(69, 73);
-            this.lblPoeni.TabIndex = 23;
-            this.lblPoeni.Text = "0";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(298, 34);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Поени";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 100);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Ник:";
             // 
             // tbPrekar
             // 
-            this.tbPrekar.Location = new System.Drawing.Point(70, 97);
+            resources.ApplyResources(this.tbPrekar, "tbPrekar");
             this.tbPrekar.Name = "tbPrekar";
             this.tbPrekar.ReadOnly = true;
-            this.tbPrekar.Size = new System.Drawing.Size(156, 20);
-            this.tbPrekar.TabIndex = 20;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 69);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Презиме:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 34);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Име:";
             // 
             // tbPrezime
             // 
-            this.tbPrezime.Location = new System.Drawing.Point(70, 62);
+            resources.ApplyResources(this.tbPrezime, "tbPrezime");
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.ReadOnly = true;
-            this.tbPrezime.Size = new System.Drawing.Size(156, 20);
-            this.tbPrezime.TabIndex = 15;
             // 
             // tbIme
             // 
-            this.tbIme.Location = new System.Drawing.Point(70, 34);
+            resources.ApplyResources(this.tbIme, "tbIme");
             this.tbIme.Name = "tbIme";
             this.tbIme.ReadOnly = true;
-            this.tbIme.Size = new System.Drawing.Size(156, 20);
-            this.tbIme.TabIndex = 14;
             // 
-            // formBesilka
+            // HangmanForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 400);
             this.Controls.Add(this.gbVasiInformacii);
             this.Controls.Add(this.gbZborovi);
             this.Controls.Add(this.pbBody);
@@ -304,8 +226,7 @@
             this.Controls.Add(this.pbLeftHand);
             this.Controls.Add(this.pbHead);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "formBesilka";
-            this.Text = "Бесилка";
+            this.Name = "HangmanForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBesilka_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHead)).EndInit();
