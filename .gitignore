@@ -1,3 +1,10 @@
-/Besilka/bin
+/Besilka/bin/Debug/*.exe
+/Besilka/bin/Debug/*.config
+/Besilka/bin/Debug/*.manifest
+/Besilka/bin/Debug/*.pdb
+/Besilka/bin/Release/*.exe
+/Besilka/bin/Release/*.config
+/Besilka/bin/Release/*.manifest
+/Besilka/bin/Release/*.pdb
 /Besilka/obj
 *.suo

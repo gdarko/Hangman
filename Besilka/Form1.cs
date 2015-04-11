@@ -20,6 +20,7 @@ namespace Besilka
     public partial class formBesilka : Form
     {
         Game game;
+        Hmdb db;
 
         public void UnloadBody()
         {
@@ -34,6 +35,8 @@ namespace Besilka
         public formBesilka()
         {
             InitializeComponent();
+
+            this.db = new Hmdb();
 
             UnloadBody();
 
@@ -128,6 +131,17 @@ namespace Besilka
               int CurrentPoints = Convert.ToInt32(lblPoeni.Text);
               int NewPoints = CurrentPoints + (int)game.Session.points;
               lblPoeni.Text = Convert.ToString(NewPoints);
-        } 
+        }
+
+        private void btnResults_Click(object sender, EventArgs e)
+        {
+            HighScores window = new HighScores();
+
+            window.ShowDialog();
+        }
+
+
+ 
+        
     }
 }

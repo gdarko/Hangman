@@ -39,7 +39,7 @@
             this.lblPogodiZbor = new System.Windows.Forms.Label();
             this.tbCharacter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnResults = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.gbZborovi = new System.Windows.Forms.GroupBox();
@@ -155,15 +155,16 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Внеси буква";
             // 
-            // button1
+            // btnResults
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.button1.Location = new System.Drawing.Point(208, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Листа со резултати";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnResults.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnResults.Location = new System.Drawing.Point(208, 92);
+            this.btnResults.Name = "btnResults";
+            this.btnResults.Size = new System.Drawing.Size(190, 23);
+            this.btnResults.TabIndex = 11;
+            this.btnResults.Text = "Листа со резултати";
+            this.btnResults.UseVisualStyleBackColor = false;
+            this.btnResults.Click += new System.EventHandler(this.btnResults_Click);
             // 
             // btnClose
             // 
@@ -192,7 +193,7 @@
             this.gbZborovi.Controls.Add(this.tbCharacter);
             this.gbZborovi.Controls.Add(this.label1);
             this.gbZborovi.Controls.Add(this.lblPogodiZbor);
-            this.gbZborovi.Controls.Add(this.button1);
+            this.gbZborovi.Controls.Add(this.btnResults);
             this.gbZborovi.Controls.Add(this.btnClose);
             this.gbZborovi.Location = new System.Drawing.Point(468, 239);
             this.gbZborovi.Name = "gbZborovi";
@@ -331,7 +332,7 @@
         private System.Windows.Forms.Label lblPogodiZbor;
         private System.Windows.Forms.TextBox tbCharacter;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnResults;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.GroupBox gbZborovi;
