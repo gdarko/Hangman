@@ -175,6 +175,7 @@
             this.btnClose.TabIndex = 12;
             this.btnClose.Text = "Откажи";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnCheck
             // 
@@ -305,6 +306,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "formBesilka";
             this.Text = "Бесилка";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBesilka_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftHand)).EndInit();

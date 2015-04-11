@@ -31,6 +31,7 @@ namespace Besilka
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            db.Close();
             Close();
         }
     }

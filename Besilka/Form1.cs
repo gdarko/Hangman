@@ -47,7 +47,7 @@ namespace Besilka
                 this.game = window.result;
                 tbIme.Text = game.Player.FirstName;
                 tbPrekar.Text = game.Player.NickName;
-                tbPrezime.Text = game.Player.FirstName;
+                tbPrezime.Text = game.Player.LastName;
                 lblPogodiZbor.Text = game.Session.EncryptedWord;
             }
             else
@@ -140,8 +140,59 @@ namespace Besilka
             window.ShowDialog();
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
- 
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (dbSaveResult())
+                {
+                    MessageBox.Show("Резултатот е успешно зачуван!", "Резултат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void formBesilka_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (dbSaveResult())
+                {
+                    MessageBox.Show("Резултатот е успешно зачуван!", "Резултат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                Environment.Exit(1);
+            }
+            else
+            {
+                Environment.Exit(1);
+            }
+
+        }
+
+        private bool dbSaveResult()
+        {
+            string firstname = game.Player.FirstName;
+            string nickname = game.Player.NickName;
+            string lastname = game.Player.LastName;
+            int points = game.Player.Points;
+            bool state = this.db.insertResult(firstname, nickname, lastname, points);
+            return state;
+
+        }
         
     }
 }
