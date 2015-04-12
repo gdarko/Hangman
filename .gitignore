@@ -1,3 +1,4 @@
 /Hangman/bin
 /Hangman/obj
+!*.dll
 *.suo
