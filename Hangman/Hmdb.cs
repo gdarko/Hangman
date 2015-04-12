@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Data.SqlClient;
-using System.Data.SQLite;
 
 namespace Hangman
 {
@@ -62,6 +61,7 @@ namespace Hangman
             command.Parameters.AddWithValue("@nickname", nname);
             command.Parameters.AddWithValue("@lastname", lname);
             command.Parameters.AddWithValue("@points", pts);
+
             int state = command.ExecuteNonQuery();
             return ( state > 0) ? true:false;  // vrati tocno ako uspesno dodaden rezultatot vo bazata na podatoci
         }
