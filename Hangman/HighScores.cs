@@ -28,9 +28,9 @@ namespace Hangman
         public HighScores()
         {
             InitializeComponent();
-            db = new Hmdb();
+            this.db = new Hmdb();
 
-            List<Player> Players = db.getRangList();
+            List<Player> Players = this.db.getRangList();
 
             foreach (Player player in Players)
             {
@@ -41,7 +41,7 @@ namespace Hangman
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            db.Close();
+            this.db.Close();
             Close();
         }
     }
