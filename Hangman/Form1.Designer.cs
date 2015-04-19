@@ -52,6 +52,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbPrezime = new System.Windows.Forms.TextBox();
             this.tbIme = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.опцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.помошToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.излезToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLeftHand)).BeginInit();
@@ -61,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBody)).BeginInit();
             this.gbZborovi.SuspendLayout();
             this.gbVasiInformacii.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -213,6 +219,36 @@
             this.tbIme.Name = "tbIme";
             this.tbIme.ReadOnly = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.играToolStripMenuItem,
+            this.опцииToolStripMenuItem,
+            this.помошToolStripMenuItem,
+            this.излезToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // играToolStripMenuItem
+            // 
+            this.играToolStripMenuItem.Name = "играToolStripMenuItem";
+            resources.ApplyResources(this.играToolStripMenuItem, "играToolStripMenuItem");
+            // 
+            // опцииToolStripMenuItem
+            // 
+            this.опцииToolStripMenuItem.Name = "опцииToolStripMenuItem";
+            resources.ApplyResources(this.опцииToolStripMenuItem, "опцииToolStripMenuItem");
+            // 
+            // помошToolStripMenuItem
+            // 
+            this.помошToolStripMenuItem.Name = "помошToolStripMenuItem";
+            resources.ApplyResources(this.помошToolStripMenuItem, "помошToolStripMenuItem");
+            // 
+            // излезToolStripMenuItem
+            // 
+            this.излезToolStripMenuItem.Name = "излезToolStripMenuItem";
+            resources.ApplyResources(this.излезToolStripMenuItem, "излезToolStripMenuItem");
+            // 
             // HangmanForm
             // 
             resources.ApplyResources(this, "$this");
@@ -226,6 +262,8 @@
             this.Controls.Add(this.pbLeftHand);
             this.Controls.Add(this.pbHead);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "HangmanForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBesilka_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -239,7 +277,10 @@
             this.gbZborovi.PerformLayout();
             this.gbVasiInformacii.ResumeLayout(false);
             this.gbVasiInformacii.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -268,6 +309,11 @@
         private System.Windows.Forms.TextBox tbPrekar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPoeni;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem играToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem опцииToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem помошToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem излезToolStripMenuItem;
     }
 }
 

@@ -27,5 +27,10 @@ namespace Hangman
             this.Player = player;
             this.Session = new GameSession();
         }
+
+        public void New()
+        {
+            this.Session = new GameSession();
+        }
     }
 }

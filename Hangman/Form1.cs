@@ -108,23 +108,7 @@ namespace Hangman
          */
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == System.Windows.Forms.DialogResult.Yes)
-            {
-                if (dbSaveResult())
-                {
-                    MessageBox.Show("Резултатот е успешно зачуван!", "Резултат", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                Application.Exit();
-            }
+            formBesilka_FormClosing(sender, null);
         }
 
         /**
@@ -145,12 +129,8 @@ namespace Hangman
                 {
                     MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                Environment.Exit(1);
             }
-            else
-            {
-                Environment.Exit(1);
-            }
+            Environment.Exit(1);
 
         }
 
@@ -206,7 +186,7 @@ namespace Hangman
             {
                 UnloadBody();
                 tbCharacter.Text = "";
-                game.Session = new GameSession();
+                game.New();
                 lblPogodiZbor.Text = game.Session.EncryptedWord;
                 lblPoeni.Text = Convert.ToString(game.Session.points);
                 return;
@@ -222,7 +202,7 @@ namespace Hangman
                     tbCharacter.Text = "";
                     UpdatePoints();
                     UnloadBody();
-                    game.Session = new GameSession();
+                    game.New();
                     lblPogodiZbor.Text = game.Session.EncryptedWord;
                 }
                 else
