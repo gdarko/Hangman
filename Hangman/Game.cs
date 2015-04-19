@@ -32,5 +32,15 @@ namespace Hangman
         {
             this.Session = new GameSession();
         }
+
+        public void AddPoint()
+        {
+            this.Player.Points += this.Session.points;
+        }
+
+        public int GetPoints()
+        {
+            return this.Player.Points;
+        }
     }
 }

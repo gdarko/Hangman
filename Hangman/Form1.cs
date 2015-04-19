@@ -159,9 +159,7 @@ namespace Hangman
          */
         private void UpdatePoints()
         {
-            int CurrentPoints = Convert.ToInt32(lblPoeni.Text);
-            int NewPoints = CurrentPoints + (int)game.Session.points;
-            lblPoeni.Text = Convert.ToString(NewPoints);
+            lblPoeni.Text = Convert.ToString(game.GetPoints());
         }
 
         /**
@@ -185,10 +183,10 @@ namespace Hangman
             if (game.Session.isHanged())
             {
                 UnloadBody();
-                tbCharacter.Text = "";
+                //tbCharacter.Text = "";
                 game.New();
                 lblPogodiZbor.Text = game.Session.EncryptedWord;
-                lblPoeni.Text = Convert.ToString(game.Session.points);
+                lblPoeni.Text = Convert.ToString(game.GetPoints());
                 return;
             }
             else
@@ -197,16 +195,15 @@ namespace Hangman
                 {
                     UpdateBody();
                 }
-                else if (game.Session.isGuessingSuccessful())
-                {
-                    tbCharacter.Text = "";
-                    UpdatePoints();
-                    UnloadBody();
-                    game.New();
-                    lblPogodiZbor.Text = game.Session.EncryptedWord;
-                }
                 else
                 {
+                    if (game.Session.isGuessingSuccessful())
+                    { 
+                        //tbCharacter.Text = "";
+                        game.AddPoint();
+                        game.New();
+                        UnloadBody();
+                    }         
                     UpdatePoints();
                     lblPogodiZbor.Text = game.Session.EncryptedWord;
 

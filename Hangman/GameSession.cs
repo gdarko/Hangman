@@ -35,7 +35,7 @@ namespace Hangman
          * @param readonly int BodyParts
          * Keeps the total number of BodyParts in readonly integer variable 
          */
-        readonly int BodyParts = 6;
+        private readonly int BodyParts = 6;
 
         /**
          * @param int BodyPartsAdded
@@ -47,7 +47,7 @@ namespace Hangman
          * @param int points
          * Keeps the total points scored by the user in this session 
          */
-        public int points { get; set;}
+        public int points { get; set; }
 
         //Constructor
         public GameSession()
