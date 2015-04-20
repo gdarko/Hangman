@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Hangman
 {
-    /**
-     *  Player class
-     *  Used to represent the player properties
-     *  
-     *  @authors: 
-     *  -Damjan Miloshevski
-     *  -Maja Korunoska
-     *  -Darko Gjorgjijoski
-     */
+    /// <summary>
+    ///  Player class
+    ///  Used to represent the player properties
+    ///  
+    ///  @authors: 
+    ///  -Damjan Miloshevski
+    ///  -Maja Korunoska
+    ///  -Darko Gjorgjijoski
+    /// </summary>
 
     public class Player
     {

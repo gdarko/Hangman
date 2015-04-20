@@ -10,45 +10,30 @@ using System.Windows.Forms;
 
 namespace Hangman
 {
-    /**
-     *  Main Form
-     * 
-     *  @authors: 
-     *  -Damjan Miloshevski
-     *  -Maja Korunoska
-     *  -Darko Gjorgjijoski
-     */
 
     public partial class HangmanForm : Form
     {
-        /**
-         * @param Game game
-         * The game used to keep the Player info,  and GameSession
-         */
+        /// <summary>
+        /// Information about the current game
+        /// </summary>
         Game game;
 
-        /**
-         * @param Hmdb db
-         * Keep a connection to the database
-         */
+        /// <summary>
+        /// Database connection
+        /// </summary>
         Hmdb db;
 
-        // Constructor
+
         public HangmanForm()
         {
             InitializeComponent();
-
-            //Database initialization
             this.db = new Hmdb();
-
-            //NewGame instance used to show the NewGame form(window)
             NewGame window = new NewGame();
 
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 this.game = new Game(window.result, this);
-                //this.game.mainform = this;
                 tbIme.Text = game.Player.FirstName;
                 tbPrekar.Text = game.Player.NickName;
                 tbPrezime.Text = game.Player.LastName;
@@ -61,11 +46,7 @@ namespace Hangman
             }            
         }
 
-        /**
-         * Function btnCheck_Click()
-         * @return void
-         * btnCheck event
-         */
+
         private void btnCheck_Click(object sender, EventArgs e)
         {
             char c = tbCharacter.Text[0];
@@ -91,32 +72,20 @@ namespace Hangman
             lblPoeni.Text = Convert.ToString(game.GetPoints());
         }
 
-        /**
-         * Function btnResults_Click()
-         * @return void
-         * btnResults event
-         */
+
         private void btnResults_Click(object sender, EventArgs e)
         {
             HighScores window = new HighScores();
             window.ShowDialog();
         }
 
-        /**
-         * Function btnClose_Click()
-         * @return void
-         * btnClose event
-         */
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             formBesilka_FormClosing(sender, null);
         }
 
-        /**
-         * Function formBesilka_FormClosing()
-         * @return void
-         * FormClosing event
-         */
+
         private void formBesilka_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -135,12 +104,12 @@ namespace Hangman
 
         }
 
-        /**
-         * Function dbSaveResult()
-         * @return bool
-         * Ccalled the user prompt to save the result in the 
-         * database and returns bool if success
-         */
+
+        /// <summary>
+        /// Function dbSaveResult()
+        /// @return bool
+        /// Helper Function to save the user score
+        /// </summary>
         private bool dbSaveResult()
         {
             string firstname = game.Player.FirstName;
@@ -151,7 +120,9 @@ namespace Hangman
             return state;
 
         }
-
+        /// <summary>
+        /// Used to get the panel(pnlBody) for drawing the body
+        /// </summary>
         public Panel BodyPanel
         {
             get { return pnlBody; }

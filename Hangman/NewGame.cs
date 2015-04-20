@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Hangman
 {
-    /**
-     *  @authors: 
-     *  -Damjan Miloshevski
-     *  -Maja Korunoska
-     *  -Darko Gjorgjijoski
-     */
+    /// <summary>
+    ///  @authors: 
+    ///  -Damjan Miloshevski
+    ///  -Maja Korunoska
+    ///  -Darko Gjorgjijoski
+    /// </summary>
 
     public partial class NewGame : Form
     {

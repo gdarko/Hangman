@@ -9,23 +9,22 @@ using System.Data.SqlClient;
 
 namespace Hangman
 {
-    /**
-     *  Hmdb class
-     *  Includes Basic functionality to connect, read and write to the database
-     *  
-     * @Authors
-     *  -Damjan Miloshevski
-     *  -Maja Korunoska
-     *  -Darko Gjorgjijoski
-     *
-     */
+    ///<summary>
+    ///  Hmdb class
+    ///  Includes Basic functionality to connect, read and write to the database
+    ///  
+    /// @Authors
+    ///  -Damjan Miloshevski
+    ///  -Maja Korunoska
+    ///  -Darko Gjorgjijoski
+    ///</summary>
 
     public class Hmdb
     {
-        /**
-         * @param Db
-         * The Db connection
-         */
+        ///<summary>
+        /// @param Db
+        /// The Db connection
+        ///</summary>
         public SQLiteConnection Db { get; set; }
 
         public Hmdb()
@@ -34,10 +33,11 @@ namespace Hangman
             this.Db.Open();
         }
 
-        /**
-         * @return List<Player>
-         * Returns list of players from the SQL query ordered by points in descending order
-         */
+
+        ///<summary>
+        /// @return List
+        /// Returns list of players from the SQL query ordered by points in descending order
+        ///</summary>
         public List<Player> getRangList()
         {
             string sql = "select * from scores order by points desc";
@@ -51,10 +51,11 @@ namespace Hangman
             return players;
         }
 
-        /**
-         * @return bool
-         * Returns boolean that indicates if database was changed / result inserted
-         */
+
+        ///<summary>
+        /// @return bool
+        /// Returns boolean that indicates if database was changed / result inserted
+        ///</summary>
         public bool insertResult(string fname, string nname, string lname, int pts)
         {
             SQLiteCommand command = new SQLiteCommand("insert into scores (firstname, nickname, lastname, points) values (@firstname, @nickname, @lastname,@points)", this.Db);
@@ -67,10 +68,10 @@ namespace Hangman
             return ( state > 0) ? true:false;  // vrati tocno ako uspesno dodaden rezultatot vo bazata na podatoci
         }
 
-        /**
-         * @return void
-         * Close the database connection
-         */
+        ///<summary>
+        /// @return void
+        /// Close the database connection
+        ///</summary>
         public void Close()
         {
             this.Db.Close();

@@ -9,12 +9,12 @@ using System.IO;
 
 namespace Hangman
 {
-    /**
-     *  @authors: 
-     *  -Damjan Miloshevski
-     *  -Maja Korunoska
-     *  -Darko Gjorgjijoski
-     */
+    /// <summary>
+    ///  @authors: 
+    ///  -Damjan Miloshevski
+    ///  -Maja Korunoska
+    ///  -Darko Gjorgjijoski
+    /// </summary>
 
     public static class RandomWord
     {

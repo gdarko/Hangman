@@ -7,51 +7,61 @@ using System.Windows.Forms;
 
 namespace Hangman
 {
-    /**
-     *  Class GameSession
-     *  Basically used to process every new word and generate its string 
-     *  with underscores
-     * 
-     *  @authors: 
-     *  -Damjan Miloshevski
-     *  -Maja Korunoska
-     *  -Darko Gjorgjijoski
-     */
+     /// <summary>
+     ///  Class GameSession
+     ///  Basically used to process every new word and generate its string 
+     ///  with underscores
+     /// 
+     ///  @authors: 
+     ///  -Damjan Miloshevski
+     ///  -Maja Korunoska
+     ///  -Darko Gjorgjijoski
+     /// </summary>
 
     public class GameSession
-    {
+    {   
+        /// <summary>
+        /// @param string Body
+        /// Kepps the current Body for the session
+        /// </summary>
         public Body Body {get; set;}
-        /**
-         * @param string Word
-         * Keeps the Word that is generated for this session for guessing
-         */
+        
+        
+        /// <summary>
+        /// @param string Word
+        /// Keeps the Word that is generated for this session for guessing
+        /// </summary>
         private string Word;
 
-        /**
-         * @param string EncryptedWord
-         * Keeps the Word in underscored version that is public for player 
-         */
-        public string EncryptedWord { get; set; }
 
-        /**
-         * @param readonly int BodyParts
-         * Keeps the total number of BodyParts in readonly integer variable 
-         */
+        /// <summary>
+        /// @param string EncryptedWord
+        /// Keeps the Word in underscored version that is public for player 
+        /// </summary>
+        public string EncryptedWord { get; set; }
+          
+
+        /// <summary>
+        /// @param readonly int BodyParts
+        /// Keeps the total number of BodyParts in readonly integer variable 
+        /// </summary>
         private readonly int BodyParts = 6;
 
-        /**
-         * @param int BodyPartsAdded
-         * Keeps the total number of BodyParts Hanged in this session 
-         */
+        
+        /// <summary>
+        /// @param int BodyPartsAdded
+        /// Keeps the total number of BodyParts Hanged in this session 
+        /// </summary>
         public int BodyPartsAdded { get; set; }
 
-        /**
-         * @param int points
-         * Keeps the total points scored by the user in this session 
-         */
+        
+        /// <summary>
+        /// @param int points
+        /// Keeps the total points scored by the user in this session 
+        /// </summary>
         public int points { get; set; }
 
-        //Constructor
+
         public GameSession(HangmanForm p)
         {
             this.Word = RandomWord.getRandom();
@@ -61,38 +71,41 @@ namespace Hangman
             this.Body = new Body(p);
         }
 
-        /**
-         * Function isHanged()
-         * @return bool
-         * Check wherether if the user is hanged, so if BodyParts and
-         * BodyPartsAdded are equal means all the body parts of the
-         * user are hanged and the user loses the game
-         */
+
+        /// <summary>
+        /// Function isHanged()
+        /// @return bool
+        /// Check wherether if the user is hanged, so if BodyParts and
+        /// BodyPartsAdded are equal means all the body parts of the
+        /// user are hanged and the user loses the game
+        /// </summary>
         public bool isHanged()
         {
             return this.BodyParts.Equals(this.BodyPartsAdded);
         }
 
-        /**
-         * Function isGuessingSuccessful()
-         * @return bool
-         * Check wherether if the user guessed the word successfuly
-         */
+
+        /// <summary>
+        /// Function isGuessingSuccessful()
+        /// @return bool
+        /// Check wherether if the user guessed the word successfuly
+        /// </summary>
         public bool isGuessingSuccessful()
         {
             return this.EncryptedWord.Equals(this.Word);
         }
 
-        /**
-         * Function ProcessNewCharacter()
-         * @return bool
-         * 
-         * Saves the underscores indexes from EncryptedWord into the array
-         * and check if the characters from Word on those positions are the
-         * same with the user input. 
-         * If true it increasses the User points and return true, Otherwise it 
-         * return false, meaning that body part needs to be hanged.
-         */
+
+        /// <summary>
+        /// Function Guess()
+        /// @return bool
+        /// 
+        /// Saves the underscores indexes from EncryptedWord into the array
+        /// and check if the characters from Word on those positions are the
+        /// same with the user input. 
+        /// If true it increasses the User points and return true, Otherwise it 
+        /// return false, meaning that body part needs to be hanged.
+        /// </summary>
         public bool Guess(Char a)
         {
             int [] indexes = new int[10]; 
