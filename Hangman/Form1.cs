@@ -53,7 +53,8 @@ namespace Hangman
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren()) return;  
+            if (!ValidateChildren()) return; 
+            //gi validira site kontroli i ako e se vo red prodolzuva ako ne ne, ova go pravam za da sprecam exception...
             char c = tbCharacter.Text[0];
 
             int State = game.UpdateSession(c);
