@@ -19,7 +19,7 @@ namespace Hangman
 
     public partial class NewGame : Form
     {
-        public Game result { get; set; }
+        public Player result { get; set; }
 
         public NewGame()
         {
@@ -30,7 +30,7 @@ namespace Hangman
             string FirstName = tbFirstName.Text;
             string LastName = tbLastName.Text;
             string NickName = tbNickName.Text;
-            result = new Game(new Player(FirstName, LastName, NickName, 0));
+            result = new Player(FirstName, LastName, NickName, 0);
             DialogResult = System.Windows.Forms.DialogResult.OK;
             Close();
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Hangman
 {
@@ -19,6 +20,7 @@ namespace Hangman
 
     public class GameSession
     {
+        public Body Body {get; set;}
         /**
          * @param string Word
          * Keeps the Word that is generated for this session for guessing
@@ -50,12 +52,13 @@ namespace Hangman
         public int points { get; set; }
 
         //Constructor
-        public GameSession()
+        public GameSession(HangmanForm p)
         {
             this.Word = RandomWord.getRandom();
             this.EncryptedWord = RandomWord.Encrypt(this.Word);
             this.points = 0;
             this.BodyPartsAdded = 0;
+            this.Body = new Body(p);
         }
 
         /**
@@ -90,7 +93,7 @@ namespace Hangman
          * If true it increasses the User points and return true, Otherwise it 
          * return false, meaning that body part needs to be hanged.
          */
-        public bool ProcessNewCharacter(Char a)
+        public bool Guess(Char a)
         {
             int [] indexes = new int[10]; 
             for(int i = 0, j=0; i<EncryptedWord.Length; i++)
@@ -115,8 +118,8 @@ namespace Hangman
 
             if (!ExitsInEncrypted)
             {
-                this.BodyPartsAdded = this.BodyPartsAdded + 1;
-                return false;
+                BodyPartsAdded++;
+                return false;   
             }
 
             this.points = this.points + 1;

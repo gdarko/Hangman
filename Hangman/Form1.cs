@@ -33,25 +33,10 @@ namespace Hangman
          */
         Hmdb db;
 
-        /**
-         * @return void
-         * Makes the body parts invisible on initialization
-         */
-        public void UnloadBody()
-        {
-            pbBody.Visible = false;
-            pbHead.Visible = false;
-            pbLeftHand.Visible = false;
-            pbLeftLeg.Visible = false;
-            pbRightHand.Visible = false;
-            pbRightLeg.Visible = false;
-        }
-
         // Constructor
         public HangmanForm()
         {
             InitializeComponent();
-            UnloadBody();
 
             //Database initialization
             this.db = new Hmdb();
@@ -62,7 +47,8 @@ namespace Hangman
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                this.game = window.result;
+                this.game = new Game(window.result, this);
+                //this.game.mainform = this;
                 tbIme.Text = game.Player.FirstName;
                 tbPrekar.Text = game.Player.NickName;
                 tbPrezime.Text = game.Player.LastName;
@@ -72,8 +58,7 @@ namespace Hangman
             {
                 MessageBox.Show("Играта не може да започне!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Environment.Exit(1);
-            }
-            
+            }            
         }
 
         /**
@@ -84,9 +69,26 @@ namespace Hangman
         private void btnCheck_Click(object sender, EventArgs e)
         {
             char c = tbCharacter.Text[0];
-            bool result = game.Session.ProcessNewCharacter(c);
-            UpdateSession(result);
-            
+
+            int State = game.UpdateSession(c);
+
+            if (State == Globals.HANGED)
+            {
+                Invalidate(true);
+            }
+
+            // Ke se koristat po potreba
+            if (State == Globals.GUESS_SUCCESS)
+            {
+
+            }
+
+            if (State == Globals.GUESS_NOT_SUCCESS)
+            {
+
+            }
+            lblPogodiZbor.Text = game.Session.EncryptedWord;
+            lblPoeni.Text = Convert.ToString(game.GetPoints());
         }
 
         /**
@@ -97,7 +99,6 @@ namespace Hangman
         private void btnResults_Click(object sender, EventArgs e)
         {
             HighScores window = new HighScores();
-
             window.ShowDialog();
         }
 
@@ -130,7 +131,7 @@ namespace Hangman
                     MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            Environment.Exit(1);
+            Application.Exit();
 
         }
 
@@ -151,96 +152,10 @@ namespace Hangman
 
         }
 
-        /**
-         * Function UpdatePoints()
-         * @return void
-         * UpdatePoints() is called when correct letter is entered
-         * Updates the points to the lblPoeni label
-         */
-        private void UpdatePoints()
+        public Panel BodyPanel
         {
-            lblPoeni.Text = Convert.ToString(game.GetPoints());
-        }
-
-        /**
-         * Function UpdateSession(bool)
-         * @params bool result
-         * @return void
-         * Called once the user enter a letter in the text box and after the
-         * letter is processed by the GameSession.ProccessNewLetter()
-         * UpdateSession receives GameSession.ProccessNewLetter() result as parameter
-         *
-         * Few cases are convered:
-         * 
-         * If the Player is hanged
-         * Otherwise
-         *  Check if wrong letter is entered using the "result" parameter
-         *  Check if the session is finished successfully.(Found match)
-         *  or the Player is still in the session and guess the next letter
-         */
-        private void UpdateSession(bool result)
-        {
-            if (game.Session.isHanged())
-            {
-                UnloadBody();
-                //tbCharacter.Text = "";
-                game.New();
-                lblPogodiZbor.Text = game.Session.EncryptedWord;
-                lblPoeni.Text = Convert.ToString(game.GetPoints());
-                return;
-            }
-            else
-            {
-                if (!result)   // Vnesol gresen karakter
-                {
-                    UpdateBody();
-                }
-                else
-                {
-                    if (game.Session.isGuessingSuccessful())
-                    { 
-                        //tbCharacter.Text = "";
-                        game.AddPoint();
-                        game.New();
-                        UnloadBody();
-                    }         
-                    UpdatePoints();
-                    lblPogodiZbor.Text = game.Session.EncryptedWord;
-
-                }
-            }
-        }
-
-        /**
-         * Function UpdateBody()
-         * @return void
-         * Called when the Player failed to guess the letter/word and on
-         * every fail it Hang his body part by part
-         */
-        private void UpdateBody()
-        {
-
-            switch (game.Session.BodyPartsAdded)
-            {
-                case 1:
-                    pbHead.Visible = true;
-                    break;
-                case 2:
-                    pbBody.Visible = true;
-                    break;
-                case 3:
-                    pbLeftHand.Visible = true;
-                    break;
-                case 4:
-                    pbRightHand.Visible = true;
-                    break;
-                case 5:
-                    pbLeftLeg.Visible = true;
-                    break;
-                case 6:
-                    pbRightLeg.Visible = true;
-                    break;
-            }
+            get { return pnlBody; }
+            set { pnlBody = value; }
         }
         
     }

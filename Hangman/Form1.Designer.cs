@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HangmanForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbHead = new System.Windows.Forms.PictureBox();
-            this.pbLeftHand = new System.Windows.Forms.PictureBox();
-            this.pbLeftLeg = new System.Windows.Forms.PictureBox();
-            this.pbRightHand = new System.Windows.Forms.PictureBox();
-            this.pbRightLeg = new System.Windows.Forms.PictureBox();
-            this.pbBody = new System.Windows.Forms.PictureBox();
             this.lblPogodiZbor = new System.Windows.Forms.Label();
             this.tbCharacter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,59 +50,13 @@
             this.опцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помошToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.излезToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHead)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLeftHand)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLeftLeg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRightHand)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRightLeg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBody)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlBody = new System.Windows.Forms.Panel();
             this.gbZborovi.SuspendLayout();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // pbHead
-            // 
-            resources.ApplyResources(this.pbHead, "pbHead");
-            this.pbHead.Name = "pbHead";
-            this.pbHead.TabStop = false;
-            // 
-            // pbLeftHand
-            // 
-            resources.ApplyResources(this.pbLeftHand, "pbLeftHand");
-            this.pbLeftHand.Name = "pbLeftHand";
-            this.pbLeftHand.TabStop = false;
-            // 
-            // pbLeftLeg
-            // 
-            resources.ApplyResources(this.pbLeftLeg, "pbLeftLeg");
-            this.pbLeftLeg.Name = "pbLeftLeg";
-            this.pbLeftLeg.TabStop = false;
-            // 
-            // pbRightHand
-            // 
-            resources.ApplyResources(this.pbRightHand, "pbRightHand");
-            this.pbRightHand.Name = "pbRightHand";
-            this.pbRightHand.TabStop = false;
-            // 
-            // pbRightLeg
-            // 
-            resources.ApplyResources(this.pbRightLeg, "pbRightLeg");
-            this.pbRightLeg.Name = "pbRightLeg";
-            this.pbRightLeg.TabStop = false;
-            // 
-            // pbBody
-            // 
-            resources.ApplyResources(this.pbBody, "pbBody");
-            this.pbBody.Name = "pbBody";
-            this.pbBody.TabStop = false;
             // 
             // lblPogodiZbor
             // 
@@ -249,36 +196,36 @@
             this.излезToolStripMenuItem.Name = "излезToolStripMenuItem";
             resources.ApplyResources(this.излезToolStripMenuItem, "излезToolStripMenuItem");
             // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // pnlBody
+            // 
+            resources.ApplyResources(this.pnlBody, "pnlBody");
+            this.pnlBody.Name = "pnlBody";
+            // 
             // HangmanForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.gbVasiInformacii);
             this.Controls.Add(this.gbZborovi);
-            this.Controls.Add(this.pbBody);
-            this.Controls.Add(this.pbRightLeg);
-            this.Controls.Add(this.pbRightHand);
-            this.Controls.Add(this.pbLeftLeg);
-            this.Controls.Add(this.pbLeftHand);
-            this.Controls.Add(this.pbHead);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HangmanForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBesilka_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHead)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLeftHand)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLeftLeg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRightHand)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRightLeg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBody)).EndInit();
             this.gbZborovi.ResumeLayout(false);
             this.gbZborovi.PerformLayout();
             this.gbVasiInformacii.ResumeLayout(false);
             this.gbVasiInformacii.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,12 +234,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pbHead;
-        private System.Windows.Forms.PictureBox pbLeftHand;
-        private System.Windows.Forms.PictureBox pbLeftLeg;
-        private System.Windows.Forms.PictureBox pbRightHand;
-        private System.Windows.Forms.PictureBox pbRightLeg;
-        private System.Windows.Forms.PictureBox pbBody;
         private System.Windows.Forms.Label lblPogodiZbor;
         private System.Windows.Forms.TextBox tbCharacter;
         private System.Windows.Forms.Label label1;
@@ -314,6 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem опцииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem помошToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem излезToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlBody;
     }
 }
 
