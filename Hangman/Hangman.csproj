@@ -68,7 +68,6 @@
     </Compile>
     <Compile Include="HMController.cs" />
     <Compile Include="Hmdb.cs" />
-    <Compile Include="IUpdatableView.cs" />
     <Compile Include="NewGame.cs">
       <SubType>Form</SubType>
     </Compile>
