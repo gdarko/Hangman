@@ -37,7 +37,14 @@ namespace Hangman
             "telefon",
             "tepih",
             "baterija",
-            "sokak"
+            "sokak",
+            "fakultet",
+            "patuvanje",
+            "letuvanje",
+            "srekja",
+            "geografija",
+            "zivot",
+            "hemija"
         };
 
         public static string getRandom()

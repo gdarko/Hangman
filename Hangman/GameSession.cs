@@ -63,7 +63,7 @@ namespace Hangman
          * @return bool
          * Check wherether if the user is hanged, so if BodyParts and
          * BodyPartsAdded are equal means all the body parts of the
-         * user are hanged and the user looses the game
+         * user are hanged and the user loses the game
          */
         public bool isHanged()
         {
