@@ -130,7 +130,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPogodiZbor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 14</value>
+    <value>226, 16</value>
   </data>
   <data name="lblPogodiZbor.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 46</value>
@@ -154,7 +154,7 @@
     <value>3</value>
   </data>
   <data name="tbCharacter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 37</value>
+    <value>9, 37</value>
   </data>
   <data name="tbCharacter.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 20</value>
@@ -208,7 +208,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 92</value>
+    <value>234, 92</value>
   </data>
   <data name="btnResults.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 23</value>
@@ -235,13 +235,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 92</value>
+    <value>90, 92</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>0</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Откажи</value>
@@ -271,7 +271,7 @@
     <value>75, 23</value>
   </data>
   <data name="btnCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>2</value>
   </data>
   <data name="btnCheck.Text" xml:space="preserve">
     <value>Пробај</value>
@@ -292,7 +292,7 @@
     <value>468, 239</value>
   </data>
   <data name="gbZborovi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 128</value>
+    <value>438, 128</value>
   </data>
   <data name="gbZborovi.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -310,7 +310,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbZborovi.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;lblPoeni.Name" xml:space="preserve">
     <value>lblPoeni</value>
@@ -412,7 +412,7 @@
     <value>468, 55</value>
   </data>
   <data name="gbVasiInformacii.Size" type="System.Drawing.Size, System.Drawing">
-    <value>404, 142</value>
+    <value>438, 142</value>
   </data>
   <data name="gbVasiInformacii.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -430,7 +430,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbVasiInformacii.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblPoeni.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -442,7 +442,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPoeni.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 47</value>
+    <value>329, 47</value>
   </data>
   <data name="lblPoeni.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 73</value>
@@ -472,7 +472,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 34</value>
+    <value>339, 34</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
@@ -673,7 +673,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="играToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
@@ -874,7 +874,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="pnlBody.Location" type="System.Drawing.Point, System.Drawing">
     <value>215, 117</value>
@@ -895,8 +895,68 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pnlBody.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblRemainingTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRemainingTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>872, 223</value>
+  </data>
+  <data name="lblRemainingTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblRemainingTime.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblRemainingTime.Text" xml:space="preserve">
+    <value>03:00</value>
+  </data>
+  <data name="&gt;&gt;lblRemainingTime.Name" xml:space="preserve">
+    <value>lblRemainingTime</value>
+  </data>
+  <data name="&gt;&gt;lblRemainingTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRemainingTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblRemainingTime.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="timerRemainingTime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>755, 223</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Преостанато време:</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="errorInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>297, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -932,6 +992,18 @@
   </data>
   <data name="&gt;&gt;излезToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timerRemainingTime.Name" xml:space="preserve">
+    <value>timerRemainingTime</value>
+  </data>
+  <data name="&gt;&gt;timerRemainingTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;errorInput.Name" xml:space="preserve">
+    <value>errorInput</value>
+  </data>
+  <data name="&gt;&gt;errorInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>HangmanForm</value>

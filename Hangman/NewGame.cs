@@ -40,5 +40,43 @@ namespace Hangman
             Close();
         }
 
+        private void tbFirstName_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(tbFirstName.Text))
+            {
+                errorName.SetError(tbFirstName, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                errorName.SetError(tbFirstName, "Ве молиме внесете име!");
+            }
+        }
+
+        private void tbLastName_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(tbLastName.Text))
+            {
+                errorSurname.SetError(tbLastName, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                errorSurname.SetError(tbLastName, "Ве молиме внесете презиме!");
+            }
+        }
+
+        private void tbNickName_Validating(object sender, CancelEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(tbNickName.Text))
+            {
+                errorNickname.SetError(tbNickName, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                errorNickname.SetError(tbNickName, "Поинтересно е со прекар! :)");
+            }
+        }
     }
 }

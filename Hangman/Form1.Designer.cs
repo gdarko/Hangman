@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HangmanForm));
             this.lblPogodiZbor = new System.Windows.Forms.Label();
             this.tbCharacter = new System.Windows.Forms.TextBox();
@@ -52,10 +53,15 @@
             this.излезToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlBody = new System.Windows.Forms.Panel();
+            this.lblRemainingTime = new System.Windows.Forms.Label();
+            this.timerRemainingTime = new System.Windows.Forms.Timer(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.errorInput = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbZborovi.SuspendLayout();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorInput)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPogodiZbor
@@ -67,6 +73,7 @@
             // 
             resources.ApplyResources(this.tbCharacter, "tbCharacter");
             this.tbCharacter.Name = "tbCharacter";
+            this.tbCharacter.Validating += new System.ComponentModel.CancelEventHandler(this.tbCharacter_Validating);
             // 
             // label1
             // 
@@ -207,10 +214,30 @@
             resources.ApplyResources(this.pnlBody, "pnlBody");
             this.pnlBody.Name = "pnlBody";
             // 
+            // lblRemainingTime
+            // 
+            resources.ApplyResources(this.lblRemainingTime, "lblRemainingTime");
+            this.lblRemainingTime.Name = "lblRemainingTime";
+            // 
+            // timerRemainingTime
+            // 
+            this.timerRemainingTime.Tick += new System.EventHandler(this.timerRemainingTime_Tick);
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // errorInput
+            // 
+            this.errorInput.ContainerControl = this;
+            // 
             // HangmanForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblRemainingTime);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.gbVasiInformacii);
             this.Controls.Add(this.gbZborovi);
@@ -219,6 +246,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HangmanForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBesilka_FormClosing);
+            this.Load += new System.EventHandler(this.HangmanForm_Load);
             this.gbZborovi.ResumeLayout(false);
             this.gbZborovi.PerformLayout();
             this.gbVasiInformacii.ResumeLayout(false);
@@ -226,6 +254,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,6 +285,10 @@
         private System.Windows.Forms.ToolStripMenuItem помошToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem излезToolStripMenuItem;
         private System.Windows.Forms.Panel pnlBody;
+        private System.Windows.Forms.Label lblRemainingTime;
+        private System.Windows.Forms.Timer timerRemainingTime;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider errorInput;
     }
 }
 

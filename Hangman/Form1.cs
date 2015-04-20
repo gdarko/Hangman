@@ -23,6 +23,10 @@ namespace Hangman
         /// </summary>
         Hmdb db;
 
+        /// <summary>
+        /// Timer for the game
+        /// </summary>
+        DateTime EndOfTime;
 
         public HangmanForm()
         {
@@ -49,6 +53,7 @@ namespace Hangman
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren()) return;  
             char c = tbCharacter.Text[0];
 
             int State = game.UpdateSession(c);
@@ -56,6 +61,9 @@ namespace Hangman
             if (State == Globals.HANGED)
             {
                 Invalidate(true);
+                MessageBox.Show("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbCharacter.Text = null;
+                startTimer();
             }
 
             // Ke se koristat po potreba
@@ -70,6 +78,7 @@ namespace Hangman
             }
             lblPogodiZbor.Text = game.Session.EncryptedWord;
             lblPoeni.Text = Convert.ToString(game.GetPoints());
+            tbCharacter.Text = null;
         }
 
 
@@ -97,11 +106,10 @@ namespace Hangman
                 }
                 else
                 {
-                    MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             Application.Exit();
-
         }
 
 
@@ -128,6 +136,52 @@ namespace Hangman
             get { return pnlBody; }
             set { pnlBody = value; }
         }
-        
+
+        private void timerRemainingTime_Tick(object sender, EventArgs e)
+        {
+            TimeSpan ts = EndOfTime.Subtract(DateTime.Now);
+            lblRemainingTime.Text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
+            if (ts.TotalMilliseconds < 0)
+            {
+                Timer t = sender as Timer;
+                t.Enabled = false;
+                MessageBox.Show("Вашето време истече!", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                formBesilka_FormClosing(sender, null);
+            }
+        }
+        private void startTimer()
+        {
+            EndOfTime = DateTime.Now.AddMinutes(5);
+            timerRemainingTime = new Timer() { Enabled = true };
+            timerRemainingTime.Tick += new EventHandler(timerRemainingTime_Tick);
+        }
+
+        private void HangmanForm_Load(object sender, EventArgs e)
+        {
+            startTimer();
+        }
+        private bool checkCharacter(string str)
+        {//checks the value of the character of the user input
+            if (str.Length != 1) return false;
+            else if (string.IsNullOrWhiteSpace(str)) return false;
+            foreach (object obj in str)
+            {
+                Char c = Convert.ToChar(obj);
+                if (!Char.IsLetter(c)) return false;
+            }
+            return true;
+        }
+        private void tbCharacter_Validating(object sender, CancelEventArgs e)
+        {
+            if (checkCharacter(tbCharacter.Text))
+            {
+                errorInput.SetError(tbCharacter, null);
+            }
+            else
+            {
+                e.Cancel = true;
+                errorInput.SetError(tbCharacter, "Внесете една буква!");
+            }
+        }
     }
 }

@@ -39,8 +39,14 @@
             this.btnOtkazi = new System.Windows.Forms.Button();
             this.btnPocetok = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.errorName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorSurname = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorNickname = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorSurname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNickname)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,7 +60,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(256, 140);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Информации за вас";
             // 
@@ -71,8 +77,9 @@
             // 
             this.tbNickName.Location = new System.Drawing.Point(68, 100);
             this.tbNickName.Name = "tbNickName";
-            this.tbNickName.Size = new System.Drawing.Size(182, 20);
+            this.tbNickName.Size = new System.Drawing.Size(169, 20);
             this.tbNickName.TabIndex = 4;
+            this.tbNickName.Validating += new System.ComponentModel.CancelEventHandler(this.tbNickName_Validating);
             // 
             // label2
             // 
@@ -87,8 +94,9 @@
             // 
             this.tbLastName.Location = new System.Drawing.Point(68, 65);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(182, 20);
+            this.tbLastName.Size = new System.Drawing.Size(169, 20);
             this.tbLastName.TabIndex = 2;
+            this.tbLastName.Validating += new System.ComponentModel.CancelEventHandler(this.tbLastName_Validating);
             // 
             // label1
             // 
@@ -103,8 +111,9 @@
             // 
             this.tbFirstName.Location = new System.Drawing.Point(68, 27);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(182, 20);
+            this.tbFirstName.Size = new System.Drawing.Size(169, 20);
             this.tbFirstName.TabIndex = 0;
+            this.tbFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.tbFirstName_Validating);
             // 
             // btnOtkazi
             // 
@@ -126,6 +135,18 @@
             this.btnPocetok.UseVisualStyleBackColor = true;
             this.btnPocetok.Click += new System.EventHandler(this.btnPocetok_Click);
             // 
+            // errorName
+            // 
+            this.errorName.ContainerControl = this;
+            // 
+            // errorSurname
+            // 
+            this.errorSurname.ContainerControl = this;
+            // 
+            // errorNickname
+            // 
+            this.errorNickname.ContainerControl = this;
+            // 
             // NewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +160,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorSurname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorNickname)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,5 +179,8 @@
         private System.Windows.Forms.Button btnOtkazi;
         private System.Windows.Forms.Button btnPocetok;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.ErrorProvider errorName;
+        private System.Windows.Forms.ErrorProvider errorSurname;
+        private System.Windows.Forms.ErrorProvider errorNickname;
     }
 }
