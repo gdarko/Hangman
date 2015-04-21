@@ -27,6 +27,7 @@ namespace Hangman
         {
             InitializeComponent();
             NewGame window = new NewGame();
+            btnHelp.BackColor = Color.SeaGreen;
 
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -41,13 +42,13 @@ namespace Hangman
             {
                 MessageBox.Show("Играта не може да започне!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Environment.Exit(1);
-            }            
+            }
         }
 
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren()) return; 
+            if (!ValidateChildren()) return;
             //gi validira site kontroli i ako e se vo red prodolzuva ako ne ne, ova go pravam za da sprecam exception...
             char c = tbCharacter.Text[0];
 
@@ -177,6 +178,22 @@ namespace Hangman
                 e.Cancel = true;
                 errorInput.SetError(tbCharacter, "Внесете една буква!");
             }
+        }
+
+        private void излезToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult response = MessageBox.Show("Дали сте сигурни?", "Излези?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (response != DialogResult.No)
+            {
+                formBesilka_FormClosing(sender, null);
+            }
+            else return;
+        }
+
+        private void помошToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Instructions h = new Instructions();
+            h.ShowDialog();
         }
     }
 }

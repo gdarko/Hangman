@@ -49,15 +49,22 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.опцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.помошToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.инструкцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.излезToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlBody = new System.Windows.Forms.Panel();
             this.lblRemainingTime = new System.Windows.Forms.Label();
             this.timerRemainingTime = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.errorInput = new System.Windows.Forms.ErrorProvider(this.components);
             this.label9 = new System.Windows.Forms.Label();
+            this.новаИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.листаСоРезултатиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.нивоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorInput = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnHelp = new System.Windows.Forms.Button();
             this.gbZborovi.SuspendLayout();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -107,6 +114,7 @@
             // 
             // gbZborovi
             // 
+            this.gbZborovi.Controls.Add(this.btnHelp);
             this.gbZborovi.Controls.Add(this.btnCheck);
             this.gbZborovi.Controls.Add(this.tbCharacter);
             this.gbZborovi.Controls.Add(this.label1);
@@ -179,13 +187,17 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.играToolStripMenuItem,
             this.опцииToolStripMenuItem,
-            this.помошToolStripMenuItem,
+            this.инструкцииToolStripMenuItem,
             this.излезToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // играToolStripMenuItem
             // 
+            this.играToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.новаИграToolStripMenuItem,
+            this.нивоToolStripMenuItem,
+            this.листаСоРезултатиToolStripMenuItem});
             this.играToolStripMenuItem.Name = "играToolStripMenuItem";
             resources.ApplyResources(this.играToolStripMenuItem, "играToolStripMenuItem");
             // 
@@ -194,21 +206,17 @@
             this.опцииToolStripMenuItem.Name = "опцииToolStripMenuItem";
             resources.ApplyResources(this.опцииToolStripMenuItem, "опцииToolStripMenuItem");
             // 
-            // помошToolStripMenuItem
+            // инструкцииToolStripMenuItem
             // 
-            this.помошToolStripMenuItem.Name = "помошToolStripMenuItem";
-            resources.ApplyResources(this.помошToolStripMenuItem, "помошToolStripMenuItem");
+            this.инструкцииToolStripMenuItem.Name = "инструкцииToolStripMenuItem";
+            resources.ApplyResources(this.инструкцииToolStripMenuItem, "инструкцииToolStripMenuItem");
+            this.инструкцииToolStripMenuItem.Click += new System.EventHandler(this.помошToolStripMenuItem_Click);
             // 
             // излезToolStripMenuItem
             // 
             this.излезToolStripMenuItem.Name = "излезToolStripMenuItem";
             resources.ApplyResources(this.излезToolStripMenuItem, "излезToolStripMenuItem");
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.излезToolStripMenuItem.Click += new System.EventHandler(this.излезToolStripMenuItem_Click);
             // 
             // pnlBody
             // 
@@ -229,14 +237,61 @@
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
-            // errorInput
-            // 
-            this.errorInput.ContainerControl = this;
-            // 
             // label9
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
+            // 
+            // новаИграToolStripMenuItem
+            // 
+            this.новаИграToolStripMenuItem.Name = "новаИграToolStripMenuItem";
+            resources.ApplyResources(this.новаИграToolStripMenuItem, "новаИграToolStripMenuItem");
+            // 
+            // листаСоРезултатиToolStripMenuItem
+            // 
+            this.листаСоРезултатиToolStripMenuItem.Name = "листаСоРезултатиToolStripMenuItem";
+            resources.ApplyResources(this.листаСоРезултатиToolStripMenuItem, "листаСоРезултатиToolStripMenuItem");
+            // 
+            // нивоToolStripMenuItem
+            // 
+            this.нивоToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.easyToolStripMenuItem,
+            this.normalToolStripMenuItem,
+            this.hardToolStripMenuItem});
+            this.нивоToolStripMenuItem.Name = "нивоToolStripMenuItem";
+            resources.ApplyResources(this.нивоToolStripMenuItem, "нивоToolStripMenuItem");
+            // 
+            // easyToolStripMenuItem
+            // 
+            this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
+            resources.ApplyResources(this.easyToolStripMenuItem, "easyToolStripMenuItem");
+            // 
+            // normalToolStripMenuItem
+            // 
+            this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
+            resources.ApplyResources(this.normalToolStripMenuItem, "normalToolStripMenuItem");
+            // 
+            // hardToolStripMenuItem
+            // 
+            this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
+            resources.ApplyResources(this.hardToolStripMenuItem, "hardToolStripMenuItem");
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // errorInput
+            // 
+            this.errorInput.ContainerControl = this;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.btnHelp, "btnHelp");
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.UseVisualStyleBackColor = true;
             // 
             // HangmanForm
             // 
@@ -289,14 +344,21 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem играToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem опцииToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem помошToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem инструкцииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem излезToolStripMenuItem;
         private System.Windows.Forms.Panel pnlBody;
         private System.Windows.Forms.Label lblRemainingTime;
         private System.Windows.Forms.Timer timerRemainingTime;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ErrorProvider errorInput;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ToolStripMenuItem новаИграToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem листаСоРезултатиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem нивоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider errorInput;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 
