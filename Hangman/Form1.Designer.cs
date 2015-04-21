@@ -57,6 +57,7 @@
             this.timerRemainingTime = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.errorInput = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             this.gbZborovi.SuspendLayout();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -232,10 +233,16 @@
             // 
             this.errorInput.ContainerControl = this;
             // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
             // HangmanForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblRemainingTime);
             this.Controls.Add(this.pnlBody);
@@ -289,6 +296,7 @@
         private System.Windows.Forms.Timer timerRemainingTime;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ErrorProvider errorInput;
+        private System.Windows.Forms.Label label9;
     }
 }
 
