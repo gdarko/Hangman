@@ -19,11 +19,6 @@ namespace Hangman
         Game game;
 
         /// <summary>
-        /// Database connection
-        /// </summary>
-        Hmdb db;
-
-        /// <summary>
         /// Timer for the game
         /// </summary>
         DateTime EndOfTime;
@@ -31,7 +26,6 @@ namespace Hangman
         public HangmanForm()
         {
             InitializeComponent();
-            this.db = new Hmdb();
             NewGame window = new NewGame();
 
             // Show the NewGame form on initialization and get the results from it
@@ -85,7 +79,7 @@ namespace Hangman
 
         private void btnResults_Click(object sender, EventArgs e)
         {
-            HighScores window = new HighScores();
+            HighScores window = new HighScores(game.DB);
             window.ShowDialog();
         }
 
@@ -125,7 +119,7 @@ namespace Hangman
             string nickname = game.Player.NickName;
             string lastname = game.Player.LastName;
             int points = game.Player.Points;
-            bool state = this.db.insertResult(firstname, nickname, lastname, points);
+            bool state = game.DB.insertResult(firstname, nickname, lastname, points);
             return state;
 
         }

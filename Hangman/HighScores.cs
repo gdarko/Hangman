@@ -23,14 +23,16 @@ namespace Hangman
 
     public partial class HighScores : Form
     {
-        Hmdb db;
 
-        public HighScores()
+        private Hmdb _db { get; set; }
+
+        public HighScores(Hmdb db = null)
         {
             InitializeComponent();
-            this.db = new Hmdb();
 
-            List<Player> Players = this.db.getRangList();
+            this._db = db;
+
+            List<Player> Players = _db.getRangList();
 
             foreach (Player player in Players)
             {
@@ -41,7 +43,7 @@ namespace Hangman
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.db.Close();
+            _db.Close();
             Close();
         }
     }

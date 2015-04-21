@@ -22,11 +22,13 @@ namespace Hangman
 
         public GameSession Session { get; set; }
         public Player Player { get; set; }
+        public Hmdb DB { get; set; }
 
         public Game(Player player, HangmanForm main) : base (main)
         {
             this.Player = player;
             this.Session = new GameSession(MainForm);
+            this.DB = new Hmdb();
         }
 
         public void New()
@@ -48,7 +50,6 @@ namespace Hangman
         {
             if (Session.isHanged())
             {
-
                 New();
                 return Globals.HANGED;
             }
