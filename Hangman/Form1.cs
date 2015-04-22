@@ -165,7 +165,7 @@ namespace Hangman
         }
         private void startTimer()
         {
-            EndOfTime = DateTime.Now.AddMinutes(1);
+            EndOfTime = DateTime.Now.AddMinutes(5);
             timerRemainingTime = new Timer() { Enabled = true };
             timerRemainingTime.Tick += new EventHandler(timerRemainingTime_Tick);
             if (EndOfTime.Second == 0 && EndOfTime.Minute == 0)
