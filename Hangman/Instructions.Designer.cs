@@ -51,14 +51,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Инструкции";
             // 
-            // Help
+            // Instructions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 340);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
-            this.Name = "Help";
+            this.Name = "Instructions";
             this.Text = "Инструкции";
             this.ResumeLayout(false);
             this.PerformLayout();

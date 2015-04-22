@@ -27,11 +27,12 @@ namespace Hangman
         {
             InitializeComponent();
             NewGame window = new NewGame();
+            lblPogodiZbor.Visible = false;
 
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                this.game = new Game(window.result, this);
+                game = new Game(window.result, this);
                 tbIme.Text = game.Player.FirstName;
                 tbPrekar.Text = game.Player.NickName;
                 tbPrezime.Text = game.Player.LastName;
@@ -58,6 +59,7 @@ namespace Hangman
                 Invalidate(true);
                 MessageBox.Show("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbCharacter.Text = null;
+                startTimer();
             }
 
             // Ke se koristat po potreba
@@ -83,9 +85,22 @@ namespace Hangman
         }
 
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnPause_Click(object sender, EventArgs e)
         {
-            formBesilka_FormClosing(sender, null);
+            DialogResult response = MessageBox.Show("ИГРАТА Е ПАУЗИРАНА", "Паузирај", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (response == DialogResult.OK)
+            {
+                timerRemainingTime.Stop();
+                btnStartGame.Enabled = false;
+                btnResults.Enabled = true;
+                btnPause.Enabled = false;
+                btnCheck.Enabled = false;
+                btnHelp.Enabled = false;
+                lblPogodiZbor.Visible = false;
+                tbCharacter.ReadOnly = true;
+                btnContinue.Enabled = true;
+                btnContinue.ForeColor = Color.White;
+            }
         }
 
 
@@ -133,7 +148,7 @@ namespace Hangman
         private void timerRemainingTime_Tick(object sender, EventArgs e)
         {
             TimeSpan ts = EndOfTime.Subtract(DateTime.Now);
-            lblRemainingTime.Text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
+            lblRemainingTime.Text = string.Format("{0:D2}:{1:D2}", ts.Minutes, ts.Seconds);
             if (ts.TotalMilliseconds < 0)
             {
                 Timer t = sender as Timer;
@@ -141,7 +156,7 @@ namespace Hangman
                 MessageBox.Show("Вашето време истече!", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 formBesilka_FormClosing(sender, null);
                 btnCheck.Enabled = false;
-                btnClose.Enabled = false;
+                btnPause.Enabled = false;
                 btnHelp.Enabled = false;
                 label6.Visible = false;
                 lblRemainingTime.Visible = false;
@@ -150,9 +165,13 @@ namespace Hangman
         }
         private void startTimer()
         {
-            EndOfTime = DateTime.Now.AddMinutes(5);
+            EndOfTime = DateTime.Now.AddMinutes(1);
             timerRemainingTime = new Timer() { Enabled = true };
             timerRemainingTime.Tick += new EventHandler(timerRemainingTime_Tick);
+            if (EndOfTime.Second == 0 && EndOfTime.Minute == 0)
+            {
+                btnResults.Enabled = true;
+            }
         }
 
         private void HangmanForm_Load(object sender, EventArgs e)
@@ -162,7 +181,7 @@ namespace Hangman
         private bool checkCharacter(string str)
         {//checks the value of the character of the user input
             if (str.Length != 1) return false;
-           // else if (string.IsNullOrWhiteSpace(str)) return false;
+            else if (string.IsNullOrWhiteSpace(str)) return false;
             foreach (object obj in str)
             {
                 Char c = Convert.ToChar(obj);
@@ -221,21 +240,47 @@ namespace Hangman
             {
                 startTimer();
                 btnCheck.Enabled = true;
-                btnClose.Enabled = true;
+                btnPause.Enabled = true;
                 btnHelp.Enabled = true;
                 label6.Visible = true;
+                lblPogodiZbor.Visible = true;
                 lblRemainingTime.Visible = true;
                 tbCharacter.ReadOnly = false;
                 btnCheck.ForeColor = Color.White;
-                btnClose.ForeColor = Color.White;
+                btnPause.ForeColor = Color.White;
                 btnHelp.ForeColor = Color.White;
             }
         }
 
         private void листаСоРезултатиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HighScores window = new HighScores(game.DB);
-            window.ShowDialog();
+            if (game.DB != null)
+            {
+                if (EndOfTime.Second != 0 && EndOfTime.Minute != 0)
+                {
+                    MessageBox.Show("Не можете да ги видите резултатите додека играта трае!", "Информација!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    HighScores window = new HighScores(game.DB);
+                    window.ShowDialog();
+                }
+            }
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            timerRemainingTime.Start();
+            lblPogodiZbor.Visible = true;
+            btnResults.Enabled = false;
+            btnContinue.Enabled = false;
+            btnPause.Enabled = false;
+            btnPause.Enabled = true;
+            btnStartGame.Enabled = true;
+            btnCheck.Enabled = true;
+            btnHelp.Enabled = true;
+            tbCharacter.ReadOnly = false;
         }
     }
 }

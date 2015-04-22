@@ -34,9 +34,10 @@
             this.tbCharacter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnResults = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.gbZborovi = new System.Windows.Forms.GroupBox();
+            this.btnContinue = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.gbVasiInformacii = new System.Windows.Forms.GroupBox();
             this.lblPoeni = new System.Windows.Forms.Label();
@@ -98,14 +99,14 @@
             this.btnResults.UseVisualStyleBackColor = false;
             this.btnResults.Click += new System.EventHandler(this.btnResults_Click);
             // 
-            // btnClose
+            // btnPause
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.btnClose, "btnClose");
-            this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnClose.Name = "btnClose";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnPause.BackColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnPause, "btnPause");
+            this.btnPause.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnPause.Name = "btnPause";
+            this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
             // btnCheck
             // 
@@ -118,16 +119,26 @@
             // 
             // gbZborovi
             // 
+            this.gbZborovi.Controls.Add(this.btnContinue);
             this.gbZborovi.Controls.Add(this.btnHelp);
             this.gbZborovi.Controls.Add(this.btnCheck);
             this.gbZborovi.Controls.Add(this.tbCharacter);
             this.gbZborovi.Controls.Add(this.label1);
             this.gbZborovi.Controls.Add(this.lblPogodiZbor);
             this.gbZborovi.Controls.Add(this.btnResults);
-            this.gbZborovi.Controls.Add(this.btnClose);
+            this.gbZborovi.Controls.Add(this.btnPause);
             resources.ApplyResources(this.gbZborovi, "gbZborovi");
             this.gbZborovi.Name = "gbZborovi";
             this.gbZborovi.TabStop = false;
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.Color.Goldenrod;
+            resources.ApplyResources(this.btnContinue, "btnContinue");
+            this.btnContinue.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // btnHelp
             // 
@@ -147,7 +158,10 @@
             this.gbVasiInformacii.Controls.Add(this.label2);
             this.gbVasiInformacii.Controls.Add(this.tbPrezime);
             this.gbVasiInformacii.Controls.Add(this.tbIme);
+            this.gbVasiInformacii.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             resources.ApplyResources(this.gbVasiInformacii, "gbVasiInformacii");
+            this.gbVasiInformacii.ForeColor = System.Drawing.Color.DarkRed;
+            this.errorInput.SetIconAlignment(this.gbVasiInformacii, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gbVasiInformacii.IconAlignment"))));
             this.gbVasiInformacii.Name = "gbVasiInformacii";
             this.gbVasiInformacii.TabStop = false;
             // 
@@ -344,7 +358,7 @@
         private System.Windows.Forms.TextBox tbCharacter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnResults;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.GroupBox gbZborovi;
         private System.Windows.Forms.GroupBox gbVasiInformacii;
@@ -375,6 +389,7 @@
         private System.Windows.Forms.ErrorProvider errorInput;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnStartGame;
+        private System.Windows.Forms.Button btnContinue;
     }
 }
 
