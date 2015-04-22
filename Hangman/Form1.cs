@@ -27,7 +27,6 @@ namespace Hangman
         {
             InitializeComponent();
             NewGame window = new NewGame();
-            btnHelp.BackColor = Color.SeaGreen;
 
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -40,7 +39,7 @@ namespace Hangman
             }
             else
             {
-                MessageBox.Show("Играта не може да започне!", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Играта не може да започне!", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Environment.Exit(1);
             }
         }
@@ -59,7 +58,6 @@ namespace Hangman
                 Invalidate(true);
                 MessageBox.Show("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbCharacter.Text = null;
-                startTimer();
             }
 
             // Ke se koristat po potreba
@@ -105,7 +103,6 @@ namespace Hangman
                     MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            Application.Exit();
         }
 
 
@@ -143,6 +140,12 @@ namespace Hangman
                 t.Enabled = false;
                 MessageBox.Show("Вашето време истече!", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 formBesilka_FormClosing(sender, null);
+                btnCheck.Enabled = false;
+                btnClose.Enabled = false;
+                btnHelp.Enabled = false;
+                label6.Visible = false;
+                lblRemainingTime.Visible = false;
+                tbCharacter.ReadOnly = true;
             }
         }
         private void startTimer()
@@ -154,12 +157,12 @@ namespace Hangman
 
         private void HangmanForm_Load(object sender, EventArgs e)
         {
-            startTimer();
+            btnStartGame.Focus();
         }
         private bool checkCharacter(string str)
         {//checks the value of the character of the user input
             if (str.Length != 1) return false;
-            else if (string.IsNullOrWhiteSpace(str)) return false;
+           // else if (string.IsNullOrWhiteSpace(str)) return false;
             foreach (object obj in str)
             {
                 Char c = Convert.ToChar(obj);
@@ -185,7 +188,7 @@ namespace Hangman
             DialogResult response = MessageBox.Show("Дали сте сигурни?", "Излези?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (response != DialogResult.No)
             {
-                formBesilka_FormClosing(sender, null);
+                Application.Exit();
             }
             else return;
         }
@@ -194,6 +197,45 @@ namespace Hangman
         {
             Instructions h = new Instructions();
             h.ShowDialog();
+        }
+
+        private void btnStartGame_Click(object sender, EventArgs e)
+        {
+            if (EndOfTime.Minute != 0 && EndOfTime.Second != 0)
+            {
+                DialogResult response = MessageBox.Show("Тековната игра сеуште трае!", "Нова игра!?",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (response == DialogResult.Yes)
+                {
+                    DialogResult re = MessageBox.Show("Со почнување на нова игра моментално освоените поени ви се бришат!!",
+                        "Потврди?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (re == DialogResult.Yes)
+                    {
+                        startTimer();
+                    }
+                    else return;
+                }
+                else return;
+            }
+            else
+            {
+                startTimer();
+                btnCheck.Enabled = true;
+                btnClose.Enabled = true;
+                btnHelp.Enabled = true;
+                label6.Visible = true;
+                lblRemainingTime.Visible = true;
+                tbCharacter.ReadOnly = false;
+                btnCheck.ForeColor = Color.White;
+                btnClose.ForeColor = Color.White;
+                btnHelp.ForeColor = Color.White;
+            }
+        }
+
+        private void листаСоРезултатиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HighScores window = new HighScores(game.DB);
+            window.ShowDialog();
         }
     }
 }

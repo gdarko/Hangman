@@ -37,6 +37,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.gbZborovi = new System.Windows.Forms.GroupBox();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.gbVasiInformacii = new System.Windows.Forms.GroupBox();
             this.lblPoeni = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +49,12 @@
             this.tbIme = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.новаИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.нивоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.листаСоРезултатиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.опцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инструкцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.излезToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,15 +63,9 @@
             this.timerRemainingTime = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.новаИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.листаСоРезултатиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.нивоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorInput = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnHelp = new System.Windows.Forms.Button();
+            this.btnStartGame = new System.Windows.Forms.Button();
             this.gbZborovi.SuspendLayout();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             resources.ApplyResources(this.tbCharacter, "tbCharacter");
             this.tbCharacter.Name = "tbCharacter";
+            this.tbCharacter.ReadOnly = true;
             this.tbCharacter.Validating += new System.ComponentModel.CancelEventHandler(this.tbCharacter_Validating);
             // 
             // label1
@@ -100,6 +102,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Red;
             resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnClose.Name = "btnClose";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -108,6 +111,7 @@
             // 
             this.btnCheck.BackColor = System.Drawing.SystemColors.Highlight;
             resources.ApplyResources(this.btnCheck, "btnCheck");
+            this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.UseVisualStyleBackColor = false;
             this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
@@ -124,6 +128,14 @@
             resources.ApplyResources(this.gbZborovi, "gbZborovi");
             this.gbZborovi.Name = "gbZborovi";
             this.gbZborovi.TabStop = false;
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.SeaGreen;
+            resources.ApplyResources(this.btnHelp, "btnHelp");
+            this.btnHelp.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.UseVisualStyleBackColor = false;
             // 
             // gbVasiInformacii
             // 
@@ -201,6 +213,41 @@
             this.играToolStripMenuItem.Name = "играToolStripMenuItem";
             resources.ApplyResources(this.играToolStripMenuItem, "играToolStripMenuItem");
             // 
+            // новаИграToolStripMenuItem
+            // 
+            this.новаИграToolStripMenuItem.Name = "новаИграToolStripMenuItem";
+            resources.ApplyResources(this.новаИграToolStripMenuItem, "новаИграToolStripMenuItem");
+            // 
+            // нивоToolStripMenuItem
+            // 
+            this.нивоToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.easyToolStripMenuItem,
+            this.normalToolStripMenuItem,
+            this.hardToolStripMenuItem});
+            this.нивоToolStripMenuItem.Name = "нивоToolStripMenuItem";
+            resources.ApplyResources(this.нивоToolStripMenuItem, "нивоToolStripMenuItem");
+            // 
+            // easyToolStripMenuItem
+            // 
+            this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
+            resources.ApplyResources(this.easyToolStripMenuItem, "easyToolStripMenuItem");
+            // 
+            // normalToolStripMenuItem
+            // 
+            this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
+            resources.ApplyResources(this.normalToolStripMenuItem, "normalToolStripMenuItem");
+            // 
+            // hardToolStripMenuItem
+            // 
+            this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
+            resources.ApplyResources(this.hardToolStripMenuItem, "hardToolStripMenuItem");
+            // 
+            // листаСоРезултатиToolStripMenuItem
+            // 
+            this.листаСоРезултатиToolStripMenuItem.Name = "листаСоРезултатиToolStripMenuItem";
+            resources.ApplyResources(this.листаСоРезултатиToolStripMenuItem, "листаСоРезултатиToolStripMenuItem");
+            this.листаСоРезултатиToolStripMenuItem.Click += new System.EventHandler(this.листаСоРезултатиToolStripMenuItem_Click);
+            // 
             // опцииToolStripMenuItem
             // 
             this.опцииToolStripMenuItem.Name = "опцииToolStripMenuItem";
@@ -242,40 +289,6 @@
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
             // 
-            // новаИграToolStripMenuItem
-            // 
-            this.новаИграToolStripMenuItem.Name = "новаИграToolStripMenuItem";
-            resources.ApplyResources(this.новаИграToolStripMenuItem, "новаИграToolStripMenuItem");
-            // 
-            // листаСоРезултатиToolStripMenuItem
-            // 
-            this.листаСоРезултатиToolStripMenuItem.Name = "листаСоРезултатиToolStripMenuItem";
-            resources.ApplyResources(this.листаСоРезултатиToolStripMenuItem, "листаСоРезултатиToolStripMenuItem");
-            // 
-            // нивоToolStripMenuItem
-            // 
-            this.нивоToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.easyToolStripMenuItem,
-            this.normalToolStripMenuItem,
-            this.hardToolStripMenuItem});
-            this.нивоToolStripMenuItem.Name = "нивоToolStripMenuItem";
-            resources.ApplyResources(this.нивоToolStripMenuItem, "нивоToolStripMenuItem");
-            // 
-            // easyToolStripMenuItem
-            // 
-            this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
-            resources.ApplyResources(this.easyToolStripMenuItem, "easyToolStripMenuItem");
-            // 
-            // normalToolStripMenuItem
-            // 
-            this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            resources.ApplyResources(this.normalToolStripMenuItem, "normalToolStripMenuItem");
-            // 
-            // hardToolStripMenuItem
-            // 
-            this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
-            resources.ApplyResources(this.hardToolStripMenuItem, "hardToolStripMenuItem");
-            // 
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
@@ -286,17 +299,19 @@
             // 
             this.errorInput.ContainerControl = this;
             // 
-            // btnHelp
+            // btnStartGame
             // 
-            this.btnHelp.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.btnHelp, "btnHelp");
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnStartGame.BackColor = System.Drawing.Color.Gold;
+            resources.ApplyResources(this.btnStartGame, "btnStartGame");
+            this.btnStartGame.Name = "btnStartGame";
+            this.btnStartGame.UseVisualStyleBackColor = false;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // HangmanForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnStartGame);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblRemainingTime);
@@ -359,6 +374,7 @@
         private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider errorInput;
         private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.Button btnStartGame;
     }
 }
 

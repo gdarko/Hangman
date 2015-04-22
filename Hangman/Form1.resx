@@ -160,7 +160,7 @@
     <value>67, 20</value>
   </data>
   <data name="tbCharacter.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tbCharacter.Name" xml:space="preserve">
     <value>tbCharacter</value>
@@ -208,7 +208,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnResults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>234, 92</value>
+    <value>234, 80</value>
   </data>
   <data name="btnResults.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 23</value>
@@ -231,17 +231,20 @@
   <data name="&gt;&gt;btnResults.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnClose.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnClose.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 92</value>
+    <value>116, 80</value>
   </data>
   <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 23</value>
   </data>
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Откажи</value>
@@ -258,11 +261,14 @@
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="btnCheck.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnCheck.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCheck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 92</value>
+    <value>9, 80</value>
   </data>
   <data name="btnCheck.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -271,7 +277,7 @@
     <value>97, 23</value>
   </data>
   <data name="btnCheck.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btnCheck.Text" xml:space="preserve">
     <value>Пробај</value>
@@ -287,6 +293,21 @@
   </data>
   <data name="&gt;&gt;btnCheck.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnHelp.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnHelp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 33</value>
+  </data>
+  <data name="btnHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 23</value>
+  </data>
+  <data name="btnHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnHelp.Text" xml:space="preserve">
+    <value>Помош!</value>
   </data>
   <data name="&gt;&gt;btnHelp.Name" xml:space="preserve">
     <value>btnHelp</value>
@@ -304,10 +325,10 @@
     <value>468, 239</value>
   </data>
   <data name="gbZborovi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 128</value>
+    <value>438, 116</value>
   </data>
   <data name="gbZborovi.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>2</value>
   </data>
   <data name="gbZborovi.Text" xml:space="preserve">
     <value>Игра</value>
@@ -322,7 +343,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbZborovi.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;lblPoeni.Name" xml:space="preserve">
     <value>lblPoeni</value>
@@ -442,7 +463,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbVasiInformacii.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="lblPoeni.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -517,13 +538,13 @@
     <value>11, 100</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 13</value>
+    <value>48, 13</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Ник:</value>
+    <value>Прекар:</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -663,30 +684,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="играToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
-  <data name="играToolStripMenuItem.Text" xml:space="preserve">
-    <value>Игра</value>
-  </data>
-  <data name="опцииToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="опцииToolStripMenuItem.Text" xml:space="preserve">
-    <value>Опции</value>
-  </data>
-  <data name="инструкцииToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 20</value>
-  </data>
-  <data name="инструкцииToolStripMenuItem.Text" xml:space="preserve">
-    <value>Инструкции</value>
-  </data>
-  <data name="излезToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
-  </data>
-  <data name="излезToolStripMenuItem.Text" xml:space="preserve">
-    <value>Излез</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -709,136 +706,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
-  <data name="pnlBody.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 117</value>
+  <data name="играToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
   </data>
-  <data name="pnlBody.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 205</value>
-  </data>
-  <data name="pnlBody.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;pnlBody.Name" xml:space="preserve">
-    <value>pnlBody</value>
-  </data>
-  <data name="&gt;&gt;pnlBody.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlBody.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pnlBody.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblRemainingTime.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRemainingTime.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblRemainingTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>872, 223</value>
-  </data>
-  <data name="lblRemainingTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
-  <data name="lblRemainingTime.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="lblRemainingTime.Text" xml:space="preserve">
-    <value>05:00</value>
-  </data>
-  <data name="&gt;&gt;lblRemainingTime.Name" xml:space="preserve">
-    <value>lblRemainingTime</value>
-  </data>
-  <data name="&gt;&gt;lblRemainingTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRemainingTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblRemainingTime.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="timerRemainingTime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>755, 223</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 13</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Преостанато време:</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Trebuchet MS, 9pt</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>474, 378</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 18</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value> All rights reserved. © DMD, 2015</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="играToolStripMenuItem.Text" xml:space="preserve">
+    <value>Игра</value>
   </data>
   <data name="новаИграToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 22</value>
   </data>
   <data name="новаИграToolStripMenuItem.Text" xml:space="preserve">
     <value>Нова игра</value>
-  </data>
-  <data name="листаСоРезултатиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 22</value>
-  </data>
-  <data name="листаСоРезултатиToolStripMenuItem.Text" xml:space="preserve">
-    <value>Листа со резултати</value>
   </data>
   <data name="нивоToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 22</value>
@@ -863,6 +743,153 @@
   </data>
   <data name="hardToolStripMenuItem.Text" xml:space="preserve">
     <value>Hard</value>
+  </data>
+  <data name="листаСоРезултатиToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
+  </data>
+  <data name="листаСоРезултатиToolStripMenuItem.Text" xml:space="preserve">
+    <value>Листа со резултати</value>
+  </data>
+  <data name="опцииToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="опцииToolStripMenuItem.Text" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="инструкцииToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 20</value>
+  </data>
+  <data name="инструкцииToolStripMenuItem.Text" xml:space="preserve">
+    <value>Инструкции</value>
+  </data>
+  <data name="излезToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
+  </data>
+  <data name="излезToolStripMenuItem.Text" xml:space="preserve">
+    <value>Излез</value>
+  </data>
+  <data name="pnlBody.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 117</value>
+  </data>
+  <data name="pnlBody.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 205</value>
+  </data>
+  <data name="pnlBody.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;pnlBody.Name" xml:space="preserve">
+    <value>pnlBody</value>
+  </data>
+  <data name="&gt;&gt;pnlBody.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlBody.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlBody.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblRemainingTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRemainingTime.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblRemainingTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>872, 209</value>
+  </data>
+  <data name="lblRemainingTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 13</value>
+  </data>
+  <data name="lblRemainingTime.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblRemainingTime.Text" xml:space="preserve">
+    <value>05:00</value>
+  </data>
+  <data name="lblRemainingTime.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblRemainingTime.Name" xml:space="preserve">
+    <value>lblRemainingTime</value>
+  </data>
+  <data name="&gt;&gt;lblRemainingTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRemainingTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblRemainingTime.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="timerRemainingTime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>132, 17</value>
+  </metadata>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>755, 209</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Преостанато време:</value>
+  </data>
+  <data name="label6.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Trebuchet MS, 9pt</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>465, 373</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 18</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value> All rights reserved. © DMD, 2015</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1039,7 +1066,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <metadata name="errorInput.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>297, 17</value>
@@ -1053,8 +1080,29 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>918, 400</value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="btnStartGame.Location" type="System.Drawing.Point, System.Drawing">
+    <value>763, 361</value>
+  </data>
+  <data name="btnStartGame.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 30</value>
+  </data>
+  <data name="btnStartGame.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnStartGame.Text" xml:space="preserve">
+    <value>Започни нова игра!</value>
+  </data>
+  <data name="&gt;&gt;btnStartGame.Name" xml:space="preserve">
+    <value>btnStartGame</value>
+  </data>
+  <data name="&gt;&gt;btnStartGame.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStartGame.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnStartGame.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Hangman</value>
@@ -1065,40 +1113,10 @@
   <data name="&gt;&gt;играToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;опцииToolStripMenuItem.Name" xml:space="preserve">
-    <value>опцииToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;опцииToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;инструкцииToolStripMenuItem.Name" xml:space="preserve">
-    <value>инструкцииToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;инструкцииToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;излезToolStripMenuItem.Name" xml:space="preserve">
-    <value>излезToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;излезToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timerRemainingTime.Name" xml:space="preserve">
-    <value>timerRemainingTime</value>
-  </data>
-  <data name="&gt;&gt;timerRemainingTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;новаИграToolStripMenuItem.Name" xml:space="preserve">
     <value>новаИграToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;новаИграToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;листаСоРезултатиToolStripMenuItem.Name" xml:space="preserve">
-    <value>листаСоРезултатиToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;листаСоРезултатиToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;нивоToolStripMenuItem.Name" xml:space="preserve">
@@ -1125,6 +1143,36 @@
   <data name="&gt;&gt;hardToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;листаСоРезултатиToolStripMenuItem.Name" xml:space="preserve">
+    <value>листаСоРезултатиToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;листаСоРезултатиToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;опцииToolStripMenuItem.Name" xml:space="preserve">
+    <value>опцииToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;опцииToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;инструкцииToolStripMenuItem.Name" xml:space="preserve">
+    <value>инструкцииToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;инструкцииToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;излезToolStripMenuItem.Name" xml:space="preserve">
+    <value>излезToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;излезToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timerRemainingTime.Name" xml:space="preserve">
+    <value>timerRemainingTime</value>
+  </data>
+  <data name="&gt;&gt;timerRemainingTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;errorInput.Name" xml:space="preserve">
     <value>errorInput</value>
   </data>
@@ -1136,29 +1184,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnHelp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 33</value>
-  </data>
-  <data name="btnHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 23</value>
-  </data>
-  <data name="btnHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="btnHelp.Text" xml:space="preserve">
-    <value>Помош!</value>
-  </data>
-  <data name="&gt;&gt;btnHelp.Name" xml:space="preserve">
-    <value>btnHelp</value>
-  </data>
-  <data name="&gt;&gt;btnHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnHelp.Parent" xml:space="preserve">
-    <value>gbZborovi</value>
-  </data>
-  <data name="&gt;&gt;btnHelp.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
 </root>
