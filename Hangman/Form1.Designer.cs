@@ -65,13 +65,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.errorInput = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnStartGame = new System.Windows.Forms.Button();
             this.gbZborovi.SuspendLayout();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorInput)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPogodiZbor
@@ -161,7 +159,6 @@
             this.gbVasiInformacii.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             resources.ApplyResources(this.gbVasiInformacii, "gbVasiInformacii");
             this.gbVasiInformacii.ForeColor = System.Drawing.Color.DarkRed;
-            this.errorInput.SetIconAlignment(this.gbVasiInformacii, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gbVasiInformacii.IconAlignment"))));
             this.gbVasiInformacii.Name = "gbVasiInformacii";
             this.gbVasiInformacii.TabStop = false;
             // 
@@ -231,6 +228,7 @@
             // 
             this.новаИграToolStripMenuItem.Name = "новаИграToolStripMenuItem";
             resources.ApplyResources(this.новаИграToolStripMenuItem, "новаИграToolStripMenuItem");
+            this.новаИграToolStripMenuItem.Click += new System.EventHandler(this.новаИграToolStripMenuItem_Click);
             // 
             // нивоToolStripMenuItem
             // 
@@ -245,16 +243,19 @@
             // 
             this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
             resources.ApplyResources(this.easyToolStripMenuItem, "easyToolStripMenuItem");
+            this.easyToolStripMenuItem.Click += new System.EventHandler(this.easyToolStripMenuItem_Click);
             // 
             // normalToolStripMenuItem
             // 
             this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
             resources.ApplyResources(this.normalToolStripMenuItem, "normalToolStripMenuItem");
+            this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
             // 
             // hardToolStripMenuItem
             // 
             this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
             resources.ApplyResources(this.hardToolStripMenuItem, "hardToolStripMenuItem");
+            this.hardToolStripMenuItem.Click += new System.EventHandler(this.hardToolStripMenuItem_Click);
             // 
             // листаСоРезултатиToolStripMenuItem
             // 
@@ -309,10 +310,6 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // errorInput
-            // 
-            this.errorInput.ContainerControl = this;
-            // 
             // btnStartGame
             // 
             this.btnStartGame.BackColor = System.Drawing.Color.Gold;
@@ -345,7 +342,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,7 +382,6 @@
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
-        private System.Windows.Forms.ErrorProvider errorInput;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnStartGame;
         private System.Windows.Forms.Button btnContinue;

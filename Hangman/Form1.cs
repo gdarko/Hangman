@@ -21,7 +21,7 @@ namespace Hangman
         /// <summary>
         /// Timer for the game
         /// </summary>
-        DateTime EndOfTime;
+        DateTime EndOfTime = new DateTime();
 
         public HangmanForm()
         {
@@ -181,7 +181,7 @@ namespace Hangman
         private bool checkCharacter(string str)
         {//checks the value of the character of the user input
             if (str.Length != 1) return false;
-            else if (string.IsNullOrWhiteSpace(str)) return false;
+            // else if (string.IsNullOrWhiteSpace(str)) return false;
             foreach (object obj in str)
             {
                 Char c = Convert.ToChar(obj);
@@ -191,17 +191,18 @@ namespace Hangman
         }
         private void tbCharacter_Validating(object sender, CancelEventArgs e)
         {
-            if (checkCharacter(tbCharacter.Text))
+            if (!checkCharacter(tbCharacter.Text))
             {
-                errorInput.SetError(tbCharacter, null);
-            }
-            else
-            {
+                DialogResult res = MessageBox.Show("Невалиден влез!\n Hint: Внесете една буква!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 e.Cancel = true;
-                errorInput.SetError(tbCharacter, "Внесете една буква!");
+                tbCharacter.Text = null;
+                tbCharacter.Focus();
+                if (res == DialogResult.OK)
+                {
+                    e.Cancel = false;
+                }
             }
         }
-
         private void излезToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult response = MessageBox.Show("Дали сте сигурни?", "Излези?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -281,6 +282,36 @@ namespace Hangman
             btnCheck.Enabled = true;
             btnHelp.Enabled = true;
             tbCharacter.ReadOnly = false;
+        }
+
+        private void новаИграToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Дали сте сигурни?", "Нова игра?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == System.Windows.Forms.DialogResult.Yes)
+            {
+                startTimer();
+            }
+        }
+
+        private void easyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            easyToolStripMenuItem.Checked = true;
+            normalToolStripMenuItem.Checked = false;
+            hardToolStripMenuItem.Checked = false;
+        }
+
+        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            easyToolStripMenuItem.Checked = false;
+            normalToolStripMenuItem.Checked = true;
+            hardToolStripMenuItem.Checked = false;
+        }
+
+        private void hardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            easyToolStripMenuItem.Checked = false;
+            normalToolStripMenuItem.Checked = false;
+            hardToolStripMenuItem.Checked = true;
         }
     }
 }

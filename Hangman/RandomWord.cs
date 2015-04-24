@@ -66,7 +66,7 @@ namespace Hangman
             for (int i = 0; i < totalUnderscores; i++)
             {
 
-                index = rnd.Next(1, lenght - 1);
+                index = rnd.Next(0, lenght - 1);
                 sb[index] = '_';
 
             }
