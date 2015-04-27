@@ -21,13 +21,15 @@ namespace Hangman
         /// <summary>
         /// Timer for the game
         /// </summary>
-        DateTime EndOfTime = new DateTime();
+        private static readonly int TIME = 300;//300 sekundi = 5 minuti
+        private int TimeElapsed;
 
         public HangmanForm()
         {
             InitializeComponent();
             NewGame window = new NewGame();
             lblPogodiZbor.Visible = false;
+            easyToolStripMenuItem.Checked = true;
 
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -59,7 +61,8 @@ namespace Hangman
                 Invalidate(true);
                 MessageBox.Show("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbCharacter.Text = null;
-                startTimer();
+                timerRemainingTime.Stop();
+                TimeElapsed = 0;
             }
 
             // Ke se koristat po potreba
@@ -91,6 +94,7 @@ namespace Hangman
             if (response == DialogResult.OK)
             {
                 timerRemainingTime.Stop();
+                timerRemainingTime.Enabled = false;
                 btnStartGame.Enabled = false;
                 btnResults.Enabled = true;
                 btnPause.Enabled = false;
@@ -106,16 +110,39 @@ namespace Hangman
 
         private void formBesilka_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            if (TimeElapsed != 0)
             {
-                if (dbSaveResult())
+                DialogResult result = MessageBox.Show("Играта сеуште не е завршена?", "Излези!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result != DialogResult.No)
                 {
-                    MessageBox.Show("Резултатот е успешно зачуван!", "Резултат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult re = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (re == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        if (dbSaveResult())
+                        {
+                            MessageBox.Show("Резултатот е успешно зачуван!", "Резултат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
-                else
+                Application.Exit();
+            }
+            else
+            {
+                DialogResult re = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (re == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (dbSaveResult())
+                    {
+                        MessageBox.Show("Резултатот е успешно зачуван!", "Резултат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -147,12 +174,11 @@ namespace Hangman
 
         private void timerRemainingTime_Tick(object sender, EventArgs e)
         {
-            TimeSpan ts = EndOfTime.Subtract(DateTime.Now);
-            lblRemainingTime.Text = string.Format("{0:D2}:{1:D2}", ts.Minutes, ts.Seconds);
-            if (ts.TotalMilliseconds < 0)
+            TimeElapsed++;
+            timerRemainingTime.Interval = 1000;//1 sekunda = 1000 milisekundi
+            timerRemainingTime.Enabled = true;
+            if (TimeElapsed == TIME)
             {
-                Timer t = sender as Timer;
-                t.Enabled = false;
                 MessageBox.Show("Вашето време истече!", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 formBesilka_FormClosing(sender, null);
                 btnCheck.Enabled = false;
@@ -161,17 +187,17 @@ namespace Hangman
                 label6.Visible = false;
                 lblRemainingTime.Visible = false;
                 tbCharacter.ReadOnly = true;
+                timerRemainingTime.Enabled = false;
+                timerRemainingTime.Stop();
             }
+            UpdateTime();
         }
-        private void startTimer()
+        private void UpdateTime()
         {
-            EndOfTime = DateTime.Now.AddMinutes(5);
-            timerRemainingTime = new Timer() { Enabled = true };
-            timerRemainingTime.Tick += new EventHandler(timerRemainingTime_Tick);
-            if (EndOfTime.Second == 0 && EndOfTime.Minute == 0)
-            {
-                btnResults.Enabled = true;
-            }
+            int TimeLeft = TIME - TimeElapsed;
+            int min = TimeLeft / 60;
+            int sec = TimeLeft % 60;
+            lblRemainingTime.Text = string.Format("{0:D2}:{1:D2}", min, sec);
         }
 
         private void HangmanForm_Load(object sender, EventArgs e)
@@ -181,7 +207,6 @@ namespace Hangman
         private bool checkCharacter(string str)
         {//checks the value of the character of the user input
             if (str.Length != 1) return false;
-            // else if (string.IsNullOrWhiteSpace(str)) return false;
             foreach (object obj in str)
             {
                 Char c = Convert.ToChar(obj);
@@ -205,12 +230,19 @@ namespace Hangman
         }
         private void излезToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult response = MessageBox.Show("Дали сте сигурни?", "Излези?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (response != DialogResult.No)
+            if (TimeElapsed != 0)
             {
-                Application.Exit();
+                DialogResult result = MessageBox.Show("Играта сеуште не е завршена?", "Излези!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result != DialogResult.No)
+                {
+                    formBesilka_FormClosing(sender, null);
+                    Application.Exit();
+                }
             }
-            else return;
+            else
+            {
+                formBesilka_FormClosing(sender, null);
+            }
         }
 
         private void помошToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,25 +253,10 @@ namespace Hangman
 
         private void btnStartGame_Click(object sender, EventArgs e)
         {
-            if (EndOfTime.Minute != 0 && EndOfTime.Second != 0)
+            if (TimeElapsed == 0)
             {
-                DialogResult response = MessageBox.Show("Тековната игра сеуште трае!", "Нова игра!?",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (response == DialogResult.Yes)
-                {
-                    DialogResult re = MessageBox.Show("Со почнување на нова игра моментално освоените поени ви се бришат!!",
-                        "Потврди?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (re == DialogResult.Yes)
-                    {
-                        startTimer();
-                    }
-                    else return;
-                }
-                else return;
-            }
-            else
-            {
-                startTimer();
+                UpdateTime();
+                timerRemainingTime.Start();
                 btnCheck.Enabled = true;
                 btnPause.Enabled = true;
                 btnHelp.Enabled = true;
@@ -251,28 +268,41 @@ namespace Hangman
                 btnPause.ForeColor = Color.White;
                 btnHelp.ForeColor = Color.White;
             }
+            else
+            {
+                DialogResult response = MessageBox.Show("Тековната игра сеуште трае!", "Нова игра!?",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (response == DialogResult.Yes)
+                {
+                    DialogResult re = MessageBox.Show("Со почнување на нова игра моментално освоените поени ви се бришат!!",
+                        "Потврди?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (re != DialogResult.No)
+                    {
+                        TimeElapsed = 0;
+                        timerRemainingTime.Start();
+                    }
+                }
+            }
         }
 
         private void листаСоРезултатиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (game.DB != null)
+            if (TimeElapsed != 0)
             {
-                if (EndOfTime.Second != 0 && EndOfTime.Minute != 0)
-                {
-                    MessageBox.Show("Не можете да ги видите резултатите додека играта трае!", "Информација!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    HighScores window = new HighScores(game.DB);
-                    window.ShowDialog();
-                }
+                MessageBox.Show("Не можете да ги видите резултатите додека играта трае!", "Информација!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                HighScores window = new HighScores(game.DB);
+                window.ShowDialog();
             }
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
             timerRemainingTime.Start();
+            timerRemainingTime.Enabled = true;
             lblPogodiZbor.Visible = true;
             btnResults.Enabled = false;
             btnContinue.Enabled = false;
@@ -289,7 +319,8 @@ namespace Hangman
             DialogResult res = MessageBox.Show("Дали сте сигурни?", "Нова игра?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == System.Windows.Forms.DialogResult.Yes)
             {
-                startTimer();
+                TimeElapsed = 0;
+                UpdateTime();
             }
         }
 
