@@ -59,7 +59,9 @@ namespace Hangman
             if (State == Globals.HANGED)
             {
                 Invalidate(true);
-                MessageBox.Show("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(");
+                MessageBox.Show(sb.ToString(),"Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbCharacter.Text = null;
                 timerRemainingTime.Stop();
                 TimeElapsed = 0;
