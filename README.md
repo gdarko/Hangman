@@ -1,13 +1,13 @@
 # Hangman (Бесилка) ```v.1.0```
 ## Автори:
-* Маја Коруноска [@korunoska_m](https://github.com/korunoska_m)
-* Дамјан Милошевски [@damsii](https://github.com/damsii)
-* Дарко Ѓорѓијоски [@gdarko]( https://github.com/gdarko)
+1. Маја Коруноска [@korunoska_m](https://github.com/korunoska_m)
+2. Дамјан Милошевски [@damsii](https://github.com/damsii)
+3. Дарко Ѓорѓијоски [@gdarko]( https://github.com/gdarko)
 
 ##Ментори:
-1. Проф. д-р Дејан Ѓорѓевиќ
-2. Доц. д-р Ѓорѓи Маџаров
-3. Асс. м-р Томче Делев
+* Проф. д-р Дејан Ѓорѓевиќ
+* Доц. д-р Ѓорѓи Маџаров
+* Асс. м-р Томче Делев
 
 ### За апликацијата:
 **Идеја:**
