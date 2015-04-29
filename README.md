@@ -37,7 +37,8 @@
 
 ![Main window screen 2](/screens/main_window1.png)
 
-```C#
+```
+C#
 public void ExitReadme()
 {
 if(Hangman.Readme.Read){
@@ -47,6 +48,6 @@ if(Hangman.Readme.Read){
 {
   System.Console.WriteLine("Please read again!");
   return;
-}```
-
+}
+```
 
