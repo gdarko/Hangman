@@ -1,8 +1,8 @@
 # Hangman (Бесилка)
 ## Автори:
 * Маја Коруноска
-* Дамјан Милошевски https://github.com/damsii
-* Дарко Ѓорѓијоски  https://github.com/gdarko
+* Дамјан Милошевски [@damsi](https://github.com/damsii)
+* Дарко Ѓорѓијоски [@gdarko]( https://github.com/gdarko)
 
 ##Ментори:
 * Проф. д-р Дејан Ѓорѓевиќ
