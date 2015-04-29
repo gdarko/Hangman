@@ -43,7 +43,8 @@ public void ExitReadme()
 if(Hangman.Readme.Read){
   System.Console.WriteLine("Thank you!");
  Application.Exit();
-}else
+}
+else
 {
   System.Console.WriteLine("Please read again!");
   return;
