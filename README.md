@@ -20,4 +20,4 @@
 * .NET Framework 4.5.3
 * IDE: Microsoft Visual Studio 2013 Ultimate
 
-
+##Опис на играта:
