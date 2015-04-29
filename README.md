@@ -1,1 +1,1 @@
-# Besilka
+# Hangman (Бесилка)
