@@ -24,7 +24,6 @@
 * Развојна околина: Microsoft Visual Studio 2013 Ultimate
 
 **Извршна верзија:**
-
 [Превземи тука](http://example.com)
 
 ##Опис на играта:
