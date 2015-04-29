@@ -43,7 +43,6 @@ namespace Hangman
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            _db.Close();
             Close();
         }
     }
