@@ -36,18 +36,3 @@
 За да започне со играње корисникот со кликање на **Започни нова игра** и се активира тајмер којшто означува уште колку време за играње му останало (една игра трае 5 минути). 
 
 ![Main window screen 2](/screens/main_window1.png)
-
-```C#
-public void ExitReadme()
-{
-if(Hangman.Readme.Read){
-  System.Console.WriteLine("Thank you!");
- Application.Exit();
-}
-else
-{
-  System.Console.WriteLine("Please read again!");
-  return;
-}
-```
-
