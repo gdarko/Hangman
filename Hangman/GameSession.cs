@@ -7,26 +7,26 @@ using System.Windows.Forms;
 
 namespace Hangman
 {
-     /// <summary>
-     ///  Class GameSession
-     ///  Basically used to process every new word and generate its string 
-     ///  with underscores
-     /// 
-     ///  @authors: 
-     ///  -Damjan Miloshevski
-     ///  -Maja Korunoska
-     ///  -Darko Gjorgjijoski
-     /// </summary>
+    /// <summary>
+    ///  Class GameSession
+    ///  Basically used to process every new word and generate its string 
+    ///  with underscores
+    /// 
+    ///  @authors: 
+    ///  -Damjan Miloshevski
+    ///  -Maja Korunoska
+    ///  -Darko Gjorgjijoski
+    /// </summary>
 
     public class GameSession
-    {   
+    {
         /// <summary>
         /// @param string Body
         /// Kepps the current Body for the session
         /// </summary>
-        public Body Body {get; set;}
-        
-        
+        public Body Body { get; set; }
+
+
         /// <summary>
         /// @param string Word
         /// Keeps the Word that is generated for this session for guessing
@@ -39,7 +39,7 @@ namespace Hangman
         /// Keeps the Word in underscored version that is public for player 
         /// </summary>
         public string EncryptedWord { get; set; }
-          
+
 
         /// <summary>
         /// @param readonly int BodyParts
@@ -47,28 +47,34 @@ namespace Hangman
         /// </summary>
         private readonly int BodyParts = 6;
 
-        
+
         /// <summary>
         /// @param int BodyPartsAdded
         /// Keeps the total number of BodyParts Hanged in this session 
         /// </summary>
         public int BodyPartsAdded { get; set; }
 
-        
+
         /// <summary>
         /// @param int points
         /// Keeps the total points scored by the user in this session 
         /// </summary>
         public int points { get; set; }
-
-
-        public GameSession(HangmanForm p)
+        public LEVEL Level { get; set; }
+        public enum LEVEL
+        {
+            Easy,
+            Normal,
+            Hard
+        }
+        public GameSession(HangmanForm p, LEVEL level)
         {
             this.Word = RandomWord.getRandom();
             this.EncryptedWord = RandomWord.Encrypt(this.Word);
             this.points = 0;
             this.BodyPartsAdded = 0;
             this.Body = new Body(p);
+            level = Level;
         }
 
 
@@ -108,10 +114,10 @@ namespace Hangman
         /// </summary>
         public bool Guess(Char a)
         {
-            int [] indexes = new int[10]; 
-            for(int i = 0, j=0; i<EncryptedWord.Length; i++)
+            int[] indexes = new int[10];
+            for (int i = 0, j = 0; i < EncryptedWord.Length; i++)
             {
-                if(EncryptedWord[i] == '_')
+                if (EncryptedWord[i] == '_')
                 {
                     indexes[j++] = i;
                 }
@@ -132,14 +138,14 @@ namespace Hangman
             if (!ExitsInEncrypted)
             {
                 BodyPartsAdded++;
-                return false;   
+                return false;
             }
 
             this.points = this.points + 1;
             this.EncryptedWord = ew.ToString();
 
             return true;
-            
+
         }
     }
 }

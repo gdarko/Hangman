@@ -23,6 +23,12 @@ namespace Hangman
         /// </summary>
         private static readonly int TIME = 300;//300 sekundi = 5 minuti
         private int TimeElapsed;
+        public enum LEVEL
+        {
+            Easy,
+            Normal, 
+            Hard
+        }
 
         public HangmanForm()
         {
@@ -61,7 +67,7 @@ namespace Hangman
                 Invalidate(true);
                 StringBuilder sb = new StringBuilder();
                 sb.Append("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(");
-                MessageBox.Show(sb.ToString(),"Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(sb.ToString(), "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbCharacter.Text = null;
                 timerRemainingTime.Stop();
                 TimeElapsed = 0;
