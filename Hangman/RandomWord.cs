@@ -46,26 +46,11 @@ namespace Hangman
             "zivot",
             "hemija"
         };
-        public static string[] normal = {
-            "popokatepetl",
-            "avtokefalnost",
-            "amandman"            
-        };
-        public static string[] hard ={
-            "Mahatma_Gandhi",
-            "Sergio_Leone",
-            "Pyotr Ilyich Tchaikovsky"
-        };
-        private enum LEVEL { 
-            Easy,
-            Normal,
-            Hard
-        }
         public static string getRandom()
         {
-                Random rnd = new Random();
-                int index = rnd.Next(0, words.Length - 1);
-                return words[index];
+            Random rnd = new Random();
+            int index = rnd.Next(0, words.Length - 1);
+            return words[index];
         }
 
         public static string Encrypt(string s)

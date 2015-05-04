@@ -23,13 +23,7 @@ namespace Hangman
         /// </summary>
         private static readonly int TIME = 300;//300 sekundi = 5 minuti
         private int TimeElapsed;
-        public enum LEVEL
-        {
-            Easy,
-            Normal, 
-            Hard
-        }
-
+       
         public HangmanForm()
         {
             InitializeComponent();

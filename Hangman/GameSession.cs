@@ -60,21 +60,13 @@ namespace Hangman
         /// Keeps the total points scored by the user in this session 
         /// </summary>
         public int points { get; set; }
-        public LEVEL Level { get; set; }
-        public enum LEVEL
-        {
-            Easy,
-            Normal,
-            Hard
-        }
-        public GameSession(HangmanForm p, LEVEL level)
+        public GameSession(HangmanForm p)
         {
             this.Word = RandomWord.getRandom();
             this.EncryptedWord = RandomWord.Encrypt(this.Word);
             this.points = 0;
             this.BodyPartsAdded = 0;
             this.Body = new Body(p);
-            level = Level;
         }
 
 

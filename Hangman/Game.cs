@@ -23,22 +23,17 @@ namespace Hangman
         public GameSession Session { get; set; }
         public Player Player { get; set; }
         public Hmdb DB { get; set; }
-        public enum LEVEL { 
-            Easy,
-            Normal,
-            Hard
-        }
-        public LEVEL Level { get; set; }
-        public Game(Player player, HangmanForm main,LEVEL level) : base (main)
+
+        public Game(Player player, HangmanForm main) : base (main)
         {
             this.Player = player;
-            this.Session = new GameSession(MainForm,GameSession.LEVEL.Easy);
+            this.Session = new GameSession(MainForm);
             this.DB = new Hmdb();
         }
 
         public void New()
         {
-            this.Session = new GameSession(MainForm, GameSession.LEVEL.Easy);
+            this.Session = new GameSession(MainForm);
         }
 
         public void AddPoints()
