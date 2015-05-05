@@ -3,6 +3,7 @@
 1. Маја Коруноска [@majakoru](https://github.com/majakoru)
 2. Дамјан Милошевски [@damsii](https://github.com/damsii)
 3. Дарко Ѓорѓијоски [@gdarko]( https://github.com/gdarko)
+
 --
 ##Ментори:
 * Проф. д-р Дејан Ѓорѓевиќ
