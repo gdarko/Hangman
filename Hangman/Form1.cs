@@ -70,12 +70,11 @@ namespace Hangman
             {
                 timerRemainingTime.Stop();
                 timerRemainingTime.Enabled = false;
-                btnStartGame.Enabled = false;
                 btnResults.Enabled = true;
                 btnPause.Visible = false;
                 btnContinue.Visible = true;
                 btnHelp.Enabled = false;
-                btnStartGame.ForeColor = Color.White;
+                btnStartGame.Visible = false;
                 lblPogodiZbor.Visible = false;
                 panel2.Visible = false;
                 btnHelp.Visible = false;
@@ -164,6 +163,7 @@ namespace Hangman
                 lblRemainingTime.Visible = false;
                 timerRemainingTime.Enabled = false;
                 timerRemainingTime.Stop();
+                btnStartGame.Visible = true;
             }
             UpdateTime();
         }
@@ -215,6 +215,7 @@ namespace Hangman
                 lblPogodiZbor.Visible = true;
                 btnPause.Visible = true;
                 btnHelp.Visible = true;
+                btnStartGame.Visible = false;
                 btnResults.Visible = true;
                 playSoundtrack(Hangman.Properties.Resources.MainTheme);
 
@@ -246,8 +247,7 @@ namespace Hangman
             btnHelp.Visible = true;
             btnResults.Visible = true;
             btnPause.Visible = true;
-            btnStartGame.Visible = true;
-            btnStartGame.Enabled = true;
+            btnStartGame.Visible = false;
             btnHelp.Enabled = true;
         }
 
