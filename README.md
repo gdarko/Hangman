@@ -36,6 +36,8 @@
 
 *извор: [види тука](http://en.wikipedia.org/wiki/Hangman_%28game%29#History_of_the_Hangman_game)
 
+##Gameplay и GUI:
+---
 ![New game screen](/screens/Screenshot_1.png)
 
 
