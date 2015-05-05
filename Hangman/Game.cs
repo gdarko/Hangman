@@ -56,7 +56,7 @@ namespace Hangman
             if (Session.isHanged())
             {
                 New();
-                return Globals.HANGED;
+                return (int)Globals.GUESS.HANGED;
             }
             else
             {
@@ -64,7 +64,7 @@ namespace Hangman
                 {
 
                     Session.Body.Hang();
-                    return Globals.GUESS_NOT_SUCCESS;
+                    return (int)Globals.GUESS.FAIL;
                 } 
                 else
                 {
@@ -74,7 +74,7 @@ namespace Hangman
                         New();
                     }
                     
-                    return Globals.GUESS_SUCCESS;
+                    return (int)Globals.GUESS.SUCCESS;
                 }
                 
             }

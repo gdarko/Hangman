@@ -19,8 +19,6 @@ namespace Hangman
         /// </summary>
         Game game;
 
-        Graphics g;
-
         /// <summary>
         /// Timer for the game
         /// </summary>
@@ -39,9 +37,6 @@ namespace Hangman
             btnResults.Visible = false;
             lblPogodiZbor.Visible = false;
             easyToolStripMenuItem.Checked = true;
-
-            // Graphics g = pnlBody.CreateGraphics();
-
 
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -347,13 +342,13 @@ namespace Hangman
 
         private void Guess(char c)
         {
-            int State = game.UpdateSession(c);
-            if (State == Globals.GUESS_SUCCESS)
+            var State = ( Globals.GUESS) game.UpdateSession(c);
+            if (State == Globals.GUESS.SUCCESS)
             {
                 // playSimpleSound(Hangman.Properties.Resources.correctanswer);
 
             }
-            else if (State == Globals.GUESS_NOT_SUCCESS)
+            else if (State == Globals.GUESS.FAIL)
             {
                 //playSimpleSound(Hangman.Properties.Resources.wronganswer);
             }

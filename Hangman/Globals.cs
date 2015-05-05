@@ -8,8 +8,19 @@ namespace Hangman
 {
     public class Globals
     {
-        public static readonly int GUESS_SUCCESS = 3;
-        public static readonly int GUESS_NOT_SUCCESS = 2;
-        public static readonly int HANGED = 1;
+        public enum GUESS
+        {
+            HANGED = 1,
+            FAIL,
+            SUCCESS,
+        }
+
+        public enum LEVELS
+        {
+            EASY = 4,
+            NORMAL,
+            HARD,
+        }
+
     }
 }
