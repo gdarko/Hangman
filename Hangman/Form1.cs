@@ -253,7 +253,6 @@ namespace Hangman
             btnStartGame.Visible = true;
             btnStartGame.Enabled = true;
             btnHelp.Enabled = true;
-            playSoundtrack(Hangman.Properties.Resources.MainTheme);
         }
 
 
