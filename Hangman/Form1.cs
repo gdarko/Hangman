@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,8 @@ namespace Hangman
         /// </summary>
         Game game;
 
+        Graphics g;
+
         /// <summary>
         /// Timer for the game
         /// </summary>
@@ -26,10 +29,14 @@ namespace Hangman
        
         public HangmanForm()
         {
+            this.DoubleBuffered = true;
             InitializeComponent();
             NewGame window = new NewGame();
-            lblPogodiZbor.Visible = false;
+            //lblPogodiZbor.Visible = false;
             easyToolStripMenuItem.Checked = true;
+
+           // Graphics g = pnlBody.CreateGraphics();
+
 
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -48,40 +55,6 @@ namespace Hangman
         }
 
 
-        private void btnCheck_Click(object sender, EventArgs e)
-        {
-            if (!ValidateChildren()) return;
-            //gi validira site kontroli i ako e se vo red prodolzuva ako ne ne, ova go pravam za da sprecam exception...
-            char c = tbCharacter.Text[0];
-
-            int State = game.UpdateSession(c);
-
-            if (State == Globals.HANGED)
-            {
-                Invalidate(true);
-                StringBuilder sb = new StringBuilder();
-                sb.Append("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(");
-                MessageBox.Show(sb.ToString(), "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tbCharacter.Text = null;
-                timerRemainingTime.Stop();
-                TimeElapsed = 0;
-            }
-
-            // Ke se koristat po potreba
-            if (State == Globals.GUESS_SUCCESS)
-            {
-
-            }
-
-            if (State == Globals.GUESS_NOT_SUCCESS)
-            {
-
-            }
-            lblPogodiZbor.Text = game.Session.EncryptedWord;
-            lblPoeni.Text = Convert.ToString(game.GetPoints());
-            tbCharacter.Text = null;
-        }
-
 
         private void btnResults_Click(object sender, EventArgs e)
         {
@@ -97,15 +70,15 @@ namespace Hangman
             {
                 timerRemainingTime.Stop();
                 timerRemainingTime.Enabled = false;
-                btnStartGame.Enabled = false;
+               // btnStartGame.Enabled = false;
                 btnResults.Enabled = true;
                 btnPause.Enabled = false;
-                btnCheck.Enabled = false;
+               // btnCheck.Enabled = false;
                 btnHelp.Enabled = false;
                 lblPogodiZbor.Visible = false;
-                tbCharacter.ReadOnly = true;
-                btnContinue.Enabled = true;
-                btnContinue.ForeColor = Color.White;
+               // tbCharacter.ReadOnly = true;
+                btnStartGame.Enabled = true;
+                btnStartGame.ForeColor = Color.White;
             }
         }
 
@@ -168,10 +141,10 @@ namespace Hangman
         /// <summary>
         /// Used to get the panel(pnlBody) for drawing the body
         /// </summary>
-        public Panel BodyPanel
+        public PictureBox pbGuyBox
         {
-            get { return pnlBody; }
-            set { pnlBody = value; }
+            get { return pbGuy; }
+            set { pbGuy = value; }
         }
 
         private void timerRemainingTime_Tick(object sender, EventArgs e)
@@ -183,12 +156,12 @@ namespace Hangman
             {
                 MessageBox.Show("Вашето време истече!", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 formBesilka_FormClosing(sender, null);
-                btnCheck.Enabled = false;
+                //btnCheck.Enabled = false;
                 btnPause.Enabled = false;
                 btnHelp.Enabled = false;
                 label6.Visible = false;
                 lblRemainingTime.Visible = false;
-                tbCharacter.ReadOnly = true;
+                //tbCharacter.ReadOnly = true;
                 timerRemainingTime.Enabled = false;
                 timerRemainingTime.Stop();
             }
@@ -202,34 +175,7 @@ namespace Hangman
             lblRemainingTime.Text = string.Format("{0:D2}:{1:D2}", min, sec);
         }
 
-        private void HangmanForm_Load(object sender, EventArgs e)
-        {
-            btnStartGame.Focus();
-        }
-        private bool checkCharacter(string str)
-        {//checks the value of the character of the user input
-            if (str.Length != 1) return false;
-            foreach (object obj in str)
-            {
-                Char c = Convert.ToChar(obj);
-                if (!Char.IsLetter(c)) return false;
-            }
-            return true;
-        }
-        private void tbCharacter_Validating(object sender, CancelEventArgs e)
-        {
-            if (!checkCharacter(tbCharacter.Text))
-            {
-                DialogResult res = MessageBox.Show("Невалиден влез!\n Hint: Внесете една буква!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                e.Cancel = true;
-                tbCharacter.Text = null;
-                tbCharacter.Focus();
-                if (res == DialogResult.OK)
-                {
-                    e.Cancel = false;
-                }
-            }
-        }
+
         private void излезToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (TimeElapsed != 0)
@@ -257,23 +203,16 @@ namespace Hangman
         {
             if (TimeElapsed == 0)
             {
+                lblPogodiZbor.Text = game.Session.EncryptedWord;
+                lblPoeni.Text = Convert.ToString(game.GetPoints());
                 UpdateTime();
                 timerRemainingTime.Start();
-                btnCheck.Enabled = true;
-                btnPause.Enabled = true;
-                btnHelp.Enabled = true;
-                label6.Visible = true;
-                lblPogodiZbor.Visible = true;
-                lblRemainingTime.Visible = true;
-                tbCharacter.ReadOnly = false;
-                btnCheck.ForeColor = Color.White;
-                btnPause.ForeColor = Color.White;
-                btnHelp.ForeColor = Color.White;
+
             }
             else
             {
                 DialogResult response = MessageBox.Show("Тековната игра сеуште трае!", "Нова игра!?",
-                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (response == DialogResult.Yes)
                 {
                     DialogResult re = MessageBox.Show("Со почнување на нова игра моментално освоените поени ви се бришат!!",
@@ -286,6 +225,22 @@ namespace Hangman
                 }
             }
         }
+
+        /* private void btnContinue_Click(object sender, EventArgs e)
+         {
+             timerRemainingTime.Start();
+             timerRemainingTime.Enabled = true;
+             lblPogodiZbor.Visible = true;
+             btnResults.Enabled = false;
+             btnContinue.Enabled = false;
+             btnPause.Enabled = false;
+             btnPause.Enabled = true;
+  //           btnStartGame.Enabled = true;
+    //         btnCheck.Enabled = true;
+             btnHelp.Enabled = true;
+      //       tbCharacter.ReadOnly = false;
+         }  */
+
 
         private void листаСоРезултатиToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -301,20 +256,7 @@ namespace Hangman
             }
         }
 
-        private void btnContinue_Click(object sender, EventArgs e)
-        {
-            timerRemainingTime.Start();
-            timerRemainingTime.Enabled = true;
-            lblPogodiZbor.Visible = true;
-            btnResults.Enabled = false;
-            btnContinue.Enabled = false;
-            btnPause.Enabled = false;
-            btnPause.Enabled = true;
-            btnStartGame.Enabled = true;
-            btnCheck.Enabled = true;
-            btnHelp.Enabled = true;
-            tbCharacter.ReadOnly = false;
-        }
+
 
         private void новаИграToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -345,6 +287,77 @@ namespace Hangman
             easyToolStripMenuItem.Checked = false;
             normalToolStripMenuItem.Checked = false;
             hardToolStripMenuItem.Checked = true;
+        }
+
+        // Stop flockering
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
+
+        // Keyboard
+        private void charQ_Click(object sender, EventArgs e) { Guess('q'); }
+        private void charW_Click(object sender, EventArgs e) { Guess('w'); }
+        private void charE_Click(object sender, EventArgs e) { Guess('e'); }
+        private void charR_Click(object sender, EventArgs e) { Guess('r'); }
+        private void charT_Click(object sender, EventArgs e) { Guess('t'); }
+        private void charY_Click(object sender, EventArgs e) { Guess('y'); }
+        private void charU_Click(object sender, EventArgs e) { Guess('u'); }
+        private void charI_Click(object sender, EventArgs e) { Guess('i'); }
+        private void charO_Click(object sender, EventArgs e) { Guess('o'); } 
+        private void charA_Click(object sender, EventArgs e) { Guess('a'); }
+        private void charS_Click(object sender, EventArgs e) { Guess('s'); }
+        private void charD_Click(object sender, EventArgs e) { Guess('d'); }
+        private void charF_Click(object sender, EventArgs e) { Guess('f'); }
+        private void charG_Click(object sender, EventArgs e) { Guess('g'); }
+        private void charH_Click(object sender, EventArgs e) { Guess('h'); }
+        private void charJ_Click(object sender, EventArgs e) { Guess('j'); }
+        private void charK_Click(object sender, EventArgs e) { Guess('k'); }
+        private void charL_Click(object sender, EventArgs e) { Guess('l'); }
+        private void charZ_Click(object sender, EventArgs e) { Guess('z'); }
+        private void charX_Click(object sender, EventArgs e) { Guess('x'); }
+        private void charC_Click(object sender, EventArgs e) { Guess('c'); }
+        private void charV_Click(object sender, EventArgs e) { Guess('v'); }
+        private void charB_Click(object sender, EventArgs e) { Guess('b'); }
+        private void charN_Click(object sender, EventArgs e) { Guess('n'); }
+        private void charM_Click(object sender, EventArgs e) { Guess('m'); }
+        private void charP_Click(object sender, EventArgs e) { Guess('p'); }
+
+       
+
+        private void Guess(char c)
+        {
+            int State = game.UpdateSession(c);
+            if (State == Globals.GUESS_SUCCESS)
+            {
+                playSimpleSound(Hangman.Properties.Resources.correctanswer);
+            }
+            else if(State == Globals.GUESS_NOT_SUCCESS)
+            {
+                playSimpleSound(Hangman.Properties.Resources.wronganswer);
+            }
+            else
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(");
+                MessageBox.Show(sb.ToString(), "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                timerRemainingTime.Stop();
+                TimeElapsed = 0;
+            }
+
+            lblPogodiZbor.Text = game.Session.EncryptedWord;
+            lblPoeni.Text = Convert.ToString(game.GetPoints());
+        }
+
+        private void playSimpleSound(System.IO.Stream wav)
+        {
+            SoundPlayer simpleSound = new SoundPlayer(wav);
+            simpleSound.Play();
         }
     }
 }

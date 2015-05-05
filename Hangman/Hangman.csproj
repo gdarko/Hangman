@@ -143,6 +143,39 @@
   <ItemGroup>
     <None Include="Properties\parts\right-leg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brown-grunge-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Land_008.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidepanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hanged.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-leg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correctanswer.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wronganswer.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.96.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.96.0\build\net451\System.Data.SQLite.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

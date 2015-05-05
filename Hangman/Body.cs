@@ -20,108 +20,49 @@ namespace Hangman
         public bool LeftLeg { get; set; }
         public bool RightLeg { get; set; }
 
-        public bool useGraphics;
-
-        private Pen pen { set; get; }
+        protected PictureBox pb { get; set; }
 
 
         public Body(HangmanForm main, bool UseGraphics = true)
         {
-            this.useGraphics = UseGraphics;
-            pen = new Pen(Color.Black, 5);
-            g = main.BodyPanel.CreateGraphics();
             ResetBody();
+            pb = main.pbGuyBox;
         }
 
         private void addHead()
         {
+            drawImg(Hangman.Properties.Resources.head);
             Head = true;
-
-            if (useGraphics == true)
-            {
-                g.DrawEllipse(pen, 0, 0, 100, 100);
-            }
-            else
-            {
-                var bmp = new Bitmap(Properties.Resources.head);
-                g.DrawImage(bmp, 0, 0, 100, 100);
-
-            }
         }
 
         private void addSpinal()
         {
+            drawImg(Hangman.Properties.Resources.body);
             Spinal = true;
-            if (useGraphics == true)
-            {
-                g.DrawLine(pen, 50, 100, 50, 200);
-            }
-            else
-            {
-                var bmp = new Bitmap(Properties.Resources.body);
-                g.DrawImage(bmp, 50, 100, 50, 200);
-
-            }
         }
 
         private void addLeftHand()
         {
+            drawImg(Hangman.Properties.Resources.left_hand);
             LeftHand = true;
-            if (useGraphics == true)
-            {
-                g.DrawLine(pen, 50, 120, 0, 150);
-            }
-            else
-            {
-                var bmp = new Bitmap(Properties.Resources.left_hand);
-                g.DrawImage(bmp, 50, 120, 0, 150);
-
-            }
         }
 
         private void addRightHand()
         {
+            drawImg(Hangman.Properties.Resources.right_hand);
             RightHand = true;
-            if (useGraphics == true)
-            {
-                g.DrawLine(pen, 50, 120, 100, 150);
-            }
-            else
-            {
-                var bmp = new Bitmap(Properties.Resources.right_hand);
-                g.DrawImage(bmp, 50, 120, 100, 150);
-
-            }
         }
 
         private void addLeftLeg()
         {
+            drawImg(Hangman.Properties.Resources.left_leg);
             LeftLeg = true;
-            if (useGraphics == true)
-            {
-                g.DrawLine(pen, 50, 190, 0, 250);
-            }
-            else
-            {
-                var bmp = new Bitmap(Properties.Resources.left_leg);
-                g.DrawImage(bmp, 50, 190, 0, 250);
-
-            }
         }
 
         private void addRightLeg()
         {
+            drawImg(Hangman.Properties.Resources.hanged);
             RightLeg = true;
-            if (useGraphics == true)
-            {
-                g.DrawLine(pen, 50, 190, 100, 250);
-            }
-            else
-            {
-                var bmp = new Bitmap(Properties.Resources.right_leg);
-                g.DrawImage(bmp, 50, 190, 100, 250);
-
-            }
         }
 
         private void ResetBody()
@@ -146,12 +87,13 @@ namespace Hangman
             }
             else if (!LeftHand)
             {
-                addLeftHand();
+               addLeftHand(); 
             }
             else if (!RightHand)
             {
-                addRightHand();
+                addRightHand();  
             }
+
             else if (!LeftLeg)
             {
                 addLeftLeg();
@@ -164,6 +106,11 @@ namespace Hangman
             {
                 return;
             }
+        }
+
+        void drawImg(Bitmap Res)
+        {
+            pb.Image = new Bitmap(Res);
         }
 
 
