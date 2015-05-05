@@ -26,7 +26,7 @@ namespace Hangman
         /// </summary>
         private static readonly int TIME = 300;//300 sekundi = 5 minuti
         private int TimeElapsed;
-       
+
         public HangmanForm()
         {
             this.DoubleBuffered = true;
@@ -35,7 +35,7 @@ namespace Hangman
             //lblPogodiZbor.Visible = false;
             easyToolStripMenuItem.Checked = true;
 
-           // Graphics g = pnlBody.CreateGraphics();
+            // Graphics g = pnlBody.CreateGraphics();
 
 
             // Show the NewGame form on initialization and get the results from it
@@ -70,15 +70,15 @@ namespace Hangman
             {
                 timerRemainingTime.Stop();
                 timerRemainingTime.Enabled = false;
-               // btnStartGame.Enabled = false;
+                btnStartGame.Enabled = false;
                 btnResults.Enabled = true;
                 btnPause.Enabled = false;
-               // btnCheck.Enabled = false;
+                btnPause.Visible = false;
+                btnContinue.Visible = true;
                 btnHelp.Enabled = false;
-                lblPogodiZbor.Visible = false;
-               // tbCharacter.ReadOnly = true;
                 btnStartGame.Enabled = true;
                 btnStartGame.ForeColor = Color.White;
+                lblPogodiZbor.Visible = false;
             }
         }
 
@@ -156,12 +156,10 @@ namespace Hangman
             {
                 MessageBox.Show("Вашето време истече!", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 formBesilka_FormClosing(sender, null);
-                //btnCheck.Enabled = false;
                 btnPause.Enabled = false;
                 btnHelp.Enabled = false;
                 label6.Visible = false;
                 lblRemainingTime.Visible = false;
-                //tbCharacter.ReadOnly = true;
                 timerRemainingTime.Enabled = false;
                 timerRemainingTime.Stop();
             }
@@ -204,7 +202,10 @@ namespace Hangman
             if (TimeElapsed == 0)
             {
                 lblPogodiZbor.Text = game.Session.EncryptedWord;
+                lblRemainingTime.Visible = true;
+                label6.Visible = true;
                 lblPoeni.Text = Convert.ToString(game.GetPoints());
+                btnPause.Enabled = true;
                 UpdateTime();
                 timerRemainingTime.Start();
 
@@ -226,20 +227,18 @@ namespace Hangman
             }
         }
 
-        /* private void btnContinue_Click(object sender, EventArgs e)
-         {
-             timerRemainingTime.Start();
-             timerRemainingTime.Enabled = true;
-             lblPogodiZbor.Visible = true;
-             btnResults.Enabled = false;
-             btnContinue.Enabled = false;
-             btnPause.Enabled = false;
-             btnPause.Enabled = true;
-  //           btnStartGame.Enabled = true;
-    //         btnCheck.Enabled = true;
-             btnHelp.Enabled = true;
-      //       tbCharacter.ReadOnly = false;
-         }  */
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            timerRemainingTime.Start();
+            timerRemainingTime.Enabled = true;
+            lblPogodiZbor.Visible = true;
+            btnResults.Enabled = false;
+            btnContinue.Visible = false;
+            btnPause.Visible = true;
+            btnPause.Enabled = true;
+            btnStartGame.Enabled = true;
+            btnHelp.Enabled = true;
+        }
 
 
         private void листаСоРезултатиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -309,7 +308,7 @@ namespace Hangman
         private void charY_Click(object sender, EventArgs e) { Guess('y'); }
         private void charU_Click(object sender, EventArgs e) { Guess('u'); }
         private void charI_Click(object sender, EventArgs e) { Guess('i'); }
-        private void charO_Click(object sender, EventArgs e) { Guess('o'); } 
+        private void charO_Click(object sender, EventArgs e) { Guess('o'); }
         private void charA_Click(object sender, EventArgs e) { Guess('a'); }
         private void charS_Click(object sender, EventArgs e) { Guess('s'); }
         private void charD_Click(object sender, EventArgs e) { Guess('d'); }
@@ -328,7 +327,7 @@ namespace Hangman
         private void charM_Click(object sender, EventArgs e) { Guess('m'); }
         private void charP_Click(object sender, EventArgs e) { Guess('p'); }
 
-       
+
 
         private void Guess(char c)
         {
@@ -337,7 +336,7 @@ namespace Hangman
             {
                 playSimpleSound(Hangman.Properties.Resources.correctanswer);
             }
-            else if(State == Globals.GUESS_NOT_SUCCESS)
+            else if (State == Globals.GUESS_NOT_SUCCESS)
             {
                 playSimpleSound(Hangman.Properties.Resources.wronganswer);
             }

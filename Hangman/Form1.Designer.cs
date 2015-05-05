@@ -95,6 +95,8 @@
             this.charR = new System.Windows.Forms.Button();
             this.charT = new System.Windows.Forms.Button();
             this.pbGuy = new System.Windows.Forms.PictureBox();
+            this.btnContinue = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -137,6 +139,7 @@
             this.btnStartGame.ForeColor = System.Drawing.Color.White;
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.UseVisualStyleBackColor = false;
+            this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
             // btnHelp
             // 
@@ -293,6 +296,8 @@
             // lblRemainingTime
             // 
             resources.ApplyResources(this.lblRemainingTime, "lblRemainingTime");
+            this.lblRemainingTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblRemainingTime.ForeColor = System.Drawing.Color.LightBlue;
             this.lblRemainingTime.Name = "lblRemainingTime";
             // 
             // timerRemainingTime
@@ -302,6 +307,8 @@
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.Color.LightBlue;
             this.label6.Name = "label6";
             // 
             // toolStrip1
@@ -353,12 +360,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::Hangman.Properties.Resources.sidepanel;
+            this.panel1.Controls.Add(this.btnContinue);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btnStartGame);
             this.panel1.Controls.Add(this.gbVasiInformacii);
-            this.panel1.Controls.Add(this.lblRemainingTime);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnResults);
             this.panel1.Controls.Add(this.lblPogodiZbor);
             this.panel1.Controls.Add(this.btnHelp);
@@ -665,16 +671,35 @@
             this.pbGuy.Name = "pbGuy";
             this.pbGuy.TabStop = false;
             // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.SystemColors.Highlight;
+            resources.ApplyResources(this.btnContinue, "btnContinue");
+            this.btnContinue.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Name = "label1";
+            // 
             // HangmanForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Hangman.Properties.Resources.Land_008;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pbGuy);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblRemainingTime);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HangmanForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBesilka_FormClosing);
@@ -760,6 +785,8 @@
         private System.Windows.Forms.Button charP;
         private System.Windows.Forms.Button charM;
         private System.Windows.Forms.PictureBox pbGuy;
+        private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.Label label1;
     }
 }
 
