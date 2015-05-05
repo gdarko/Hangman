@@ -32,6 +32,8 @@
 
 ###Историја на играта Hangman
 Корените на оваа игра се нејасни но се чини дека се појавила во Викторијанското време, тврди **Tony Augarde** автор на книгата _The Oxford Guide to Word Games_. Играта истотака е спомената во книгата _Traditional Games_ од 1984 на **Alice Bertha Gomme** под името _Birds, Beasts and Fishes_ (Птици, Ѕверови и Риби).
+Во некои други извори играта е наречена Бесилка, Закачалката и сл. Hangman се има појавено во системот за видео игри *Speak & Spell* од 1978 година под името **Mystery Word** (Мистериозниот збор). Денес е играна најчесто на Веб.
+***извор: [http://en.wikipedia.org/wiki/Hangman_%28game%29#History_of_the_Hangman_game](http://en.wikipedia.org/wiki/Hangman_%28game%29#History_of_the_Hangman_game)
 
 ![New game screen](/screens/Screenshot_1.png)
 
