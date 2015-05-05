@@ -32,7 +32,12 @@ namespace Hangman
             this.DoubleBuffered = true;
             InitializeComponent();
             NewGame window = new NewGame();
-            //lblPogodiZbor.Visible = false;
+            panel2.Visible = false;
+            btnStartGame.Focus();
+            btnPause.Visible = false;
+            btnHelp.Visible = false;
+            btnResults.Visible = false;
+            lblPogodiZbor.Visible = false;
             easyToolStripMenuItem.Checked = true;
 
             // Graphics g = pnlBody.CreateGraphics();
@@ -72,13 +77,15 @@ namespace Hangman
                 timerRemainingTime.Enabled = false;
                 btnStartGame.Enabled = false;
                 btnResults.Enabled = true;
-                btnPause.Enabled = false;
                 btnPause.Visible = false;
                 btnContinue.Visible = true;
                 btnHelp.Enabled = false;
-                btnStartGame.Enabled = true;
                 btnStartGame.ForeColor = Color.White;
                 lblPogodiZbor.Visible = false;
+                panel2.Visible = false;
+                btnHelp.Visible = false;
+                btnStartGame.Visible = false;
+
             }
         }
 
@@ -208,6 +215,11 @@ namespace Hangman
                 btnPause.Enabled = true;
                 UpdateTime();
                 timerRemainingTime.Start();
+                panel2.Visible = true;
+                lblPogodiZbor.Visible = true;
+                btnPause.Visible = true;
+                btnHelp.Visible = true;
+                btnResults.Visible = true;
 
             }
             else
@@ -232,10 +244,12 @@ namespace Hangman
             timerRemainingTime.Start();
             timerRemainingTime.Enabled = true;
             lblPogodiZbor.Visible = true;
-            btnResults.Enabled = false;
+            panel2.Visible = true;
             btnContinue.Visible = false;
+            btnHelp.Visible = true;
+            btnResults.Visible = true;
             btnPause.Visible = true;
-            btnPause.Enabled = true;
+            btnStartGame.Visible = true;
             btnStartGame.Enabled = true;
             btnHelp.Enabled = true;
         }
