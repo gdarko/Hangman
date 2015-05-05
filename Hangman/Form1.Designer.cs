@@ -67,6 +67,7 @@
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnContinue = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.charP = new System.Windows.Forms.Button();
             this.charM = new System.Windows.Forms.Button();
@@ -95,11 +96,8 @@
             this.charR = new System.Windows.Forms.Button();
             this.charT = new System.Windows.Forms.Button();
             this.pbGuy = new System.Windows.Forms.PictureBox();
-            this.btnContinue = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.gbVasiInformacii.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuy)).BeginInit();
@@ -213,11 +211,6 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.играToolStripMenuItem,
-            this.опцииToolStripMenuItem,
-            this.инструкцииToolStripMenuItem,
-            this.излезToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -313,12 +306,6 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.toolStripSeparator,
-            this.helpToolStripButton});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
@@ -372,6 +359,15 @@
             this.panel1.ForeColor = System.Drawing.Color.Snow;
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.SystemColors.Highlight;
+            resources.ApplyResources(this.btnContinue, "btnContinue");
+            this.btnContinue.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // panel2
             // 
@@ -671,15 +667,6 @@
             this.pbGuy.Name = "pbGuy";
             this.pbGuy.TabStop = false;
             // 
-            // btnContinue
-            // 
-            this.btnContinue.BackColor = System.Drawing.SystemColors.Highlight;
-            resources.ApplyResources(this.btnContinue, "btnContinue");
-            this.btnContinue.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.UseVisualStyleBackColor = false;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
@@ -705,10 +692,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBesilka_FormClosing);
             this.gbVasiInformacii.ResumeLayout(false);
             this.gbVasiInformacii.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

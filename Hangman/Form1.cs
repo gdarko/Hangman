@@ -24,7 +24,7 @@ namespace Hangman
         /// <summary>
         /// Timer for the game
         /// </summary>
-        private static readonly int TIME = 300;//300 sekundi = 5 minuti
+        private static readonly int TIME = 240;//240 sekundi = 4 minuti
         private int TimeElapsed;
 
         public HangmanForm()
@@ -85,7 +85,6 @@ namespace Hangman
                 panel2.Visible = false;
                 btnHelp.Visible = false;
                 btnStartGame.Visible = false;
-
             }
         }
 
@@ -178,6 +177,7 @@ namespace Hangman
             int min = TimeLeft / 60;
             int sec = TimeLeft % 60;
             lblRemainingTime.Text = string.Format("{0:D2}:{1:D2}", min, sec);
+
         }
 
 
@@ -220,6 +220,7 @@ namespace Hangman
                 btnPause.Visible = true;
                 btnHelp.Visible = true;
                 btnResults.Visible = true;
+                playSoundtrack(Hangman.Properties.Resources.MainTheme);
 
             }
             else
@@ -252,6 +253,7 @@ namespace Hangman
             btnStartGame.Visible = true;
             btnStartGame.Enabled = true;
             btnHelp.Enabled = true;
+            playSoundtrack(Hangman.Properties.Resources.MainTheme);
         }
 
 
@@ -348,11 +350,12 @@ namespace Hangman
             int State = game.UpdateSession(c);
             if (State == Globals.GUESS_SUCCESS)
             {
-                playSimpleSound(Hangman.Properties.Resources.correctanswer);
+                // playSimpleSound(Hangman.Properties.Resources.correctanswer);
+
             }
             else if (State == Globals.GUESS_NOT_SUCCESS)
             {
-                playSimpleSound(Hangman.Properties.Resources.wronganswer);
+                //playSimpleSound(Hangman.Properties.Resources.wronganswer);
             }
             else
             {
@@ -371,6 +374,11 @@ namespace Hangman
         {
             SoundPlayer simpleSound = new SoundPlayer(wav);
             simpleSound.Play();
+        }
+        private void playSoundtrack(System.IO.Stream wav)
+        {
+            SoundPlayer soundtrack = new SoundPlayer(wav);
+            soundtrack.PlayLooping();
         }
     }
 }
