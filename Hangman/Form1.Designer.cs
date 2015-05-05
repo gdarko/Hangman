@@ -45,6 +45,16 @@
             this.tbPrezime = new System.Windows.Forms.TextBox();
             this.tbIme = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.играToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.новаИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.нивоToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.easyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.hardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.листаСоРезултатиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.опцииToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.инструкцииToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.излезToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameMI = new System.Windows.Forms.ToolStripMenuItem();
             this.нивоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +70,11 @@
             this.timerRemainingTime = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.newToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.helpToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -98,6 +113,8 @@
             this.pbGuy = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbVasiInformacii.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuy)).BeginInit();
@@ -211,8 +228,77 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.играToolStripMenuItem1,
+            this.опцииToolStripMenuItem1,
+            this.инструкцииToolStripMenuItem1,
+            this.излезToolStripMenuItem1});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
+            // 
+            // играToolStripMenuItem1
+            // 
+            this.играToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.новаИграToolStripMenuItem,
+            this.нивоToolStripMenuItem1,
+            this.листаСоРезултатиToolStripMenuItem1});
+            this.играToolStripMenuItem1.Name = "играToolStripMenuItem1";
+            resources.ApplyResources(this.играToolStripMenuItem1, "играToolStripMenuItem1");
+            // 
+            // новаИграToolStripMenuItem
+            // 
+            this.новаИграToolStripMenuItem.Name = "новаИграToolStripMenuItem";
+            resources.ApplyResources(this.новаИграToolStripMenuItem, "новаИграToolStripMenuItem");
+            this.новаИграToolStripMenuItem.Click += new System.EventHandler(this.новаИграToolStripMenuItem_Click);
+            // 
+            // нивоToolStripMenuItem1
+            // 
+            this.нивоToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.easyToolStripMenuItem1,
+            this.normalToolStripMenuItem1,
+            this.hardToolStripMenuItem1});
+            this.нивоToolStripMenuItem1.Name = "нивоToolStripMenuItem1";
+            resources.ApplyResources(this.нивоToolStripMenuItem1, "нивоToolStripMenuItem1");
+            // 
+            // easyToolStripMenuItem1
+            // 
+            this.easyToolStripMenuItem1.Name = "easyToolStripMenuItem1";
+            resources.ApplyResources(this.easyToolStripMenuItem1, "easyToolStripMenuItem1");
+            this.easyToolStripMenuItem1.Click += new System.EventHandler(this.easyToolStripMenuItem_Click);
+            // 
+            // normalToolStripMenuItem1
+            // 
+            this.normalToolStripMenuItem1.Name = "normalToolStripMenuItem1";
+            resources.ApplyResources(this.normalToolStripMenuItem1, "normalToolStripMenuItem1");
+            this.normalToolStripMenuItem1.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
+            // 
+            // hardToolStripMenuItem1
+            // 
+            this.hardToolStripMenuItem1.Name = "hardToolStripMenuItem1";
+            resources.ApplyResources(this.hardToolStripMenuItem1, "hardToolStripMenuItem1");
+            this.hardToolStripMenuItem1.Click += new System.EventHandler(this.hardToolStripMenuItem_Click);
+            // 
+            // листаСоРезултатиToolStripMenuItem1
+            // 
+            this.листаСоРезултатиToolStripMenuItem1.Name = "листаСоРезултатиToolStripMenuItem1";
+            resources.ApplyResources(this.листаСоРезултатиToolStripMenuItem1, "листаСоРезултатиToolStripMenuItem1");
+            // 
+            // опцииToolStripMenuItem1
+            // 
+            this.опцииToolStripMenuItem1.Name = "опцииToolStripMenuItem1";
+            resources.ApplyResources(this.опцииToolStripMenuItem1, "опцииToolStripMenuItem1");
+            // 
+            // инструкцииToolStripMenuItem1
+            // 
+            this.инструкцииToolStripMenuItem1.Name = "инструкцииToolStripMenuItem1";
+            resources.ApplyResources(this.инструкцииToolStripMenuItem1, "инструкцииToolStripMenuItem1");
+            this.инструкцииToolStripMenuItem1.Click += new System.EventHandler(this.помошToolStripMenuItem_Click);
+            // 
+            // излезToolStripMenuItem1
+            // 
+            this.излезToolStripMenuItem1.Name = "излезToolStripMenuItem1";
+            resources.ApplyResources(this.излезToolStripMenuItem1, "излезToolStripMenuItem1");
+            this.излезToolStripMenuItem1.Click += new System.EventHandler(this.излезToolStripMenuItem_Click);
             // 
             // играToolStripMenuItem
             // 
@@ -306,8 +392,43 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripButton1,
+            this.openToolStripButton1,
+            this.saveToolStripButton1,
+            this.toolStripSeparator4,
+            this.helpToolStripButton1});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
+            // 
+            // newToolStripButton1
+            // 
+            this.newToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.newToolStripButton1, "newToolStripButton1");
+            this.newToolStripButton1.Name = "newToolStripButton1";
+            // 
+            // openToolStripButton1
+            // 
+            this.openToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.openToolStripButton1, "openToolStripButton1");
+            this.openToolStripButton1.Name = "openToolStripButton1";
+            // 
+            // saveToolStripButton1
+            // 
+            this.saveToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.saveToolStripButton1, "saveToolStripButton1");
+            this.saveToolStripButton1.Name = "saveToolStripButton1";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            // 
+            // helpToolStripButton1
+            // 
+            this.helpToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.helpToolStripButton1, "helpToolStripButton1");
+            this.helpToolStripButton1.Name = "helpToolStripButton1";
             // 
             // newToolStripButton
             // 
@@ -692,6 +813,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBesilka_FormClosing);
             this.gbVasiInformacii.ResumeLayout(false);
             this.gbVasiInformacii.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -770,6 +895,21 @@
         private System.Windows.Forms.PictureBox pbGuy;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem играToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripButton newToolStripButton1;
+        private System.Windows.Forms.ToolStripButton openToolStripButton1;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton helpToolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem опцииToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem инструкцииToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem излезToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem новаИграToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem нивоToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem листаСоРезултатиToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem1;
     }
 }
 
