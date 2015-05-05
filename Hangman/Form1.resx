@@ -376,7 +376,7 @@
     <value>18, 15</value>
   </data>
   <data name="gbVasiInformacii.Size" type="System.Drawing.Size, System.Drawing">
-    <value>381, 142</value>
+    <value>401, 142</value>
   </data>
   <data name="gbVasiInformacii.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -636,30 +636,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="играToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
-  <data name="играToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Игра</value>
-  </data>
-  <data name="опцииToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
-  </data>
-  <data name="опцииToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Опции</value>
-  </data>
-  <data name="инструкцииToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 20</value>
-  </data>
-  <data name="инструкцииToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Инструкции</value>
-  </data>
-  <data name="излезToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
-  </data>
-  <data name="излезToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Излез</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -683,6 +659,12 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="играToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="играToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Игра</value>
   </data>
   <data name="новаИграToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 22</value>
@@ -719,6 +701,30 @@
   </data>
   <data name="листаСоРезултатиToolStripMenuItem1.Text" xml:space="preserve">
     <value>Листа со резултати</value>
+  </data>
+  <data name="опцииToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="опцииToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="заАпликацијатаToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 22</value>
+  </data>
+  <data name="заАпликацијатаToolStripMenuItem1.Text" xml:space="preserve">
+    <value>За апликацијата</value>
+  </data>
+  <data name="инструкцииToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 20</value>
+  </data>
+  <data name="инструкцииToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Инструкции</value>
+  </data>
+  <data name="излезToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
+  </data>
+  <data name="излезToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Излез</value>
   </data>
   <data name="играToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
@@ -864,30 +870,6 @@
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>297, 17</value>
   </metadata>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>997, 25</value>
-  </data>
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="newToolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -906,7 +888,7 @@
     <value>23, 22</value>
   </data>
   <data name="newToolStripButton1.Text" xml:space="preserve">
-    <value>&amp;New</value>
+    <value>&amp;Нова игра</value>
   </data>
   <data name="openToolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -931,7 +913,7 @@
     <value>23, 22</value>
   </data>
   <data name="openToolStripButton1.Text" xml:space="preserve">
-    <value>&amp;Open</value>
+    <value>&amp;Отвори снимена игра</value>
   </data>
   <data name="saveToolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -956,7 +938,7 @@
     <value>23, 22</value>
   </data>
   <data name="saveToolStripButton1.Text" xml:space="preserve">
-    <value>&amp;Save</value>
+    <value>&amp;Сними</value>
   </data>
   <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -983,7 +965,31 @@
     <value>23, 22</value>
   </data>
   <data name="helpToolStripButton1.Text" xml:space="preserve">
-    <value>He&amp;lp</value>
+    <value>&amp;Помош</value>
+  </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
+  </data>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>997, 25</value>
+  </data>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="toolStrip1.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="newToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2493,6 +2499,12 @@
     <value>опцииToolStripMenuItem1</value>
   </data>
   <data name="&gt;&gt;опцииToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;заАпликацијатаToolStripMenuItem1.Name" xml:space="preserve">
+    <value>заАпликацијатаToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;заАпликацијатаToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;инструкцииToolStripMenuItem1.Name" xml:space="preserve">

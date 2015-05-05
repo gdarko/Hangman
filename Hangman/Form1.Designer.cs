@@ -53,6 +53,7 @@
             this.hardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.листаСоРезултатиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.опцииToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.заАпликацијатаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.инструкцииToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.излезToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -285,8 +286,16 @@
             // 
             // опцииToolStripMenuItem1
             // 
+            this.опцииToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.заАпликацијатаToolStripMenuItem1});
             this.опцииToolStripMenuItem1.Name = "опцииToolStripMenuItem1";
             resources.ApplyResources(this.опцииToolStripMenuItem1, "опцииToolStripMenuItem1");
+            // 
+            // заАпликацијатаToolStripMenuItem1
+            // 
+            this.заАпликацијатаToolStripMenuItem1.Name = "заАпликацијатаToolStripMenuItem1";
+            resources.ApplyResources(this.заАпликацијатаToolStripMenuItem1, "заАпликацијатаToolStripMenuItem1");
+            this.заАпликацијатаToolStripMenuItem1.Click += new System.EventHandler(this.заАпликацијатаToolStripMenuItem1_Click);
             // 
             // инструкцииToolStripMenuItem1
             // 
@@ -429,6 +438,7 @@
             this.helpToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.helpToolStripButton1, "helpToolStripButton1");
             this.helpToolStripButton1.Name = "helpToolStripButton1";
+            this.helpToolStripButton1.Click += new System.EventHandler(this.helpToolStripButton1_Click);
             // 
             // newToolStripButton
             // 
@@ -910,6 +920,7 @@
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem листаСоРезултатиToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem заАпликацијатаToolStripMenuItem1;
     }
 }
 

@@ -125,6 +125,7 @@ namespace Hangman
                         MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+                Application.Exit();
             }
         }
 
@@ -378,6 +379,18 @@ namespace Hangman
         {
             SoundPlayer soundtrack = new SoundPlayer(wav);
             soundtrack.PlayLooping();
+        }
+
+        private void заАпликацијатаToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            About a = new About();
+            a.ShowDialog();
+        }
+
+        private void helpToolStripButton1_Click(object sender, EventArgs e)
+        {
+            Instructions i = new Instructions();
+            i.ShowDialog();
         }
     }
 }
