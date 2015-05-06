@@ -115,7 +115,7 @@ namespace Hangman
                 lblPogodiZbor.Visible = true;
                 btnPause.Visible = true;
                 btnStartGame.Visible = false;
-                playSound(Hangman.Properties.Resources.MainTheme);
+                playSound(Hangman.Properties.Resources.MainTheme, true /* Looping */);
 
             }
             else
