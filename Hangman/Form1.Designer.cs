@@ -45,17 +45,17 @@
             this.tbPrezime = new System.Windows.Forms.TextBox();
             this.tbIme = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.играToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.новаИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.нивоToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.lvlTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.easyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.normalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.листаСоРезултатиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.опцииToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.заАпликацијатаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.инструкцииToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.излезToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listresTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.instrTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameMI = new System.Windows.Forms.ToolStripMenuItem();
             this.нивоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,8 +83,7 @@
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnContinue = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlKeyboard = new System.Windows.Forms.Panel();
             this.charP = new System.Windows.Forms.Button();
             this.charM = new System.Windows.Forms.Button();
             this.charN = new System.Windows.Forms.Button();
@@ -113,11 +112,12 @@
             this.charT = new System.Windows.Forms.Button();
             this.pbGuy = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlKeyboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuy)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,7 +139,7 @@
             // 
             // btnPause
             // 
-            this.btnPause.BackColor = System.Drawing.Color.Red;
+            this.btnPause.BackColor = System.Drawing.Color.Tomato;
             resources.ApplyResources(this.btnPause, "btnPause");
             this.btnPause.FlatAppearance.BorderSize = 0;
             this.btnPause.ForeColor = System.Drawing.Color.White;
@@ -230,36 +230,36 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.играToolStripMenuItem1,
-            this.опцииToolStripMenuItem1,
-            this.инструкцииToolStripMenuItem1,
-            this.излезToolStripMenuItem1});
+            this.gameTSMI,
+            this.optionsTSMI,
+            this.instrTSMI,
+            this.closeTSMI});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
-            // играToolStripMenuItem1
+            // gameTSMI
             // 
-            this.играToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.новаИграToolStripMenuItem,
-            this.нивоToolStripMenuItem1,
-            this.листаСоРезултатиToolStripMenuItem1});
-            this.играToolStripMenuItem1.Name = "играToolStripMenuItem1";
-            resources.ApplyResources(this.играToolStripMenuItem1, "играToolStripMenuItem1");
+            this.gameTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameTSMI,
+            this.lvlTSMI,
+            this.listresTSMI});
+            this.gameTSMI.Name = "gameTSMI";
+            resources.ApplyResources(this.gameTSMI, "gameTSMI");
             // 
-            // новаИграToolStripMenuItem
+            // newGameTSMI
             // 
-            this.новаИграToolStripMenuItem.Name = "новаИграToolStripMenuItem";
-            resources.ApplyResources(this.новаИграToolStripMenuItem, "новаИграToolStripMenuItem");
-            this.новаИграToolStripMenuItem.Click += new System.EventHandler(this.новаИграToolStripMenuItem_Click);
+            this.newGameTSMI.Name = "newGameTSMI";
+            resources.ApplyResources(this.newGameTSMI, "newGameTSMI");
+            this.newGameTSMI.Click += new System.EventHandler(this.newGameTSMI_Click);
             // 
-            // нивоToolStripMenuItem1
+            // lvlTSMI
             // 
-            this.нивоToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lvlTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.easyToolStripMenuItem1,
             this.normalToolStripMenuItem1,
             this.hardToolStripMenuItem1});
-            this.нивоToolStripMenuItem1.Name = "нивоToolStripMenuItem1";
-            resources.ApplyResources(this.нивоToolStripMenuItem1, "нивоToolStripMenuItem1");
+            this.lvlTSMI.Name = "lvlTSMI";
+            resources.ApplyResources(this.lvlTSMI, "lvlTSMI");
             // 
             // easyToolStripMenuItem1
             // 
@@ -279,35 +279,35 @@
             resources.ApplyResources(this.hardToolStripMenuItem1, "hardToolStripMenuItem1");
             this.hardToolStripMenuItem1.Click += new System.EventHandler(this.hardToolStripMenuItem_Click);
             // 
-            // листаСоРезултатиToolStripMenuItem1
+            // listresTSMI
             // 
-            this.листаСоРезултатиToolStripMenuItem1.Name = "листаСоРезултатиToolStripMenuItem1";
-            resources.ApplyResources(this.листаСоРезултатиToolStripMenuItem1, "листаСоРезултатиToolStripMenuItem1");
+            this.listresTSMI.Name = "listresTSMI";
+            resources.ApplyResources(this.listresTSMI, "listresTSMI");
             // 
-            // опцииToolStripMenuItem1
+            // optionsTSMI
             // 
-            this.опцииToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.заАпликацијатаToolStripMenuItem1});
-            this.опцииToolStripMenuItem1.Name = "опцииToolStripMenuItem1";
-            resources.ApplyResources(this.опцииToolStripMenuItem1, "опцииToolStripMenuItem1");
+            this.optionsTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutTSMI});
+            this.optionsTSMI.Name = "optionsTSMI";
+            resources.ApplyResources(this.optionsTSMI, "optionsTSMI");
             // 
-            // заАпликацијатаToolStripMenuItem1
+            // aboutTSMI
             // 
-            this.заАпликацијатаToolStripMenuItem1.Name = "заАпликацијатаToolStripMenuItem1";
-            resources.ApplyResources(this.заАпликацијатаToolStripMenuItem1, "заАпликацијатаToolStripMenuItem1");
-            this.заАпликацијатаToolStripMenuItem1.Click += new System.EventHandler(this.заАпликацијатаToolStripMenuItem1_Click);
+            this.aboutTSMI.Name = "aboutTSMI";
+            resources.ApplyResources(this.aboutTSMI, "aboutTSMI");
+            this.aboutTSMI.Click += new System.EventHandler(this.aboutTSMI_Click);
             // 
-            // инструкцииToolStripMenuItem1
+            // instrTSMI
             // 
-            this.инструкцииToolStripMenuItem1.Name = "инструкцииToolStripMenuItem1";
-            resources.ApplyResources(this.инструкцииToolStripMenuItem1, "инструкцииToolStripMenuItem1");
-            this.инструкцииToolStripMenuItem1.Click += new System.EventHandler(this.помошToolStripMenuItem_Click);
+            this.instrTSMI.Name = "instrTSMI";
+            resources.ApplyResources(this.instrTSMI, "instrTSMI");
+            this.instrTSMI.Click += new System.EventHandler(this.helpTSMI_Click);
             // 
-            // излезToolStripMenuItem1
+            // closeTSMI
             // 
-            this.излезToolStripMenuItem1.Name = "излезToolStripMenuItem1";
-            resources.ApplyResources(this.излезToolStripMenuItem1, "излезToolStripMenuItem1");
-            this.излезToolStripMenuItem1.Click += new System.EventHandler(this.излезToolStripMenuItem_Click);
+            this.closeTSMI.Name = "closeTSMI";
+            resources.ApplyResources(this.closeTSMI, "closeTSMI");
+            this.closeTSMI.Click += new System.EventHandler(this.closeTSMI_Click);
             // 
             // играToolStripMenuItem
             // 
@@ -322,7 +322,7 @@
             // 
             this.newGameMI.Name = "newGameMI";
             resources.ApplyResources(this.newGameMI, "newGameMI");
-            this.newGameMI.Click += new System.EventHandler(this.новаИграToolStripMenuItem_Click);
+            this.newGameMI.Click += new System.EventHandler(this.newGameTSMI_Click);
             // 
             // нивоToolStripMenuItem
             // 
@@ -355,7 +355,7 @@
             // 
             this.листаСоРезултатиToolStripMenuItem.Name = "листаСоРезултатиToolStripMenuItem";
             resources.ApplyResources(this.листаСоРезултатиToolStripMenuItem, "листаСоРезултатиToolStripMenuItem");
-            this.листаСоРезултатиToolStripMenuItem.Click += new System.EventHandler(this.листаСоРезултатиToolStripMenuItem_Click);
+            this.листаСоРезултатиToolStripMenuItem.Click += new System.EventHandler(this.listresTSMI_Click);
             // 
             // опцииToolStripMenuItem
             // 
@@ -373,13 +373,13 @@
             // 
             this.инструкцииToolStripMenuItem.Name = "инструкцииToolStripMenuItem";
             resources.ApplyResources(this.инструкцииToolStripMenuItem, "инструкцииToolStripMenuItem");
-            this.инструкцииToolStripMenuItem.Click += new System.EventHandler(this.помошToolStripMenuItem_Click);
+            this.инструкцииToolStripMenuItem.Click += new System.EventHandler(this.helpTSMI_Click);
             // 
             // излезToolStripMenuItem
             // 
             this.излезToolStripMenuItem.Name = "излезToolStripMenuItem";
             resources.ApplyResources(this.излезToolStripMenuItem, "излезToolStripMenuItem");
-            this.излезToolStripMenuItem.Click += new System.EventHandler(this.излезToolStripMenuItem_Click);
+            this.излезToolStripMenuItem.Click += new System.EventHandler(this.closeTSMI_Click);
             // 
             // lblRemainingTime
             // 
@@ -478,58 +478,49 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::Hangman.Properties.Resources.sidepanel;
-            this.panel1.Controls.Add(this.btnContinue);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pnlKeyboard);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btnStartGame);
             this.panel1.Controls.Add(this.gbVasiInformacii);
             this.panel1.Controls.Add(this.btnResults);
             this.panel1.Controls.Add(this.lblPogodiZbor);
             this.panel1.Controls.Add(this.btnHelp);
-            this.panel1.Controls.Add(this.btnPause);
             this.panel1.ForeColor = System.Drawing.Color.Snow;
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // btnContinue
+            // pnlKeyboard
             // 
-            this.btnContinue.BackColor = System.Drawing.SystemColors.Highlight;
-            resources.ApplyResources(this.btnContinue, "btnContinue");
-            this.btnContinue.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.UseVisualStyleBackColor = false;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.charP);
-            this.panel2.Controls.Add(this.charM);
-            this.panel2.Controls.Add(this.charN);
-            this.panel2.Controls.Add(this.charL);
-            this.panel2.Controls.Add(this.charK);
-            this.panel2.Controls.Add(this.charJ);
-            this.panel2.Controls.Add(this.charH);
-            this.panel2.Controls.Add(this.charQ);
-            this.panel2.Controls.Add(this.charO);
-            this.panel2.Controls.Add(this.charI);
-            this.panel2.Controls.Add(this.charU);
-            this.panel2.Controls.Add(this.charB);
-            this.panel2.Controls.Add(this.charY);
-            this.panel2.Controls.Add(this.charV);
-            this.panel2.Controls.Add(this.charC);
-            this.panel2.Controls.Add(this.charX);
-            this.panel2.Controls.Add(this.charZ);
-            this.panel2.Controls.Add(this.charF);
-            this.panel2.Controls.Add(this.charD);
-            this.panel2.Controls.Add(this.charS);
-            this.panel2.Controls.Add(this.charG);
-            this.panel2.Controls.Add(this.charA);
-            this.panel2.Controls.Add(this.charW);
-            this.panel2.Controls.Add(this.charE);
-            this.panel2.Controls.Add(this.charR);
-            this.panel2.Controls.Add(this.charT);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
+            this.pnlKeyboard.Controls.Add(this.button1);
+            this.pnlKeyboard.Controls.Add(this.charP);
+            this.pnlKeyboard.Controls.Add(this.charM);
+            this.pnlKeyboard.Controls.Add(this.charN);
+            this.pnlKeyboard.Controls.Add(this.charL);
+            this.pnlKeyboard.Controls.Add(this.charK);
+            this.pnlKeyboard.Controls.Add(this.charJ);
+            this.pnlKeyboard.Controls.Add(this.charH);
+            this.pnlKeyboard.Controls.Add(this.btnPause);
+            this.pnlKeyboard.Controls.Add(this.charQ);
+            this.pnlKeyboard.Controls.Add(this.charO);
+            this.pnlKeyboard.Controls.Add(this.charI);
+            this.pnlKeyboard.Controls.Add(this.charU);
+            this.pnlKeyboard.Controls.Add(this.charB);
+            this.pnlKeyboard.Controls.Add(this.charY);
+            this.pnlKeyboard.Controls.Add(this.charV);
+            this.pnlKeyboard.Controls.Add(this.charC);
+            this.pnlKeyboard.Controls.Add(this.charX);
+            this.pnlKeyboard.Controls.Add(this.charZ);
+            this.pnlKeyboard.Controls.Add(this.charF);
+            this.pnlKeyboard.Controls.Add(this.charD);
+            this.pnlKeyboard.Controls.Add(this.charS);
+            this.pnlKeyboard.Controls.Add(this.charG);
+            this.pnlKeyboard.Controls.Add(this.charA);
+            this.pnlKeyboard.Controls.Add(this.charW);
+            this.pnlKeyboard.Controls.Add(this.charE);
+            this.pnlKeyboard.Controls.Add(this.charR);
+            this.pnlKeyboard.Controls.Add(this.charT);
+            resources.ApplyResources(this.pnlKeyboard, "pnlKeyboard");
+            this.pnlKeyboard.Name = "pnlKeyboard";
             // 
             // charP
             // 
@@ -805,6 +796,15 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Name = "label1";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SeaGreen;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // HangmanForm
             // 
             resources.ApplyResources(this, "$this");
@@ -829,7 +829,7 @@
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnlKeyboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbGuy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -876,7 +876,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button charQ;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlKeyboard;
         private System.Windows.Forms.Button charB;
         private System.Windows.Forms.Button charV;
         private System.Windows.Forms.Button charC;
@@ -903,24 +903,24 @@
         private System.Windows.Forms.Button charP;
         private System.Windows.Forms.Button charM;
         private System.Windows.Forms.PictureBox pbGuy;
-        private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem играToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gameTSMI;
         private System.Windows.Forms.ToolStripButton newToolStripButton1;
         private System.Windows.Forms.ToolStripButton openToolStripButton1;
         private System.Windows.Forms.ToolStripButton saveToolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton helpToolStripButton1;
-        private System.Windows.Forms.ToolStripMenuItem опцииToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem инструкцииToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem излезToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem новаИграToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem нивоToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem optionsTSMI;
+        private System.Windows.Forms.ToolStripMenuItem instrTSMI;
+        private System.Windows.Forms.ToolStripMenuItem closeTSMI;
+        private System.Windows.Forms.ToolStripMenuItem newGameTSMI;
+        private System.Windows.Forms.ToolStripMenuItem lvlTSMI;
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem листаСоРезултатиToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listresTSMI;
         private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem заАпликацијатаToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aboutTSMI;
+        private System.Windows.Forms.Button button1;
     }
 }
 

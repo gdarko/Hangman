@@ -24,10 +24,13 @@ namespace Hangman
         public Player Player { get; set; }
         public Hmdb DB { get; set; }
 
+        public bool isRunning { get; set; }
+
         public Game(Player player, HangmanForm main) : base (main)
         {
             this.Player = player;
             New();
+            this.isRunning = true;
             this.DB = new Hmdb();
         }
 

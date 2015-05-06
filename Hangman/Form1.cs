@@ -30,7 +30,7 @@ namespace Hangman
             this.DoubleBuffered = true;
             InitializeComponent();
             NewGame window = new NewGame();
-            panel2.Visible = false;
+            pnlKeyboard.Visible = false;
             btnStartGame.Focus();
             btnPause.Visible = false;
             btnHelp.Visible = false;
@@ -54,35 +54,97 @@ namespace Hangman
             }
         }
 
+            
+        /// <summary>
+        /// 
+        /// All of the below functions are events. They are triggered
+        /// once the player do some action!
+        /// 
+        /// </summary>
 
-
+        /// <summary>
+        /// 
+        ///  BUTTON EVENTS
+        /// 
+        /// </summary>
         private void btnResults_Click(object sender, EventArgs e)
         {
             HighScores window = new HighScores(game.DB);
             window.ShowDialog();
         }
-
-
         private void btnPause_Click(object sender, EventArgs e)
         {
-            DialogResult response = MessageBox.Show("ИГРАТА Е ПАУЗИРАНА", "Паузирај", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            if (response == DialogResult.OK)
+            if (game.isRunning)
             {
+                DialogResult response = MessageBox.Show("ИГРАТА Е ПАУЗИРАНА", "Паузирај", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 timerRemainingTime.Stop();
                 timerRemainingTime.Enabled = false;
                 btnResults.Enabled = true;
-                btnPause.Visible = false;
-                btnContinue.Visible = true;
                 btnHelp.Enabled = false;
                 btnStartGame.Visible = false;
                 lblPogodiZbor.Visible = false;
-                panel2.Visible = false;
                 btnHelp.Visible = false;
                 btnStartGame.Visible = false;
+                btnPause.Text = "Continue";
+                disableKeyboardButtons();
+                game.isRunning = false;
+            }
+            else
+            {
+                timerRemainingTime.Start();
+                timerRemainingTime.Enabled = true;
+                lblPogodiZbor.Visible = true;
+                btnHelp.Visible = true;
+                btnResults.Visible = true;
+                btnStartGame.Visible = false;
+                btnHelp.Enabled = true;
+                btnPause.Text = "Pause";
+                enableButtonsKeyboard();
+                game.isRunning = true;
+            }
+
+        }
+        private void btnStartGame_Click(object sender, EventArgs e)
+        {
+            if (TimeElapsed == 0)
+            {
+                lblPogodiZbor.Text = game.Session.EncryptedWord;
+                lblRemainingTime.Visible = true;
+                label6.Visible = true;
+                lblPoeni.Text = Convert.ToString(game.GetPoints());
+                btnPause.Enabled = true;
+                UpdateTime();
+                timerRemainingTime.Start();
+                pnlKeyboard.Visible = true;
+                lblPogodiZbor.Visible = true;
+                btnPause.Visible = true;
+                btnHelp.Visible = true;
+                btnStartGame.Visible = false;
+                btnResults.Visible = true;
+                playSound(Hangman.Properties.Resources.MainTheme);
+
+            }
+            else
+            {
+                DialogResult response = MessageBox.Show("Тековната игра сеуште трае!", "Нова игра!?",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (response == DialogResult.Yes)
+                {
+                    DialogResult re = MessageBox.Show("Со почнување на нова игра моментално освоените поени ви се бришат!!",
+                        "Потврди?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (re != DialogResult.No)
+                    {
+                        TimeElapsed = 0;
+                        timerRemainingTime.Start();
+                    }
+                }
             }
         }
 
-
+        /// <summary>
+        ///  OTHER EVENTS
+        ///  Closing form, timer tick, etc.
+        /// </summary>
         private void formBesilka_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (TimeElapsed != 0)
@@ -122,32 +184,6 @@ namespace Hangman
                 Application.Exit();
             }
         }
-
-
-        /// <summary>
-        /// Function dbSaveResult()
-        /// @return bool
-        /// Helper Function to save the user score
-        /// </summary>
-        private bool dbSaveResult()
-        {
-            string firstname = game.Player.FirstName;
-            string nickname = game.Player.NickName;
-            string lastname = game.Player.LastName;
-            int points = game.Player.Points;
-            bool state = game.DB.insertResult(firstname, nickname, lastname, points);
-            return state;
-
-        }
-        /// <summary>
-        /// Used to get the panel(pnlBody) for drawing the body
-        /// </summary>
-        public PictureBox pbGuyBox
-        {
-            get { return pbGuy; }
-            set { pbGuy = value; }
-        }
-
         private void timerRemainingTime_Tick(object sender, EventArgs e)
         {
             TimeElapsed++;
@@ -167,17 +203,24 @@ namespace Hangman
             }
             UpdateTime();
         }
-        private void UpdateTime()
+
+        /// <summary>
+        ///  MENU TOOLSTRIP EVENTS
+        /// </summary>
+        private void listresTSMI_Click(object sender, EventArgs e)
         {
-            int TimeLeft = TIME - TimeElapsed;
-            int min = TimeLeft / 60;
-            int sec = TimeLeft % 60;
-            lblRemainingTime.Text = string.Format("{0:D2}:{1:D2}", min, sec);
-
+            if (TimeElapsed != 0)
+            {
+                MessageBox.Show("Не можете да ги видите резултатите додека играта трае!", "Информација!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                HighScores window = new HighScores(game.DB);
+                window.ShowDialog();
+            }
         }
-
-
-        private void излезToolStripMenuItem_Click(object sender, EventArgs e)
+        private void closeTSMI_Click(object sender, EventArgs e)
         {
             if (TimeElapsed != 0)
             {
@@ -193,82 +236,12 @@ namespace Hangman
                 formBesilka_FormClosing(sender, null);
             }
         }
-
-        private void помошToolStripMenuItem_Click(object sender, EventArgs e)
+        private void helpTSMI_Click(object sender, EventArgs e)
         {
             Instructions h = new Instructions();
             h.ShowDialog();
         }
-
-        private void btnStartGame_Click(object sender, EventArgs e)
-        {
-            if (TimeElapsed == 0)
-            {
-                lblPogodiZbor.Text = game.Session.EncryptedWord;
-                lblRemainingTime.Visible = true;
-                label6.Visible = true;
-                lblPoeni.Text = Convert.ToString(game.GetPoints());
-                btnPause.Enabled = true;
-                UpdateTime();
-                timerRemainingTime.Start();
-                panel2.Visible = true;
-                lblPogodiZbor.Visible = true;
-                btnPause.Visible = true;
-                btnHelp.Visible = true;
-                btnStartGame.Visible = false;
-                btnResults.Visible = true;
-                playSoundtrack(Hangman.Properties.Resources.MainTheme);
-
-            }
-            else
-            {
-                DialogResult response = MessageBox.Show("Тековната игра сеуште трае!", "Нова игра!?",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (response == DialogResult.Yes)
-                {
-                    DialogResult re = MessageBox.Show("Со почнување на нова игра моментално освоените поени ви се бришат!!",
-                        "Потврди?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (re != DialogResult.No)
-                    {
-                        TimeElapsed = 0;
-                        timerRemainingTime.Start();
-                    }
-                }
-            }
-        }
-
-        private void btnContinue_Click(object sender, EventArgs e)
-        {
-            timerRemainingTime.Start();
-            timerRemainingTime.Enabled = true;
-            lblPogodiZbor.Visible = true;
-            panel2.Visible = true;
-            btnContinue.Visible = false;
-            btnHelp.Visible = true;
-            btnResults.Visible = true;
-            btnPause.Visible = true;
-            btnStartGame.Visible = false;
-            btnHelp.Enabled = true;
-        }
-
-
-        private void листаСоРезултатиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (TimeElapsed != 0)
-            {
-                MessageBox.Show("Не можете да ги видите резултатите додека играта трае!", "Информација!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                HighScores window = new HighScores(game.DB);
-                window.ShowDialog();
-            }
-        }
-
-
-
-        private void новаИграToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newGameTSMI_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show("Дали сте сигурни?", "Нова игра?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == System.Windows.Forms.DialogResult.Yes)
@@ -277,40 +250,39 @@ namespace Hangman
                 UpdateTime();
             }
         }
-
         private void easyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             easyToolStripMenuItem.Checked = true;
             normalToolStripMenuItem.Checked = false;
             hardToolStripMenuItem.Checked = false;
         }
-
         private void normalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             easyToolStripMenuItem.Checked = false;
             normalToolStripMenuItem.Checked = true;
             hardToolStripMenuItem.Checked = false;
         }
-
         private void hardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             easyToolStripMenuItem.Checked = false;
             normalToolStripMenuItem.Checked = false;
             hardToolStripMenuItem.Checked = true;
         }
-
-        // Stop flockering
-        protected override CreateParams CreateParams
+        private void aboutTSMI_Click(object sender, EventArgs e)
         {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
-                return cp;
-            }
+            About a = new About();
+            a.ShowDialog();
         }
 
-        // Keyboard
+        private void helpToolStripButton1_Click(object sender, EventArgs e)
+        {
+            Instructions i = new Instructions();
+            i.ShowDialog();
+        }
+        
+        /// <summary>
+        ///  KEYBOARD EVENTS
+        /// </summary>
         private void charQ_Click(object sender, EventArgs e) { Guess('q'); }
         private void charW_Click(object sender, EventArgs e) { Guess('w'); }
         private void charE_Click(object sender, EventArgs e) { Guess('e'); }
@@ -338,19 +310,44 @@ namespace Hangman
         private void charM_Click(object sender, EventArgs e) { Guess('m'); }
         private void charP_Click(object sender, EventArgs e) { Guess('p'); }
 
+        /// END EVENTS
+        /// START HELPERS
 
+        /// <summary>
+        /// Helper functions start from there. All of them below are used
+        /// to as helpers for all the events above.
+        /// </summary>
+        /// 
 
+        /// <summary>
+        /// override CreateParams
+        /// Used to stop flickering
+        /// </summary>
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        }
+        /// <summary>
+        /// Function Guess()
+        /// @return void
+        /// Helper Function used to process the clicked character
+        /// </summary>
         private void Guess(char c)
         {
             var State = ( Globals.GUESS) game.UpdateSession(c);
             if (State == Globals.GUESS.SUCCESS)
             {
-                // playSimpleSound(Hangman.Properties.Resources.correctanswer);
+                // playSound(Hangman.Properties.Resources.correctanswer);
 
             }
             else if (State == Globals.GUESS.FAIL)
             {
-                //playSimpleSound(Hangman.Properties.Resources.wronganswer);
+                //playSound(Hangman.Properties.Resources.wronganswer);
             }
             else
             {
@@ -364,28 +361,86 @@ namespace Hangman
             lblPogodiZbor.Text = game.Session.EncryptedWord;
             lblPoeni.Text = Convert.ToString(game.GetPoints());
         }
-
-        private void playSimpleSound(System.IO.Stream wav)
+        /// <summary>
+        /// Function dbSaveResult()
+        /// @return bool
+        /// Helper Function to save the user score
+        /// </summary>
+        private bool dbSaveResult()
+        {
+            string firstname = game.Player.FirstName;
+            string nickname = game.Player.NickName;
+            string lastname = game.Player.LastName;
+            int points = game.Player.Points;
+            bool state = game.DB.insertResult(firstname, nickname, lastname, points);
+            return state;
+        }
+        /// <summary>
+        /// Function UpdateTme()
+        /// @return bool
+        /// Helper Function used to update the time on each timer tick
+        /// </summary>
+        private void UpdateTime()
+        {
+            int TimeLeft = TIME - TimeElapsed;
+            int min = TimeLeft / 60;
+            int sec = TimeLeft % 60;
+            lblRemainingTime.Text = string.Format("{0:D2}:{1:D2}", min, sec);
+        }
+        /// <summary>
+        /// Function playSound
+        /// return void
+        /// Helper function for playing sounds
+        /// </summary>
+        private void playSound(System.IO.Stream wav, bool looping = false)
         {
             SoundPlayer simpleSound = new SoundPlayer(wav);
-            simpleSound.Play();
+            if (looping)
+            {
+                simpleSound.Play();
+            }
+            else
+            {
+                simpleSound.PlayLooping();
+            }
+            
         }
-        private void playSoundtrack(System.IO.Stream wav)
+        /// <summary>
+        /// Allow access to the panel used for drawing the body
+        /// </summary>
+        public PictureBox pbGuyBox
         {
-            SoundPlayer soundtrack = new SoundPlayer(wav);
-            soundtrack.PlayLooping();
+            get { return pbGuy; }
+            set { pbGuy = value; }
         }
 
-        private void заАпликацијатаToolStripMenuItem1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Disable buttons on the keyboard
+        /// </summary>
+        public void disableKeyboardButtons()
         {
-            About a = new About();
-            a.ShowDialog();
+            foreach (Control c in pnlKeyboard.Controls)
+            {
+                if (c.Text != "Continue")
+                {
+                    c.Enabled = false;
+                    c.BackColor = Color.Gray;
+                }
+            }
         }
-
-        private void helpToolStripButton1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Enable buttons on the keyboard
+        /// </summary>
+        public void enableButtonsKeyboard()
         {
-            Instructions i = new Instructions();
-            i.ShowDialog();
+            foreach (Control c in pnlKeyboard.Controls)
+            {
+                if (c.Text != "Pause")
+                {
+                    c.Enabled = true;
+                    c.BackColor = Color.SeaGreen;
+                }
+            }
         }
     }
 }
