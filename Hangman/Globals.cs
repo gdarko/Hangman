@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hangman
 {
-    public class Globals
+    public static class Globals
     {
         public enum GUESS
         {
@@ -21,6 +21,8 @@ namespace Hangman
             NORMAL,
             HARD,
         }
+
+        public static readonly int TOTAL_GAME_TIME = 240; //240 sekundi = 4 minuti
 
     }
 }

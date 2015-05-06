@@ -22,7 +22,6 @@ namespace Hangman
         /// <summary>
         /// Timer for the game
         /// </summary>
-        private static readonly int TIME = 240;//240 sekundi = 4 minuti
         private int TimeElapsed;
 
         public HangmanForm()
@@ -30,13 +29,9 @@ namespace Hangman
             this.DoubleBuffered = true;
             InitializeComponent();
             NewGame window = new NewGame();
-            pnlKeyboard.Visible = false;
-            btnStartGame.Focus();
-            btnPause.Visible = false;
-            btnHelp.Visible = false;
-            btnResults.Visible = false;
             lblPogodiZbor.Visible = false;
             easyToolStripMenuItem.Checked = true;
+            disableKeyboardButtons();
 
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -108,19 +103,18 @@ namespace Hangman
         {
             if (TimeElapsed == 0)
             {
+                enableButtonsKeyboard();
                 lblPogodiZbor.Text = game.Session.EncryptedWord;
+                lblPoeni.Text = Convert.ToString(game.GetPoints());
                 lblRemainingTime.Visible = true;
                 label6.Visible = true;
-                lblPoeni.Text = Convert.ToString(game.GetPoints());
                 btnPause.Enabled = true;
                 UpdateTime();
                 timerRemainingTime.Start();
                 pnlKeyboard.Visible = true;
                 lblPogodiZbor.Visible = true;
                 btnPause.Visible = true;
-                btnHelp.Visible = true;
                 btnStartGame.Visible = false;
-                btnResults.Visible = true;
                 playSound(Hangman.Properties.Resources.MainTheme);
 
             }
@@ -189,7 +183,7 @@ namespace Hangman
             TimeElapsed++;
             timerRemainingTime.Interval = 1000;//1 sekunda = 1000 milisekundi
             timerRemainingTime.Enabled = true;
-            if (TimeElapsed == TIME)
+            if (TimeElapsed == Globals.TOTAL_GAME_TIME)
             {
                 MessageBox.Show("Вашето време истече!", "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 formBesilka_FormClosing(sender, null);
@@ -355,6 +349,7 @@ namespace Hangman
                 sb.Append("Многу ни е жал!\nВие сте обесени.\nПробајте повторно :(");
                 MessageBox.Show(sb.ToString(), "Информација", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 timerRemainingTime.Stop();
+                pbGuy.Image = null;
                 TimeElapsed = 0;
             }
 
@@ -382,7 +377,7 @@ namespace Hangman
         /// </summary>
         private void UpdateTime()
         {
-            int TimeLeft = TIME - TimeElapsed;
+            int TimeLeft = Globals.TOTAL_GAME_TIME - TimeElapsed;
             int min = TimeLeft / 60;
             int sec = TimeLeft % 60;
             lblRemainingTime.Text = string.Format("{0:D2}:{1:D2}", min, sec);
@@ -421,7 +416,7 @@ namespace Hangman
         {
             foreach (Control c in pnlKeyboard.Controls)
             {
-                if (c.Text != "Continue")
+                if (c.Name != "btnPause")
                 {
                     c.Enabled = false;
                     c.BackColor = Color.Gray;
@@ -435,7 +430,7 @@ namespace Hangman
         {
             foreach (Control c in pnlKeyboard.Controls)
             {
-                if (c.Text != "Pause")
+                if (c.Name != "btnPause")
                 {
                     c.Enabled = true;
                     c.BackColor = Color.SeaGreen;
