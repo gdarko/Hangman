@@ -367,8 +367,7 @@ namespace Hangman
             string nickname = game.Player.NickName;
             string lastname = game.Player.LastName;
             int points = game.Player.Points;
-            bool state = game.DB.insertResult(firstname, nickname, lastname, points);
-            return state;
+            return game.DB.insertResult(firstname, nickname, lastname, points);
         }
         /// <summary>
         /// Function UpdateTme()

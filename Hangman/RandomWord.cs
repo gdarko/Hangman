@@ -44,6 +44,9 @@ namespace Hangman
             "srekja",
             "geografija",
             "zivot",
+			"telepatija",
+			"student",
+			"dozd",
             "hemija"
         };
         public static string getRandom()
