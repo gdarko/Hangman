@@ -25,6 +25,8 @@ namespace Hangman
         public Hmdb DB { get; set; }
 
         public bool isRunning { get; set; }
+		
+		private Globals.LEVELS lvl {get; set;}
 
         public Game(Player player, HangmanForm main) : base (main)
         {
@@ -37,11 +39,6 @@ namespace Hangman
         public void New()
         {
             this.Session = new GameSession(MainForm);
-        }
-
-        public bool GameIsStared()
-        {
-            return Session != null;
         }
 
         public void AddPoints()
