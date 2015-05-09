@@ -47,7 +47,12 @@ namespace Hangman
 			"telepatija",
 			"student",
 			"dozd",
-            "hemija"
+            "hemija",
+            "popokateptl",
+            "kilimandzaro",
+            "avtokefalnost",
+            "havarija",
+            "inzenerstvo"
         };
         public static string getRandom()
         {
