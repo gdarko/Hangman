@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Xml.Linq;
 
 namespace Hangman
 {
@@ -18,131 +19,31 @@ namespace Hangman
 
     public static class RandomWord
     {
-        public static string[] words =
-            new string[] {
-            "mecka",
-            "kucka",
-            "kamion",
-            "prikolka",
-            "lubenica",
-            "ljubov",
-            "jorgan",
-            "avtomobil",
-            "kompjuter",
-            "video",
-            "tablet",
-            "devojka",
-            "momce",
-            "zgrada",
-            "telefon",
-            "tepih",
-            "baterija",
-            "sokak",
-            "fakultet",
-            "patuvanje",
-            "letuvanje",
-            "srekja",
-            "geografija",
-            "zivot",
-			"telepatija",
-			"student",
-			"dozd",
-            "hemija",
-            "popokateptl",
-            "kilimandzaro",
-            "avtokefalnost",
-            "havarija",
-            "inzenerstvo",
-            "modernizacija",
-            "helikobakterija",
-            "energetika",
-            "bure-barut",
-            "dzimirinka",
-            "ajvar",
-            "pracka",
-            "avokado",
-            "seizmologija",
-            "hidrometeorologija",
-            "lihnidos",
-            "astibo",
-            "republika",
-            "armija",
-            "zamok",
-            "manastir",
-            "zemjotres",
-            "sveta-gora",
-            "kajmakcalan",
-            "nidze",
-            "solunska-glava",
-            "jakupica",
-            "sultan-tepe",
-            "carev-vrv",
-            "ris",
-            "diva-koza",
-            "oklop",
-            "bazen",
-            "otpor",
-            "jamajka",
-            "golemina",
-            "informatika",
-            "programiranje",
-            "razvoj",
-            "industrija",
-            "zeleznica",
-            "nacionalnost",
-            "drzavnost",
-            "istorija",
-            "golemina",
-            "neolit",
-            "paleolit",
-            "sajonara",
-            "glusec",
-            "vetrobran",
-            "klisura",
-            "karpa",
-            "zmija",
-            "kaval",
-            "kanalizacija",
-            "vodovod",
-            "bunker",
-            "tajno",
-            "mrak",
-            "zimbamve",
-            "akonkagva",
-            "fidzi",
-            "fukusima",
-            "nagasaki",
-            "cernobil",
-            "komunizam",
-            "kapitalizam",
-            "socijalizam",
-            "ropstvo",
-            "spijunaza",
-            "vselena",
-            "aerodrom",
-            "destinacija",
-            "dalecina",
-            "umisla",
-            "ubistvo",
-            "policija",
-            "korab",
-            "titov-vrv",
-            "istrazuvanje",
-            "telefonija",
-            "manipulacija",
-            "stereo",
-            "akustika",
-            "studio",
-            "stadion",
-            "natprevar",
-            "sport",
-            "covecnost",
-            "humanost",
-            "civilizacija",
-        };
-        public static string getRandom()
+
+        public static string [] ReadXML(string s)
+        {   
+            var WordsArr = XDocument.Parse(s);
+            var array = WordsArr.Descendants("Word").Select(x => (string)x).ToArray();
+            return array;
+        }
+
+        public static string getRandom(Globals.LEVELS L)
         {
+            string wrdLoc = "";
+            if (L == Globals.LEVELS.EASY)
+            {
+                wrdLoc = Hangman.Properties.Resources.Easy;
+            }
+            else if(L == Globals.LEVELS.NORMAL)
+            {
+                wrdLoc = Hangman.Properties.Resources.Medium;
+            }
+            else
+            {
+                wrdLoc = Hangman.Properties.Resources.Hard;
+            }
             Random rnd = new Random();
+            string[] words = ReadXML(wrdLoc);
             int index = rnd.Next(0, words.Length - 1);
             return words[index];
         }

@@ -19,7 +19,8 @@ namespace Hangman
 
     public partial class NewGame : Form
     {
-        public Player result { get; set; }
+        public Player player { get; set; }
+        public HmOptions options  { get; set; }
 
         public NewGame()
         {
@@ -30,7 +31,13 @@ namespace Hangman
             string FirstName = tbFirstName.Text;
             string LastName = tbLastName.Text;
             string NickName = tbNickName.Text;
-            result = new Player(FirstName, LastName, NickName, 0);
+            bool musicEnabled = cbMusic.Checked;
+            Globals.LEVELS Level = (Globals.LEVELS)cbLevels.SelectedIndex + 1;
+
+            options = new HmOptions(Level, musicEnabled);
+            
+            player = new Player(FirstName, LastName, NickName, 0);
+
             DialogResult = System.Windows.Forms.DialogResult.OK;
             Close();
         }

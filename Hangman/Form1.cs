@@ -36,7 +36,7 @@ namespace Hangman
             // Show the NewGame form on initialization and get the results from it
             if (window.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                game = new Game(window.result, this);
+                game = new Game(window.player, this, window.options );
                 tbIme.Text = game.Player.FirstName;
                 tbPrekar.Text = game.Player.NickName;
                 tbPrezime.Text = game.Player.LastName;
@@ -436,5 +436,7 @@ namespace Hangman
                 }
             }
         }
+
+        
     }
 }

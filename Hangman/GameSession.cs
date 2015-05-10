@@ -33,6 +33,11 @@ namespace Hangman
         /// </summary>
         private string Word;
 
+        /// <summary>
+        /// @param enum Level
+        /// Keeps the Level
+        /// </summary>
+        private Globals.LEVELS Level { get; set; }
 
         /// <summary>
         /// @param string EncryptedWord
@@ -60,9 +65,9 @@ namespace Hangman
         /// Keeps the total points scored by the user in this session 
         /// </summary>
         public int points { get; set; }
-        public GameSession(HangmanForm p)
+        public GameSession(HangmanForm p, Globals.LEVELS L)
         {
-            this.Word = RandomWord.getRandom();
+            this.Word = RandomWord.getRandom(L);
             this.EncryptedWord = RandomWord.Encrypt(this.Word);
             this.points = 0;
             this.BodyPartsAdded = 0;

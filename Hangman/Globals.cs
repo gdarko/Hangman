@@ -17,7 +17,7 @@ namespace Hangman
 
         public enum LEVELS
         {
-            EASY = 4,
+            EASY = 1,
             NORMAL,
             HARD,
         }

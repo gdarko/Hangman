@@ -17,19 +17,20 @@ namespace Hangman
     /// -Maja Korunoska
     /// -Darko Gjorgjijoski
     /// </summary>
-    public class Game : HMController
+    public class Game
     {
-
+        public HangmanForm MainForm { get; set; }
         public GameSession Session { get; set; }
         public Player Player { get; set; }
         public Hmdb DB { get; set; }
-
+        public HmOptions Options {get; set;}
         public bool isRunning { get; set; }
-		
-		private Globals.LEVELS lvl {get; set;}
+        
 
-        public Game(Player player, HangmanForm main) : base (main)
+        public Game(Player player, HangmanForm main, HmOptions options = null)
         {
+            this.MainForm = main;
+            this.Options = options;
             this.Player = player;
             New();
             this.isRunning = true;
@@ -38,7 +39,7 @@ namespace Hangman
 
         public void New()
         {
-            this.Session = new GameSession(MainForm);
+            this.Session = new GameSession(MainForm, Options.Level);
         }
 
         public void AddPoints()

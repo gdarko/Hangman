@@ -151,4 +151,13 @@
   <data name="MainTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MainTheme.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Easy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Easy.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Hard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hard.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Medium.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
 </root>
