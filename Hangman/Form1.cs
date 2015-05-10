@@ -113,36 +113,42 @@ namespace Hangman
         {
             if (TimeElapsed != 0)
             {
-                DialogResult result = MessageBox.Show("Играта сеуште не е завршена?", "Излези!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result != DialogResult.No)
+                int time = TimeElapsed;
+                timerRemainingTime.Stop();
+                if (MessageBox.Show("The game is still not finished. Do you want to exit?", "Exit!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    DialogResult re = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (re == System.Windows.Forms.DialogResult.Yes)
+                    if (MessageBox.Show("Do you want to save your result?", "Result", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                     {
                         if (dbSaveResult())
                         {
-                            MessageBox.Show("Резултатот е успешно зачуван!", "Резултат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Result saved!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error saving your result.!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+                    Application.Exit();
                 }
-                Application.Exit();
+                else
+                {
+                    timerRemainingTime.Start();
+                }
+                
             }
             else
             {
-                DialogResult re = MessageBox.Show("Дали сакате да го зачувате резултатот во базата?", "Резултат", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                lblRemainingTime.Visible = false;
+                DialogResult re = MessageBox.Show("Do you want to save your result?", "Result", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (re == System.Windows.Forms.DialogResult.Yes)
                 {
                     if (dbSaveResult())
                     {
-                        MessageBox.Show("Резултатот е успешно зачуван!", "Резултат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Result saved!", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Настана грешка при зачувување на вашиот резултат!", "Грешка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error saving your result.!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 Application.Exit();
