@@ -24,7 +24,7 @@ namespace Hangman
         public Player Player { get; set; }
         public Hmdb DB { get; set; }
         public HmOptions Options {get; set;}
-        public bool isRunning { get; set; }
+        public Globals.STATE isRunning { get; set; }
         
 
         public Game(Player player, HangmanForm main, HmOptions options = null)
@@ -33,8 +33,14 @@ namespace Hangman
             this.Options = options;
             this.Player = player;
             New();
-            this.isRunning = true;
+            this.isRunning = Globals.STATE.RUNNING;
             this.DB = new Hmdb();
+        }
+
+        public void Restart()
+        {
+            New();
+            this.Player.Points = 0;
         }
 
         public void New()

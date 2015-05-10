@@ -34,7 +34,6 @@
             this.btnResults = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStartGame = new System.Windows.Forms.Button();
-            this.btnHelp = new System.Windows.Forms.Button();
             this.gbVasiInformacii = new System.Windows.Forms.GroupBox();
             this.lblPoeni = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,12 +46,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gameTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.lvlTSMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.easyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.normalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.hardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listresTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.instrTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.closeTSMI = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,12 +66,6 @@
             this.lblRemainingTime = new System.Windows.Forms.Label();
             this.timerRemainingTime = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.newToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -112,10 +102,8 @@
             this.charT = new System.Windows.Forms.Button();
             this.pbGuy = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.gbVasiInformacii.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlKeyboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuy)).BeginInit();
@@ -156,15 +144,6 @@
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.UseVisualStyleBackColor = false;
             this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.BackColor = System.Drawing.Color.SeaGreen;
-            resources.ApplyResources(this.btnHelp, "btnHelp");
-            this.btnHelp.FlatAppearance.BorderSize = 0;
-            this.btnHelp.ForeColor = System.Drawing.Color.White;
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.UseVisualStyleBackColor = false;
             // 
             // gbVasiInformacii
             // 
@@ -241,7 +220,6 @@
             // 
             this.gameTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newGameTSMI,
-            this.lvlTSMI,
             this.listresTSMI});
             this.gameTSMI.Name = "gameTSMI";
             resources.ApplyResources(this.gameTSMI, "gameTSMI");
@@ -252,33 +230,6 @@
             resources.ApplyResources(this.newGameTSMI, "newGameTSMI");
             this.newGameTSMI.Click += new System.EventHandler(this.newGameTSMI_Click);
             // 
-            // lvlTSMI
-            // 
-            this.lvlTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.easyToolStripMenuItem1,
-            this.normalToolStripMenuItem1,
-            this.hardToolStripMenuItem1});
-            this.lvlTSMI.Name = "lvlTSMI";
-            resources.ApplyResources(this.lvlTSMI, "lvlTSMI");
-            // 
-            // easyToolStripMenuItem1
-            // 
-            this.easyToolStripMenuItem1.Name = "easyToolStripMenuItem1";
-            resources.ApplyResources(this.easyToolStripMenuItem1, "easyToolStripMenuItem1");
-            this.easyToolStripMenuItem1.Click += new System.EventHandler(this.easyToolStripMenuItem_Click);
-            // 
-            // normalToolStripMenuItem1
-            // 
-            this.normalToolStripMenuItem1.Name = "normalToolStripMenuItem1";
-            resources.ApplyResources(this.normalToolStripMenuItem1, "normalToolStripMenuItem1");
-            this.normalToolStripMenuItem1.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
-            // 
-            // hardToolStripMenuItem1
-            // 
-            this.hardToolStripMenuItem1.Name = "hardToolStripMenuItem1";
-            resources.ApplyResources(this.hardToolStripMenuItem1, "hardToolStripMenuItem1");
-            this.hardToolStripMenuItem1.Click += new System.EventHandler(this.hardToolStripMenuItem_Click);
-            // 
             // listresTSMI
             // 
             this.listresTSMI.Name = "listresTSMI";
@@ -287,9 +238,16 @@
             // optionsTSMI
             // 
             this.optionsTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optionTSMI,
             this.aboutTSMI});
             this.optionsTSMI.Name = "optionsTSMI";
             resources.ApplyResources(this.optionsTSMI, "optionsTSMI");
+            // 
+            // optionTSMI
+            // 
+            this.optionTSMI.Name = "optionTSMI";
+            resources.ApplyResources(this.optionTSMI, "optionTSMI");
+            this.optionTSMI.Click += new System.EventHandler(this.optionTSMI_Click);
             // 
             // aboutTSMI
             // 
@@ -337,19 +295,16 @@
             // 
             this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
             resources.ApplyResources(this.easyToolStripMenuItem, "easyToolStripMenuItem");
-            this.easyToolStripMenuItem.Click += new System.EventHandler(this.easyToolStripMenuItem_Click);
             // 
             // normalToolStripMenuItem
             // 
             this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
             resources.ApplyResources(this.normalToolStripMenuItem, "normalToolStripMenuItem");
-            this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
             // 
             // hardToolStripMenuItem
             // 
             this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
             resources.ApplyResources(this.hardToolStripMenuItem, "hardToolStripMenuItem");
-            this.hardToolStripMenuItem.Click += new System.EventHandler(this.hardToolStripMenuItem_Click);
             // 
             // листаСоРезултатиToolStripMenuItem
             // 
@@ -399,47 +354,6 @@
             this.label6.ForeColor = System.Drawing.Color.LightBlue;
             this.label6.Name = "label6";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton1,
-            this.openToolStripButton1,
-            this.saveToolStripButton1,
-            this.toolStripSeparator4,
-            this.helpToolStripButton1});
-            resources.ApplyResources(this.toolStrip1, "toolStrip1");
-            this.toolStrip1.Name = "toolStrip1";
-            // 
-            // newToolStripButton1
-            // 
-            this.newToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.newToolStripButton1, "newToolStripButton1");
-            this.newToolStripButton1.Name = "newToolStripButton1";
-            // 
-            // openToolStripButton1
-            // 
-            this.openToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.openToolStripButton1, "openToolStripButton1");
-            this.openToolStripButton1.Name = "openToolStripButton1";
-            // 
-            // saveToolStripButton1
-            // 
-            this.saveToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.saveToolStripButton1, "saveToolStripButton1");
-            this.saveToolStripButton1.Name = "saveToolStripButton1";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            // 
-            // helpToolStripButton1
-            // 
-            this.helpToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.helpToolStripButton1, "helpToolStripButton1");
-            this.helpToolStripButton1.Name = "helpToolStripButton1";
-            this.helpToolStripButton1.Click += new System.EventHandler(this.helpToolStripButton1_Click);
-            // 
             // newToolStripButton
             // 
             this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -484,14 +398,12 @@
             this.panel1.Controls.Add(this.gbVasiInformacii);
             this.panel1.Controls.Add(this.btnResults);
             this.panel1.Controls.Add(this.lblPogodiZbor);
-            this.panel1.Controls.Add(this.btnHelp);
             this.panel1.ForeColor = System.Drawing.Color.Snow;
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // pnlKeyboard
             // 
-            this.pnlKeyboard.Controls.Add(this.button1);
             this.pnlKeyboard.Controls.Add(this.charP);
             this.pnlKeyboard.Controls.Add(this.charM);
             this.pnlKeyboard.Controls.Add(this.charN);
@@ -796,15 +708,6 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.Name = "label1";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SeaGreen;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // HangmanForm
             // 
             resources.ApplyResources(this, "$this");
@@ -814,7 +717,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbGuy);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblRemainingTime);
@@ -825,8 +727,6 @@
             this.gbVasiInformacii.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlKeyboard.ResumeLayout(false);
@@ -864,9 +764,7 @@
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
-        private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnStartGame;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton newToolStripButton;
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
@@ -905,22 +803,13 @@
         private System.Windows.Forms.PictureBox pbGuy;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem gameTSMI;
-        private System.Windows.Forms.ToolStripButton newToolStripButton1;
-        private System.Windows.Forms.ToolStripButton openToolStripButton1;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton helpToolStripButton1;
         private System.Windows.Forms.ToolStripMenuItem optionsTSMI;
         private System.Windows.Forms.ToolStripMenuItem instrTSMI;
         private System.Windows.Forms.ToolStripMenuItem closeTSMI;
         private System.Windows.Forms.ToolStripMenuItem newGameTSMI;
-        private System.Windows.Forms.ToolStripMenuItem lvlTSMI;
-        private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listresTSMI;
-        private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutTSMI;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem optionTSMI;
     }
 }
 

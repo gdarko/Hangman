@@ -43,9 +43,8 @@
             this.errorSurname = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorNickname = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbLevels = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbMusic = new System.Windows.Forms.CheckBox();
+            this.cbLevels = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorName)).BeginInit();
@@ -129,11 +128,11 @@
             this.btnOtkazi.FlatAppearance.BorderSize = 0;
             this.btnOtkazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOtkazi.ForeColor = System.Drawing.Color.White;
-            this.btnOtkazi.Location = new System.Drawing.Point(109, 276);
+            this.btnOtkazi.Location = new System.Drawing.Point(76, 257);
             this.btnOtkazi.Name = "btnOtkazi";
-            this.btnOtkazi.Size = new System.Drawing.Size(75, 23);
+            this.btnOtkazi.Size = new System.Drawing.Size(111, 23);
             this.btnOtkazi.TabIndex = 1;
-            this.btnOtkazi.Text = "Откажи";
+            this.btnOtkazi.Text = "No, I don\'t want to play!";
             this.btnOtkazi.UseVisualStyleBackColor = false;
             this.btnOtkazi.Click += new System.EventHandler(this.btnOtkazi_Click);
             // 
@@ -143,11 +142,11 @@
             this.btnPocetok.FlatAppearance.BorderSize = 0;
             this.btnPocetok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPocetok.ForeColor = System.Drawing.Color.White;
-            this.btnPocetok.Location = new System.Drawing.Point(193, 276);
+            this.btnPocetok.Location = new System.Drawing.Point(193, 257);
             this.btnPocetok.Name = "btnPocetok";
             this.btnPocetok.Size = new System.Drawing.Size(75, 23);
             this.btnPocetok.TabIndex = 2;
-            this.btnPocetok.Text = "Почеток";
+            this.btnPocetok.Text = "Start";
             this.btnPocetok.UseVisualStyleBackColor = false;
             this.btnPocetok.Click += new System.EventHandler(this.btnPocetok_Click);
             // 
@@ -165,27 +164,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbMusic);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cbLevels);
             this.groupBox2.Location = new System.Drawing.Point(13, 159);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(255, 111);
+            this.groupBox2.Size = new System.Drawing.Size(255, 75);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game Options";
-            // 
-            // cbLevels
-            // 
-            this.cbLevels.FormattingEnabled = true;
-            this.cbLevels.Items.AddRange(new object[] {
-            "Easy",
-            "Normal",
-            "Hard"});
-            this.cbLevels.Location = new System.Drawing.Point(73, 29);
-            this.cbLevels.Name = "cbLevels";
-            this.cbLevels.Size = new System.Drawing.Size(169, 21);
-            this.cbLevels.TabIndex = 0;
             // 
             // label4
             // 
@@ -196,27 +182,30 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Game Level:";
             // 
-            // cbMusic
+            // cbLevels
             // 
-            this.cbMusic.AutoSize = true;
-            this.cbMusic.Location = new System.Drawing.Point(73, 65);
-            this.cbMusic.Name = "cbMusic";
-            this.cbMusic.Size = new System.Drawing.Size(151, 17);
-            this.cbMusic.TabIndex = 7;
-            this.cbMusic.Text = "Enable Background Music";
-            this.cbMusic.UseVisualStyleBackColor = true;
+            this.cbLevels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLevels.FormattingEnabled = true;
+            this.cbLevels.Items.AddRange(new object[] {
+            "Easy",
+            "Normal",
+            "Hard"});
+            this.cbLevels.Location = new System.Drawing.Point(73, 29);
+            this.cbLevels.Name = "cbLevels";
+            this.cbLevels.Size = new System.Drawing.Size(169, 21);
+            this.cbLevels.TabIndex = 0;
             // 
             // NewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.IndianRed;
-            this.ClientSize = new System.Drawing.Size(277, 311);
+            this.BackColor = System.Drawing.Color.DarkKhaki;
+            this.ClientSize = new System.Drawing.Size(277, 293);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnPocetok);
             this.Controls.Add(this.btnOtkazi);
             this.Controls.Add(this.groupBox1);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "NewGame";
             this.Text = "New Game";
             this.groupBox1.ResumeLayout(false);
@@ -249,6 +238,5 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbLevels;
-        private System.Windows.Forms.CheckBox cbMusic;
     }
 }

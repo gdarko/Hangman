@@ -28,18 +28,25 @@ namespace Hangman
         }
         private void btnPocetok_Click(object sender, EventArgs e)
         {
-            string FirstName = tbFirstName.Text;
-            string LastName = tbLastName.Text;
-            string NickName = tbNickName.Text;
-            bool musicEnabled = cbMusic.Checked;
-            Globals.LEVELS Level = (Globals.LEVELS)cbLevels.SelectedIndex + 1;
+            if(cbLevels.SelectedIndex != -1)
+            {
+                string FirstName = tbFirstName.Text;
+                string LastName = tbLastName.Text;
+                string NickName = tbNickName.Text;
+                Globals.LEVELS Level = (Globals.LEVELS)cbLevels.SelectedIndex + 1;
 
-            options = new HmOptions(Level, musicEnabled);
-            
-            player = new Player(FirstName, LastName, NickName, 0);
+                options = new HmOptions(Level);
 
-            DialogResult = System.Windows.Forms.DialogResult.OK;
-            Close();
+                player = new Player(FirstName, LastName, NickName, 0);
+
+                DialogResult = System.Windows.Forms.DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("You must choose a level before start", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
         private void btnOtkazi_Click(object sender, EventArgs e)
         {
@@ -56,7 +63,7 @@ namespace Hangman
             else
             {
                 e.Cancel = true;
-                errorName.SetError(tbFirstName, "Ве молиме внесете име!");
+                errorName.SetError(tbFirstName, "Please enter name!");
             }
         }
 
@@ -69,7 +76,7 @@ namespace Hangman
             else
             {
                 e.Cancel = true;
-                errorSurname.SetError(tbLastName, "Ве молиме внесете презиме!");
+                errorSurname.SetError(tbLastName, "Please enter last name!");
             }
         }
 
@@ -82,7 +89,7 @@ namespace Hangman
             else
             {
                 e.Cancel = true;
-                errorNickname.SetError(tbNickName, "Поинтересно е со прекар! :)");
+                errorNickname.SetError(tbNickName, "Please enter nick name!");
             }
         }
     }

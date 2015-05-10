@@ -22,6 +22,13 @@ namespace Hangman
             HARD,
         }
 
+        public enum STATE
+        {
+            STOPPED = 1,
+            PAUSED,
+            RUNNING,
+        }
+
         public static readonly int TOTAL_GAME_TIME = 240; //240 sekundi = 4 minuti
 
     }

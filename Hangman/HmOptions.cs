@@ -8,12 +8,10 @@ namespace Hangman
 {
     public class HmOptions
     {
-        public bool EnableSong { get; set; }
         public Globals.LEVELS Level { get; set; }
 
-        public HmOptions(Globals.LEVELS Level, bool EnableSong = true)
+        public HmOptions(Globals.LEVELS Level)
         {
-            this.EnableSong = EnableSong;
             this.Level = Level;
         }
     }

@@ -48,7 +48,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 33);
             this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Излез";
+            this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -61,7 +61,7 @@
             this.groupBox1.Size = new System.Drawing.Size(284, 263);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Резултати";
+            this.groupBox1.Text = "Results";
             // 
             // HighScores
             // 
