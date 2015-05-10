@@ -39,7 +39,7 @@
 
 **Извршна верзија:**
 
-[Превземи тука](https://www.dropbox.com/s/cuvld64ef5yklsz/Hangman.exe?dl=0)
+[Превземи тука](https://github.com/gdarko/Hangman/blob/master/executable/Executable_Hangman.zip)
 
 --
 
