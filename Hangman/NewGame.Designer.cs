@@ -43,9 +43,9 @@
             this.errorSurname = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorNickname = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbLevels = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.cbMusic = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbLevels = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorName)).BeginInit();
@@ -75,9 +75,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Nick Name:";
+            this.label3.Text = "Nickname:";
             // 
             // tbNickName
             // 
@@ -175,6 +175,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Game Options";
             // 
+            // cbMusic
+            // 
+            this.cbMusic.AutoSize = true;
+            this.cbMusic.Location = new System.Drawing.Point(73, 65);
+            this.cbMusic.Name = "cbMusic";
+            this.cbMusic.Size = new System.Drawing.Size(151, 17);
+            this.cbMusic.TabIndex = 7;
+            this.cbMusic.Text = "Enable Background Music";
+            this.cbMusic.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Game Level:";
+            // 
             // cbLevels
             // 
             this.cbLevels.FormattingEnabled = true;
@@ -186,25 +205,6 @@
             this.cbLevels.Name = "cbLevels";
             this.cbLevels.Size = new System.Drawing.Size(169, 21);
             this.cbLevels.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Game Level:";
-            // 
-            // cbMusic
-            // 
-            this.cbMusic.AutoSize = true;
-            this.cbMusic.Location = new System.Drawing.Point(73, 65);
-            this.cbMusic.Name = "cbMusic";
-            this.cbMusic.Size = new System.Drawing.Size(151, 17);
-            this.cbMusic.TabIndex = 7;
-            this.cbMusic.Text = "Enable Background Music";
-            this.cbMusic.UseVisualStyleBackColor = true;
             // 
             // NewGame
             // 
